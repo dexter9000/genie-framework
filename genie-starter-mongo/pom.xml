@@ -10,6 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>genie-starter-mongo</artifactId>
+    <name>Genie MongoDB Starter</name>
+    <packaging>jar</packaging>
 
     <properties>
         <argLine>-Djava.security.egd=file:/dev/./urandom -Xmx256m</argLine>

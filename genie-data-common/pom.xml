@@ -10,6 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>genie-data-common</artifactId>
+    <name>Genie Data Common</name>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
