@@ -22,10 +22,10 @@ import org.springframework.core.env.Environment;
  *
  * genie:
  *     class-names:
- *     -   "cn.com.connext.crm.repository..*"
- *     -   "cn.com.connext.crm.service..*"
- *     -   "cn.com.connext.common.web.rest..*"
- *     -   "cn.com.connext.crm.web.rest..*"
+ *     -   "com.genie.crm.repository..*"
+ *     -   "com.genie.crm.service..*"
+ *     -   "com.genie.common.web.rest..*"
+ *     -   "com.genie.crm.web.rest..*"
  */
 @Configuration
 @EnableAspectJAutoProxy

@@ -13,7 +13,7 @@ public class GetAndSetTest {
 
     @Test
     public void testAllDTO() throws IllegalAccessException, InstantiationException, InvocationTargetException {
-        Set<Class<?>> classes = ClasspathScanner.getClasses("cn.com.connext.crm.service.dto");
+        Set<Class<?>> classes = ClasspathScanner.getClasses("com.genie.crm.service.dto");
         for(Class clazz : classes){
             boolean isAbs = Modifier.isAbstract(clazz.getModifiers());
             if(!clazz.getSimpleName().endsWith("Test") && !isAbs){
