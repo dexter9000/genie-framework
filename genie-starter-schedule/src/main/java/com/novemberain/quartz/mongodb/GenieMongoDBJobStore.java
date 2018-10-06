@@ -11,18 +11,18 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
 
-public class ConnextMongoDBJobStore extends MongoDBJobStore {
+public class GenieMongoDBJobStore extends MongoDBJobStore {
 
-    private final Logger log = LoggerFactory.getLogger(ConnextMongoDBJobStore.class);
+    private final Logger log = LoggerFactory.getLogger(GenieMongoDBJobStore.class);
 
-    public ConnextMongoDBJobStore() {
+    public GenieMongoDBJobStore() {
     }
 
-    public ConnextMongoDBJobStore(MongoClient mongo) {
+    public GenieMongoDBJobStore(MongoClient mongo) {
         this.mongo = mongo;
     }
 
-    public ConnextMongoDBJobStore(String mongoUri, String username, String password) {
+    public GenieMongoDBJobStore(String mongoUri, String username, String password) {
         this.mongoUri = mongoUri;
         this.username = username;
         this.password = password;
@@ -47,7 +47,7 @@ public class ConnextMongoDBJobStore extends MongoDBJobStore {
         } catch (JobPersistenceException e) {
             log.error("Cannot recover triggers!", e);
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            log.error("ConnextMongoDBJobStore initialize error!", e);
+            log.error("GenieMongoDBJobStore initialize error!", e);
         }
     }
 

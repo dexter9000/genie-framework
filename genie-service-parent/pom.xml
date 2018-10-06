@@ -4,12 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>genie-framework</artifactId>
-        <groupId>com.genie.framework</groupId>
+        <groupId>io.github.dexter9000.genie</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>genie-service-parent</artifactId>
+    <name>Genie Service Parent</name>
+    <packaging>pom</packaging>
     <description>服务的可继承POM</description>
 
     <properties>
@@ -38,7 +40,7 @@
         <dependencies>
             <dependency>
                 <artifactId>genie-service-dependencies</artifactId>
-                <groupId>com.genie.framework</groupId>
+                <groupId>io.github.dexter9000.genie</groupId>
                 <version>${project.version}</version>
                 <type>pom</type>
                 <scope>import</scope>

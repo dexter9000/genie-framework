@@ -4,11 +4,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.genie.framework</groupId>
+    <groupId>io.github.dexter9000.genie</groupId>
     <artifactId>genie-framework</artifactId>
     <name>Genie Framework</name>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <developers>
+        <developer>
+            <name>dexter9000</name>
+            <email>dexter2000@126.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:dexter9000/genie-framework.git</connection>
+        <developerConnection>scm:git:git@github.com:dexter9000/genie-framework.git</developerConnection>
+        <url>git@github.com:dexter9000/genie-framework.git</url>
+    </scm>
 
     <prerequisites>
         <maven>3.0.0</maven>
@@ -34,6 +47,7 @@
         <undertow.version>1.4.10.Final</undertow.version>
         <dropwizard-metrics.version>3.2.2</dropwizard-metrics.version>
         <metrics-spring.version>3.1.3</metrics-spring.version>
+        <lombok.version>1.16.18</lombok.version>
 
         <logstash-logback-encoder.version>4.6</logstash-logback-encoder.version>
         <log4j.version>2.11.0</log4j.version>
@@ -65,7 +79,7 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.16.18</version>
+                <version>${lombok.version}</version>
                 <scope>compile</scope>
             </dependency>
 
@@ -169,6 +183,17 @@
         </dependencies>
     </dependencyManagement>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>oss</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>oss</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
     <!-- modules config -->
     <modules>
         <module>genie-core</module>
@@ -178,11 +203,7 @@
         <module>genie-starter-jpa</module>
         <module>genie-starter-mongo</module>
         <module>genie-starter-metrics</module>
-        <module>genie-stater-security</module>
         <module>genie-starter-schedule</module>
-        <!--<module>genie-akka</module>-->
-        <!--<module>genie-flink</module>-->
-        <!--<module>genie-drools</module>-->
         <module>genie-flow-engine</module>
 
         <module>genie-service-includes</module>
@@ -191,63 +212,5 @@
         <module>genie-module-dependencies</module>
         <module>genie-module-parent</module>
     </modules>
-
-    <profiles>
-        <profile>
-            <id>connext</id>
-            <!-- distribution config -->
-            <distributionManagement>
-                <repository>
-                    <id>maven-releases</id>
-                    <name>Connext Release Repository</name>
-                    <url>http://47.104.244.79:8082/repository/maven-releases/</url>
-                    <uniqueVersion>false</uniqueVersion>
-                </repository>
-                <snapshotRepository>
-                    <id>maven-snapshots</id>
-                    <name>Connext Snapshot Repository</name>
-                    <url>http://47.104.244.79:8082/repository/maven-snapshots/</url>
-                    <uniqueVersion>false</uniqueVersion>
-                </snapshotRepository>
-            </distributionManagement>
-
-            <repositories>
-                <repository>
-                    <id>snapshots</id>
-                    <name>Snapshots</name>
-                    <url>http://47.104.244.79:8082/repository/maven-snapshots</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </repository>
-                <repository>
-                    <id>releases</id>
-                    <name>Releases</name>
-                    <url>http://47.104.244.79:8082/repository/maven-releases</url>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>snapshots</id>
-                    <name>Snapshots</name>
-                    <url>http://47.104.244.79:8082/repository/maven-snapshots</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </pluginRepository>
-                <pluginRepository>
-                    <id>releases</id>
-                    <name>Releases</name>
-                    <url>http://47.104.244.79:8082/repository/maven-releases</url>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                </pluginRepository>
-            </pluginRepositories>
-        </profile>
-    </profiles>
 
 </project>

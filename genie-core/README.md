@@ -9,10 +9,10 @@ Genie Core是微服务工程的公共方法库，为具体的微服务工程提�
 genie:
     logger-aspect:
         class-names:
-        -   "cn.com.connext.crm.repository..*"
-        -   "cn.com.connext.crm.service..*"
-        -   "cn.com.connext.common.web.rest..*"
-        -   "cn.com.connext.crm.web.rest..*"
+        -   "com.genie.crm.repository..*"
+        -   "com.genie.crm.service..*"
+        -   "com.genie.common.web.rest..*"
+        -   "com.genie.crm.web.rest..*"
 ```
 
 ## Sharding Batch

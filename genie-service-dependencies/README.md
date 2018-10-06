@@ -9,7 +9,7 @@
         <dependencies>
             <dependency>
                 <artifactId>genie-service-dependencies</artifactId>
-                <groupId>com.genie.framework</groupId>
+                <groupId>io.github.dexter9000.genie</groupId>
                 <version>1.0-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>

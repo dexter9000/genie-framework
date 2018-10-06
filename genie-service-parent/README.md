@@ -7,7 +7,7 @@
 ```xml
     <parent>
         <artifactId>genie-service-parent</artifactId>
-        <groupId>com.genie.framework</groupId>
+        <groupId>io.github.dexter9000.genie</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 ```

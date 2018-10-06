@@ -4,12 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>genie-framework</artifactId>
-        <groupId>com.genie.framework</groupId>
+        <groupId>io.github.dexter9000.genie</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>genie-starter-mongo</artifactId>
+    <name>Genie MongoDB Starter</name>
+    <packaging>jar</packaging>
 
     <properties>
         <argLine>-Djava.security.egd=file:/dev/./urandom -Xmx256m</argLine>
@@ -27,12 +29,12 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.genie.framework</groupId>
+            <groupId>io.github.dexter9000.genie</groupId>
             <artifactId>genie-data-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.genie.framework</groupId>
+            <groupId>io.github.dexter9000.genie</groupId>
             <artifactId>genie-utils</artifactId>
             <version>${project.version}</version>
         </dependency>
