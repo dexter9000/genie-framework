@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.genie.es.exception.ElasticSearchException;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexResponse;
 import org.elasticsearch.action.admin.indices.exists.indices.IndicesExistsRequest;
+import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequest;
 import org.elasticsearch.action.admin.indices.template.put.PutIndexTemplateResponse;
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
 import org.elasticsearch.action.bulk.BulkResponse;
@@ -13,6 +14,7 @@ import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.support.WriteRequest;
 import org.elasticsearch.client.Client;
+import org.elasticsearch.client.Requests;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.IndexNotFoundException;
 import org.elasticsearch.index.query.BoolQueryBuilder;
@@ -28,6 +30,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -42,6 +45,12 @@ public class ElasticSearchOperations {
 
     public ElasticSearchOperations(Client client) {
         this.client = client;
+    }
+
+    public void createIndex(String index, String type, String setting, String mapping) throws IOException {
+
+        PutMappingRequest mappingRequest = Requests.putMappingRequest(index).type(type).source(mapping, XContentType.JSON);
+        client.admin().indices().putMapping(mappingRequest).actionGet();
     }
 
     /**

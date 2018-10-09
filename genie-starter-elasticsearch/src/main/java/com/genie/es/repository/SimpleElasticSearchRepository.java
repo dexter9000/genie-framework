@@ -1,8 +1,13 @@
 package com.genie.es.repository;
 
+import com.genie.es.annotation.ESIndex;
+import com.genie.es.exception.ElasticSearchException;
 import com.genie.es.util.EntityUtil;
+import org.elasticsearch.index.query.QueryBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
@@ -47,4 +52,24 @@ public class SimpleElasticSearchRepository<T> implements ElasticSearchRepository
                 EntityUtil.getType(entity),
                 entities);
     }
+
+    public Page<T> findPage(QueryBuilder postFilter, String shardingId, Pageable pageable){
+        return elasticSearchOperations.findPage(getIndex(shardingId), getType(), postFilter, pageable, EntityUtil.getGenericClass(this.getClass()));
+    }
+
+
+    private String getIndex(String shardingId) {
+        Class<T> genericClass = EntityUtil.getGenericClass(this.getClass());
+        ESIndex index = genericClass.getAnnotation(ESIndex.class);
+
+        if (index == null) {
+            throw new ElasticSearchException("Elastic Search Entity is null : " + genericClass.getTypeName());
+        }
+        return index.name();
+    }
+
+    private String getType() {
+        return EntityUtil.getGenericClass(this.getClass()).getSimpleName();
+    }
+
 }

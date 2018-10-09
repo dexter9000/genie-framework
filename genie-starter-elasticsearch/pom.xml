@@ -27,6 +27,16 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>io.github.dexter9000.genie</groupId>
+            <artifactId>genie-data-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.data</groupId>

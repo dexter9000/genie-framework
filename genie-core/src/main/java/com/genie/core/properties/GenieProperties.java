@@ -15,7 +15,7 @@ import java.util.Map;
  * Properties are configured in the application.yml file.
  * </p>
  */
-@ConfigurationProperties(prefix = "genie", ignoreUnknownFields = false)
+@ConfigurationProperties(prefix = "genie")
 public class GenieProperties {
 
     private final Async async = new Async();

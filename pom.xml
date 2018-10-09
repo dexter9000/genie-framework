@@ -211,6 +211,7 @@
         <module>genie-service-parent</module>
         <module>genie-module-dependencies</module>
         <module>genie-module-parent</module>
+        <module>genie-data-modelgen</module>
     </modules>
 
 </project>
