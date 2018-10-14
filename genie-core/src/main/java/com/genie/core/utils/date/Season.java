@@ -8,7 +8,6 @@ package com.genie.core.utils.date;
  * @see #ANTUMN
  * @see #WINTER
  *
- * @author Looly
  *
  */
 public enum Season {

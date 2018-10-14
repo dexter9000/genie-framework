@@ -6,7 +6,6 @@ import com.genie.core.utils.DateUtil;
  * 计时器<br>
  * 计算某个过程花费的时间，精确到毫秒
  *
- * @author Looly
  *
  */
 public class TimeInterval {

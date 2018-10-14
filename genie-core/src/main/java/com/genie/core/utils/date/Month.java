@@ -20,7 +20,6 @@ import java.util.Calendar;
  * @see Calendar#DECEMBER
  * @see Calendar#UNDECIMBER
  *
- * @author Looly
  *
  */
 public enum Month {

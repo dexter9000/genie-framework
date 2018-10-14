@@ -2,9 +2,12 @@ package com.genie.es.repository;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.genie.es.entity.MappingProperty;
 import com.genie.es.exception.ElasticSearchException;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexResponse;
 import org.elasticsearch.action.admin.indices.exists.indices.IndicesExistsRequest;
+import org.elasticsearch.action.admin.indices.mapping.get.GetMappingsRequest;
+import org.elasticsearch.action.admin.indices.mapping.get.GetMappingsResponse;
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequest;
 import org.elasticsearch.action.admin.indices.template.put.PutIndexTemplateResponse;
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
@@ -15,6 +18,8 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.support.WriteRequest;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.Requests;
+import org.elasticsearch.cluster.metadata.MappingMetaData;
+import org.elasticsearch.common.collect.ImmutableOpenMap;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.IndexNotFoundException;
 import org.elasticsearch.index.query.BoolQueryBuilder;
@@ -49,7 +54,30 @@ public class ElasticSearchOperations {
 
     public void createIndex(String index, String type, String setting, String mapping) throws IOException {
 
-        PutMappingRequest mappingRequest = Requests.putMappingRequest(index).type(type).source(mapping, XContentType.JSON);
+        PutMappingRequest mappingRequest = Requests.putMappingRequest(index).type(type)
+            .source(mapping, XContentType.JSON);
+        client.admin().indices().putMapping(mappingRequest).actionGet();
+    }
+
+    public String getMapping(String index, String type){
+        GetMappingsRequest request = new GetMappingsRequest().indices(index);
+        GetMappingsResponse response = client.admin().indices().getMappings(request).actionGet();
+        ImmutableOpenMap<String, MappingMetaData> mappings = client.admin().cluster().prepareState().execute()
+            .actionGet().getState().getMetaData().getIndices().get(index).getMappings();
+        String mapping = mappings.get(type).source().toString();
+        return mapping;
+    }
+
+    public void updateMapping(String index, String type, Map<String, MappingProperty> properties){
+
+        JSONObject jsonProperties = new JSONObject();
+        jsonProperties.put("properties", properties);
+
+        JSONObject json = new JSONObject();
+        json.put(type, jsonProperties);
+        PutMappingRequest mappingRequest = Requests.putMappingRequest(index).type(type)
+            .source(json.toJSONString(), XContentType.JSON);
+
         client.admin().indices().putMapping(mappingRequest).actionGet();
     }
 

@@ -15,7 +15,7 @@ import java.util.HashSet;
 import static springfox.documentation.builders.PathSelectors.regex;
 
 /**
- * A swagger customizer to setup {@link Docket} with JHipster settings.
+ * A swagger customizer to setup {@link Docket} with Genie settings.
  */
 public class GenieSwaggerCustomizer implements SwaggerCustomizer, Ordered {
 

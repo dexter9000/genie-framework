@@ -8,15 +8,11 @@ import javax.persistence.EntityManager;
 import java.io.Serializable;
 
 /**
- * Default implementation of the {@link org.springframework.data.repository.CrudRepository} interface. This will offer
+ * {@link org.springframework.data.repository.CrudRepository}接口的默认实现. This will offer
  * you a more sophisticated interface than the plain {@link EntityManager} .
  *
- * @author Oliver Gierke
- * @author Eberhard Wolff
- * @author Thomas Darimont
- * @author Mark Paluch
- * @param <T> the type of the entity to handle
- * @param <ID> the type of the entity's identifier
+ * @param <T> 需要处理的实体类型
+ * @param <ID> 实体类型的ID类型
  */
 public class JpaRepositoryImpl<T, ID extends Serializable>
     extends SimpleJpaRepository<T, ID> {

@@ -15,7 +15,6 @@ import java.util.*;
 /**
  * 时间工具类
  *
- * @author xiaoleilu
  */
 public final class DateUtil {
 

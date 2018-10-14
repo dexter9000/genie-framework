@@ -96,12 +96,12 @@ public class SwaggerAutoConfiguration {
     }
 
     /**
-     * JHipster Swagger Customizer
+     * Genie Swagger Customizer
      *
-     * @return the Swagger Customizer of JHipster
+     * @return the Swagger Customizer of Genie
      */
     @Bean
-    public GenieSwaggerCustomizer jHipsterSwaggerCustomizer() {
+    public GenieSwaggerCustomizer genieSwaggerCustomizer() {
         return new GenieSwaggerCustomizer(properties);
     }
 

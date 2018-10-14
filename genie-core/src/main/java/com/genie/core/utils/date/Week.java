@@ -14,7 +14,6 @@ import java.util.Calendar;
  * @see #FRIDAY
  * @see #SATURDAY
  *
- * @author Looly
  *
  */
 public enum Week {

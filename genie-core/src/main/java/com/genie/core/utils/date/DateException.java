@@ -2,7 +2,6 @@ package com.genie.core.utils.date;
 
 /**
  * 工具类异常
- * @author xiaoleilu
  */
 public class DateException extends RuntimeException {
 	private static final long serialVersionUID = 8247610319171014183L;

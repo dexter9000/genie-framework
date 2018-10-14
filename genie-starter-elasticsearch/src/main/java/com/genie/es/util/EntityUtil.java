@@ -1,10 +1,11 @@
 package com.genie.es.util;
 
-import com.genie.es.annotation.ShardingId;
 import com.genie.es.annotation.ESIndex;
+import com.genie.es.annotation.ShardingId;
 import com.genie.es.exception.ElasticSearchException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -112,6 +113,11 @@ public class EntityUtil {
     }
 
     public static <T> String getType(T entity) {
-        return entity.getClass().getSimpleName();
+        Document document = entity.getClass().getAnnotation(Document.class);
+        if(document != null){
+            return document.type();
+        }else{
+            return entity.getClass().getSimpleName();
+        }
     }
 }

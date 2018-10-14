@@ -10,7 +10,6 @@ import java.util.Date;
 /**
  * cron表达式相关工具类
  *
- * @author zap
  */
 public final class CronUtil {
 

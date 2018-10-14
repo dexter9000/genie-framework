@@ -51,6 +51,22 @@
                 <artifactId>mapstruct-processor</artifactId>
                 <version>${mapstruct.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>io.github.dexter9000.genie</groupId>
+                <artifactId>genie-starter-elasticsearch</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.dexter9000.genie</groupId>
+                <artifactId>genie-starter-mongo</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.dexter9000.genie</groupId>
+                <artifactId>genie-starter-jpa</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

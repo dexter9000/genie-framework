@@ -1,13 +1,3 @@
-/**
- * Copyright © 2016 Arvato. All rights reserved.
- *
- * @Title: InitQuartJob.java
- * @Prject: quartz
- * @Package: com.arvato.quartz
- * @author: LUPE004
- * @date: 2016年9月27日 下午1:37:22
- * @version: V1.0
- */
 package com.genie.schedule.config;
 
 import com.genie.schedule.service.QuartzTaskService;

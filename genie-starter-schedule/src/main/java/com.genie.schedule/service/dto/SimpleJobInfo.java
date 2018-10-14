@@ -1,13 +1,3 @@
-/**
- * Copyright © 2016 Arvato. All rights reserved.
- *
- * @Title: JobInfo.java
- * @Prject: quartz
- * @Package: com.arvato.quartz.bean
- * @author: LUPE004
- * @date: 2016年9月27日 上午10:43:43
- * @version: V1.0
- */
 package com.genie.schedule.service.dto;
 
 import javax.validation.constraints.NotNull;
@@ -15,7 +5,6 @@ import javax.validation.constraints.Pattern;
 
 /**
  * @ClassName: JobInfo
- * @author: meng013
  */
 public class SimpleJobInfo extends JobInfo {
 

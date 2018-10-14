@@ -17,7 +17,6 @@ import java.util.TimeZone;
 /**
  * 包装java.util.Date
  *
- * @author xiaoleilu
  *
  */
 public class DateTime extends Date {

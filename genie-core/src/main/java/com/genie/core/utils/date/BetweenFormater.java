@@ -2,7 +2,6 @@ package com.genie.core.utils.date;
 
 /**
  * 时长格式化器
- * @author Looly
  *
  */
 public class BetweenFormater {
@@ -93,7 +92,6 @@ public class BetweenFormater {
 
 	/**
 	 * 格式化等级枚举<br>
-	 * @author Looly
 	 */
 	public static enum Level {
 
