@@ -8,6 +8,9 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
+/**
+ * 时间类型转换器，数据库的时间类型和实体类中定义的类型不同，需要通过转换器进行映射
+ */
 public final class JSR310DateConverters {
 
     private JSR310DateConverters() {

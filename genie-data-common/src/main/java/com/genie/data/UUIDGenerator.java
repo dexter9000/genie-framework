@@ -3,7 +3,7 @@ package com.genie.data;
 import java.util.UUID;
 
 /**
- * Created by meng013 on 2017/8/12.
+ * UUID生成器，对于实现了{@link UUIDDomain}接口的实体类可以在持久化前自动生成UUID
  */
 public class UUIDGenerator {
 
