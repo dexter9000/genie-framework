@@ -14,6 +14,10 @@ import java.lang.annotation.*;
 @Documented
 public @interface Field {
 
+    /**
+     * json字段名
+     * @return
+     */
     @AliasFor(annotation = JsonFilter.class, attribute = "value")
     String value() default "";
 }

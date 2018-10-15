@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -53,12 +54,16 @@ public class SimpleElasticSearchRepository<T> implements ElasticSearchRepository
                 entities);
     }
 
-    public Page<T> findPage(QueryBuilder postFilter, String shardingId, Pageable pageable){
-        return elasticSearchOperations.findPage(getIndex(shardingId), getType(), postFilter, pageable, EntityUtil.getGenericClass(this.getClass()));
+    public List<T> findAll(QueryBuilder postFilter){
+        return elasticSearchOperations.findAll(getIndex(), getType(), postFilter, EntityUtil.getGenericClass(this.getClass()));
+    }
+
+    public Page<T> findPage(QueryBuilder postFilter, Pageable pageable){
+        return elasticSearchOperations.findPage(getIndex(), getType(), postFilter, pageable, EntityUtil.getGenericClass(this.getClass()));
     }
 
 
-    private String getIndex(String shardingId) {
+    private String getIndex() {
         Class<T> genericClass = EntityUtil.getGenericClass(this.getClass());
         ESIndex index = genericClass.getAnnotation(ESIndex.class);
 

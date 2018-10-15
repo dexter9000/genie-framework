@@ -6,8 +6,6 @@ import com.genie.es.entity.MappingProperty;
 import com.genie.es.exception.ElasticSearchException;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexResponse;
 import org.elasticsearch.action.admin.indices.exists.indices.IndicesExistsRequest;
-import org.elasticsearch.action.admin.indices.mapping.get.GetMappingsRequest;
-import org.elasticsearch.action.admin.indices.mapping.get.GetMappingsResponse;
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequest;
 import org.elasticsearch.action.admin.indices.template.put.PutIndexTemplateResponse;
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
@@ -18,8 +16,6 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.support.WriteRequest;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.Requests;
-import org.elasticsearch.cluster.metadata.MappingMetaData;
-import org.elasticsearch.common.collect.ImmutableOpenMap;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.IndexNotFoundException;
 import org.elasticsearch.index.query.BoolQueryBuilder;
@@ -35,12 +31,14 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * ElasticSearch基本处理类
+ */
 @SuppressWarnings({"unchecked", "Duplicates"})
 public class ElasticSearchOperations {
 
@@ -52,23 +50,28 @@ public class ElasticSearchOperations {
         this.client = client;
     }
 
-    public void createIndex(String index, String type, String setting, String mapping) throws IOException {
 
-        PutMappingRequest mappingRequest = Requests.putMappingRequest(index).type(type)
-            .source(mapping, XContentType.JSON);
-        client.admin().indices().putMapping(mappingRequest).actionGet();
+    /**
+     * 根据索引和类型查询mapping结构
+     *
+     * @param index 索引名
+     * @param type  类型名
+     * @return json结构的mapping结构
+     */
+    public String getMapping(String index, String type) {
+        return client.admin().cluster().prepareState().execute().actionGet()
+            .getState().getMetaData().getIndices()
+            .get(index).getMappings().get(type).source().toString();
     }
 
-    public String getMapping(String index, String type){
-        GetMappingsRequest request = new GetMappingsRequest().indices(index);
-        GetMappingsResponse response = client.admin().indices().getMappings(request).actionGet();
-        ImmutableOpenMap<String, MappingMetaData> mappings = client.admin().cluster().prepareState().execute()
-            .actionGet().getState().getMetaData().getIndices().get(index).getMappings();
-        String mapping = mappings.get(type).source().toString();
-        return mapping;
-    }
-
-    public void updateMapping(String index, String type, Map<String, MappingProperty> properties){
+    /**
+     * 更新mapping结构，由于ElasticSearch不支持已存在字段的修改，所以此处是对mapping结构新增索引字段
+     *
+     * @param index      索引名
+     * @param type       类型
+     * @param properties 新增字段集合
+     */
+    public void updateMapping(String index, String type, Map<String, MappingProperty> properties) {
 
         JSONObject jsonProperties = new JSONObject();
         jsonProperties.put("properties", properties);
@@ -132,6 +135,7 @@ public class ElasticSearchOperations {
         BulkResponse bulkResponse = bulkRequest.execute().actionGet();
         if (bulkResponse.hasFailures()) {
             String message = bulkResponse.buildFailureMessage();
+            log.error(message);
         }
         return bulkResponse;
     }
@@ -175,8 +179,8 @@ public class ElasticSearchOperations {
     /**
      * 查询唯一的一条记录
      *
-     * @param index
-     * @param type
+     * @param index 索引名
+     * @param type  文档类型
      * @param id
      * @return
      */
@@ -196,16 +200,64 @@ public class ElasticSearchOperations {
         return hit.getSourceAsString();
     }
 
+    public <T> List<T> findAll(String index,
+                               String type,
+                               QueryBuilder queryBuilder,
+                               Class<T> clazz) {
+
+        SearchRequestBuilder builder = client
+            .prepareSearch(index)
+            .setTypes(type)
+            .setQuery(queryBuilder);
+
+        List<T> list = new ArrayList();
+
+        SearchResponse searchResponse = builder.execute().actionGet();
+        SearchHits hits = searchResponse.getHits();
+        for (SearchHit searchHit : hits) {
+            try {
+                T t = JSON.parseObject(searchHit.getSourceAsString(), clazz);
+                if (t != null) {
+                    list.add(t);
+                }
+            } catch (Exception ex) {
+                throw new ElasticSearchException("Convert json from elasticSearch to object error:", ex);
+            }
+        }
+        return list;
+    }
+
+    public List<Map<String, Object>> findAll(String index,
+                                             String type,
+                                             String[] fields,
+                                             QueryBuilder queryBuilder) {
+
+        SearchRequestBuilder builder = client
+            .prepareSearch(index)
+            .setTypes(type)
+            .setFetchSource(fields, null)
+            .setQuery(queryBuilder);
+
+        List<Map<String, Object>> list = new ArrayList();
+
+        SearchResponse searchResponse = builder.execute().actionGet();
+        SearchHits hits = searchResponse.getHits();
+        for (SearchHit searchHit : hits) {
+            list.add(searchHit.getSource());
+        }
+        return list;
+    }
+
     /**
      * 分页查询
      *
-     * @param index
-     * @param type
-     * @param queryBuilder
-     * @param pageable
-     * @param clazz
-     * @param <T>
-     * @return
+     * @param index        索引名
+     * @param type         文档类型
+     * @param queryBuilder 查询条件
+     * @param pageable     分页描述
+     * @param clazz        实体类型类
+     * @param <T>          类型
+     * @return 分页查询结果
      */
     public <T> Page<T> findPage(String index,
                                 String type,
@@ -248,8 +300,8 @@ public class ElasticSearchOperations {
     /**
      * 根据条件查询总数
      *
-     * @param index
-     * @param type
+     * @param index        索引名
+     * @param type         文档类型
      * @param queryBuilder
      * @return
      */
@@ -266,18 +318,19 @@ public class ElasticSearchOperations {
     /**
      * 删除整个索引
      *
-     * @param indexName
+     * @param index 索引名
+     * @param index
      */
-    public void removeIndex(String indexName) {
+    public void removeIndex(String index) {
         try {
-            IndicesExistsRequest inExistsRequest = new IndicesExistsRequest(indexName);
-            DeleteIndexResponse dResponse = client.admin().indices().prepareDelete(indexName)
+            IndicesExistsRequest inExistsRequest = new IndicesExistsRequest(index);
+            DeleteIndexResponse dResponse = client.admin().indices().prepareDelete(index)
                 .execute().actionGet();
             if (!dResponse.isAcknowledged()) {
-                log.error("Fail to delete index : {}", indexName);
+                log.error("Fail to delete index : {}", index);
             }
         } catch (IndexNotFoundException e) {
-            log.warn("Fail to delete index : " + indexName);
+            log.warn("Fail to delete index : " + index);
         }
 
     }

@@ -16,5 +16,9 @@ public @interface ShardingId {
      */
     int order() default 0;
 
+    /**
+     * 是否需要保存字段
+     * @return
+     */
     boolean storage() default true;
 }

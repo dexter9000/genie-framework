@@ -53,7 +53,6 @@ public class SimpleShardingElasticSearchRepository<T> implements ShardingElastic
                     return indexName;
                 }
             }
-
         }
 
         if (index == null) {
