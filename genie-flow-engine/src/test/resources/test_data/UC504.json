@@ -1,0 +1,2870 @@
+{
+    "bounds": {
+        "lowerRight": {
+            "x": 1485.0,
+            "y": 1955.0
+        },
+        "upperLeft": {
+            "x": 0.0,
+            "y": 0.0
+        }
+    },
+    "resourceId": "canvas",
+    "stencil": {
+        "id": "BPMNDiagram"
+    },
+    "stencilset": {
+        "namespace": "http://b3mn.org/stencilset/bpmn2.0#",
+        "url": "../editor/stencilsets/bpmn2.0/bpmn2.0.json"
+    },
+    "properties": {
+        "process_id": "UC504",
+        "name": "UC504 Workflow",
+        "process_namespace": "csdb",
+        "iseagerexecutionfetch": false,
+        "messages": [],
+        "executionlisteners": {
+            "executionListeners": []
+        },
+        "eventlisteners": {
+            "eventListeners": []
+        },
+        "signaldefinitions": [],
+        "messagedefinitions": []
+    },
+    "childShapes": [
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 291.0,
+                    "y": -75.0
+                },
+                "upperLeft": {
+                    "x": 256.0,
+                    "y": -110.0
+                }
+            },
+            "resourceId": "start",
+            "childShapes": [],
+            "stencil": {
+                "id": "StartNoneEvent"
+            },
+            "properties": {
+                "overrideid": "start",
+                "name": "Start",
+                "documentation": "Start",
+                "interrupting": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow1"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow1",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 17.5,
+                    "y": 17.5
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "usertask1"
+                }
+            ],
+            "target": {
+                "resourceId": "usertask1"
+            },
+            "properties": {
+                "overrideid": "flow1"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 291.0,
+                    "y": 1905.0
+                },
+                "upperLeft": {
+                    "x": 256.0,
+                    "y": 1870.0
+                }
+            },
+            "resourceId": "end",
+            "childShapes": [],
+            "stencil": {
+                "id": "EndNoneEvent"
+            },
+            "properties": {
+                "overrideid": "end",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": []
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 326.0,
+                    "y": 46.0
+                },
+                "upperLeft": {
+                    "x": 221.0,
+                    "y": -15.0
+                }
+            },
+            "resourceId": "usertask1",
+            "childShapes": [],
+            "stencil": {
+                "id": "UserTask"
+            },
+            "properties": {
+                "overrideid": "usertask1",
+                "name": "M0CheckArticle",
+                "formproperties": {
+                    "formProperties": [
+                        {
+                            "id": "result",
+                            "name": "result",
+                            "type": "string",
+                            "expression": null,
+                            "variable": null,
+                            "required": true,
+                            "readable": true,
+                            "writable": true
+                        }
+                    ]
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "tasklisteners": {
+                    "taskListeners": []
+                },
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow3"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 326.0,
+                    "y": 231.0
+                },
+                "upperLeft": {
+                    "x": 221.0,
+                    "y": 170.0
+                }
+            },
+            "resourceId": "servicetask1",
+            "childShapes": [],
+            "stencil": {
+                "id": "ServiceTask"
+            },
+            "properties": {
+                "overrideid": "servicetask1",
+                "name": "UC 504-1 Check Article",
+                "servicetaskexpression": "#{uc504_1_CheckArticleTask.executeFor(execution)}",
+                "servicetaskresultvariable": "result",
+                "servicetaskfields": {
+                    "fields": []
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow6"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 293.0,
+                    "y": 121.0
+                },
+                "upperLeft": {
+                    "x": 253.0,
+                    "y": 81.0
+                }
+            },
+            "resourceId": "exclusivegateway1",
+            "childShapes": [],
+            "stencil": {
+                "id": "ExclusiveGateway"
+            },
+            "properties": {
+                "overrideid": "exclusivegateway1",
+                "name": "Exclusive Gateway",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow4"
+                },
+                {
+                    "resourceId": "flow5"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow3",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                },
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "exclusivegateway1"
+                }
+            ],
+            "target": {
+                "resourceId": "exclusivegateway1"
+            },
+            "properties": {
+                "overrideid": "flow3"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow4",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask1"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask1"
+            },
+            "properties": {
+                "overrideid": "flow4",
+                "name": "SUCCESS",
+                "conditionsequenceflow": "${result == \"SUCCESS\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": -95.0,
+                    "y": 421.0
+                },
+                "upperLeft": {
+                    "x": -200.0,
+                    "y": 360.0
+                }
+            },
+            "resourceId": "servicetask2",
+            "childShapes": [],
+            "stencil": {
+                "id": "ServiceTask"
+            },
+            "properties": {
+                "overrideid": "servicetask2",
+                "name": "Cancel Production Order",
+                "servicetaskexpression": "#{uc504_3_CancelProductionOrderTask.executeFor(execution)}",
+                "servicetaskresultvariable": "result",
+                "servicetaskfields": {
+                    "fields": []
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow44"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow5",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": -148.0,
+                    "y": 100.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask2"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask2"
+            },
+            "properties": {
+                "overrideid": "flow5",
+                "name": "CANCEL",
+                "conditionsequenceflow": "${result == \"CANCEL\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 326.0,
+                    "y": 421.0
+                },
+                "upperLeft": {
+                    "x": 221.0,
+                    "y": 360.0
+                }
+            },
+            "resourceId": "servicetask3",
+            "childShapes": [],
+            "stencil": {
+                "id": "ServiceTask"
+            },
+            "properties": {
+                "overrideid": "servicetask3",
+                "name": "UC504-2 Assign Serial Numbers",
+                "servicetaskexpression": "#{uc504_2_AssignSerialNumbersTask.executeFor(execution)}",
+                "servicetaskresultvariable": "result",
+                "servicetaskfields": {
+                    "fields": []
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow9"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 293.0,
+                    "y": 320.0
+                },
+                "upperLeft": {
+                    "x": 253.0,
+                    "y": 280.0
+                }
+            },
+            "resourceId": "exclusivegateway2",
+            "childShapes": [],
+            "stencil": {
+                "id": "ExclusiveGateway"
+            },
+            "properties": {
+                "overrideid": "exclusivegateway2",
+                "name": "Exclusive Gateway",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow7"
+                },
+                {
+                    "resourceId": "flow8"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow6",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                },
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "exclusivegateway2"
+                }
+            ],
+            "target": {
+                "resourceId": "exclusivegateway2"
+            },
+            "properties": {
+                "overrideid": "flow6"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow7",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask3"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask3"
+            },
+            "properties": {
+                "overrideid": "flow7",
+                "name": "SUCCESS",
+                "conditionsequenceflow": "${result == \"SUCCESS\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow8",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 415.0,
+                    "y": 300.0
+                },
+                {
+                    "x": 415.0,
+                    "y": 15.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "usertask1"
+                }
+            ],
+            "target": {
+                "resourceId": "usertask1"
+            },
+            "properties": {
+                "overrideid": "flow8",
+                "name": "FAILED",
+                "conditionsequenceflow": "${result == \"FAILED\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 175.0,
+                    "y": 543.0
+                },
+                "upperLeft": {
+                    "x": 70.0,
+                    "y": 478.0
+                }
+            },
+            "resourceId": "usertask2",
+            "childShapes": [],
+            "stencil": {
+                "id": "UserTask"
+            },
+            "properties": {
+                "overrideid": "usertask2",
+                "name": "M1AssignSerialNumber",
+                "documentation": "Assign Serial Numbers Problem",
+                "formproperties": {
+                    "formProperties": [
+                        {
+                            "id": "result",
+                            "name": "result",
+                            "type": "string",
+                            "expression": null,
+                            "variable": null,
+                            "required": true,
+                            "readable": true,
+                            "writable": true
+                        }
+                    ]
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "tasklisteners": {
+                    "taskListeners": []
+                },
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow11"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": -28.0,
+                    "y": 530.0
+                },
+                "upperLeft": {
+                    "x": -68.0,
+                    "y": 490.0
+                }
+            },
+            "resourceId": "exclusivegateway3",
+            "childShapes": [],
+            "stencil": {
+                "id": "ExclusiveGateway"
+            },
+            "properties": {
+                "overrideid": "exclusivegateway3",
+                "name": "Exclusive Gateway",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow12"
+                },
+                {
+                    "resourceId": "flow13"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 293.0,
+                    "y": 530.0
+                },
+                "upperLeft": {
+                    "x": 253.0,
+                    "y": 490.0
+                }
+            },
+            "resourceId": "exclusivegateway4",
+            "childShapes": [],
+            "stencil": {
+                "id": "ExclusiveGateway"
+            },
+            "properties": {
+                "overrideid": "exclusivegateway4",
+                "name": "Exclusive Gateway",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow10"
+                },
+                {
+                    "resourceId": "flow14"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow9",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                },
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "exclusivegateway4"
+                }
+            ],
+            "target": {
+                "resourceId": "exclusivegateway4"
+            },
+            "properties": {
+                "overrideid": "flow9"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow10",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 32.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "usertask2"
+                }
+            ],
+            "target": {
+                "resourceId": "usertask2"
+            },
+            "properties": {
+                "overrideid": "flow10",
+                "name": "FAILED",
+                "conditionsequenceflow": "${result == \"FAILED\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow11",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 32.5
+                },
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "exclusivegateway3"
+                }
+            ],
+            "target": {
+                "resourceId": "exclusivegateway3"
+            },
+            "properties": {
+                "overrideid": "flow11"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow12",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": -148.0,
+                    "y": 510.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask2"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask2"
+            },
+            "properties": {
+                "overrideid": "flow12",
+                "name": "CANCEL",
+                "conditionsequenceflow": "${result == \"CANCEL\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow13",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": -48.0,
+                    "y": 390.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask3"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask3"
+            },
+            "properties": {
+                "overrideid": "flow13",
+                "name": "RETRY",
+                "conditionsequenceflow": "${result == \"RETRY\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 326.0,
+                    "y": 670.0
+                },
+                "upperLeft": {
+                    "x": 221.0,
+                    "y": 611.0
+                }
+            },
+            "resourceId": "servicetask4",
+            "childShapes": [],
+            "stencil": {
+                "id": "ServiceTask"
+            },
+            "properties": {
+                "overrideid": "servicetask4",
+                "name": "UC504-4 Check Preconfigured Line",
+                "servicetaskexpression": "#{uc504_4_CheckPreconfiguredLineTask.executeFor(execution)}",
+                "servicetaskresultvariable": "result",
+                "servicetaskfields": {
+                    "fields": []
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow15"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 77.0,
+                    "y": 771.0
+                },
+                "upperLeft": {
+                    "x": -28.0,
+                    "y": 710.0
+                }
+            },
+            "resourceId": "usertask3",
+            "childShapes": [],
+            "stencil": {
+                "id": "UserTask"
+            },
+            "properties": {
+                "overrideid": "usertask3",
+                "name": "M2CheckPreconfiguredLine",
+                "documentation": "Problem For Check Preconfigured Line",
+                "formproperties": {
+                    "formProperties": [
+                        {
+                            "id": "result",
+                            "name": "result",
+                            "type": "string",
+                            "expression": null,
+                            "variable": null,
+                            "required": true,
+                            "readable": true,
+                            "writable": true
+                        }
+                    ]
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "tasklisteners": {
+                    "taskListeners": []
+                },
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow18"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 326.0,
+                    "y": 884.0
+                },
+                "upperLeft": {
+                    "x": 221.0,
+                    "y": 829.0
+                }
+            },
+            "resourceId": "servicetask5",
+            "childShapes": [],
+            "stencil": {
+                "id": "ServiceTask"
+            },
+            "properties": {
+                "overrideid": "servicetask5",
+                "name": "UC504-5 Assign Line",
+                "servicetaskexpression": "#{uc504_5_AssignLineTask.executeFor(execution)}",
+                "servicetaskresultvariable": "result",
+                "servicetaskfields": {
+                    "fields": []
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow21"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 326.0,
+                    "y": 1102.0
+                },
+                "upperLeft": {
+                    "x": 221.0,
+                    "y": 1041.0
+                }
+            },
+            "resourceId": "servicetask6",
+            "childShapes": [],
+            "stencil": {
+                "id": "ServiceTask"
+            },
+            "properties": {
+                "overrideid": "servicetask6",
+                "name": "UC504-6 Transfer Production Order",
+                "servicetaskexpression": "#{uc504_6_TransferProductionOrderTask.executeFor(execution)}",
+                "servicetaskresultvariable": "result",
+                "servicetaskfields": {
+                    "fields": []
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow23"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow14",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 29.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask4"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask4"
+            },
+            "properties": {
+                "overrideid": "flow14",
+                "name": "SUCCESS",
+                "conditionsequenceflow": "${result == \"SUCCESS\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 293.0,
+                    "y": 760.0
+                },
+                "upperLeft": {
+                    "x": 253.0,
+                    "y": 720.0
+                }
+            },
+            "resourceId": "exclusivegateway5",
+            "childShapes": [],
+            "stencil": {
+                "id": "ExclusiveGateway"
+            },
+            "properties": {
+                "overrideid": "exclusivegateway5",
+                "name": "Exclusive Gateway",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow16"
+                },
+                {
+                    "resourceId": "flow17"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow15",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 29.5
+                },
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "exclusivegateway5"
+                }
+            ],
+            "target": {
+                "resourceId": "exclusivegateway5"
+            },
+            "properties": {
+                "overrideid": "flow15"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow16",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "usertask3"
+                }
+            ],
+            "target": {
+                "resourceId": "usertask3"
+            },
+            "properties": {
+                "overrideid": "flow16",
+                "name": "FAILED",
+                "conditionsequenceflow": "${result == \"FAILED\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow17",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 27.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask5"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask5"
+            },
+            "properties": {
+                "overrideid": "flow17",
+                "name": "SUCCESS",
+                "conditionsequenceflow": "${result == \"SUCCESS\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": -96.0,
+                    "y": 876.0
+                },
+                "upperLeft": {
+                    "x": -136.0,
+                    "y": 836.0
+                }
+            },
+            "resourceId": "exclusivegateway6",
+            "childShapes": [],
+            "stencil": {
+                "id": "ExclusiveGateway"
+            },
+            "properties": {
+                "overrideid": "exclusivegateway6",
+                "name": "Exclusive Gateway",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow19"
+                },
+                {
+                    "resourceId": "flow20"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow18",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                },
+                {
+                    "x": -117.0,
+                    "y": 740.0
+                },
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "exclusivegateway6"
+                }
+            ],
+            "target": {
+                "resourceId": "exclusivegateway6"
+            },
+            "properties": {
+                "overrideid": "flow18"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow19",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 27.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask5"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask5"
+            },
+            "properties": {
+                "overrideid": "flow19",
+                "name": "SUCCESS",
+                "conditionsequenceflow": "${result == \"SUCCESS\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow20",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": -148.0,
+                    "y": 856.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask2"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask2"
+            },
+            "properties": {
+                "overrideid": "flow20",
+                "name": "CANCEL",
+                "conditionsequenceflow": "${result == \"CANCEL\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 293.0,
+                    "y": 991.0
+                },
+                "upperLeft": {
+                    "x": 253.0,
+                    "y": 951.0
+                }
+            },
+            "resourceId": "exclusivegateway7",
+            "childShapes": [],
+            "stencil": {
+                "id": "ExclusiveGateway"
+            },
+            "properties": {
+                "overrideid": "exclusivegateway7",
+                "name": "Exclusive Gateway",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow22"
+                },
+                {
+                    "resourceId": "flow32"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 293.0,
+                    "y": 1199.0
+                },
+                "upperLeft": {
+                    "x": 253.0,
+                    "y": 1159.0
+                }
+            },
+            "resourceId": "exclusivegateway8",
+            "childShapes": [],
+            "stencil": {
+                "id": "ExclusiveGateway"
+            },
+            "properties": {
+                "overrideid": "exclusivegateway8",
+                "name": "Exclusive Gateway",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow24"
+                },
+                {
+                    "resourceId": "flow33"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 332.0,
+                    "y": 1331.0
+                },
+                "upperLeft": {
+                    "x": 216.0,
+                    "y": 1251.0
+                }
+            },
+            "resourceId": "servicetask7",
+            "childShapes": [],
+            "stencil": {
+                "id": "ServiceTask"
+            },
+            "properties": {
+                "overrideid": "servicetask7",
+                "name": "UC504-7 Request Production Order Status",
+                "servicetaskexpression": "#{uc504_7_RequestProductionOrderStatusTask.executeFor(execution)}",
+                "servicetaskresultvariable": "result",
+                "servicetaskfields": {
+                    "fields": []
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow25"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 293.0,
+                    "y": 1400.0
+                },
+                "upperLeft": {
+                    "x": 253.0,
+                    "y": 1360.0
+                }
+            },
+            "resourceId": "exclusivegateway9",
+            "childShapes": [],
+            "stencil": {
+                "id": "ExclusiveGateway"
+            },
+            "properties": {
+                "overrideid": "exclusivegateway9",
+                "name": "Exclusive Gateway",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow26"
+                },
+                {
+                    "resourceId": "flow35"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 326.0,
+                    "y": 1511.0
+                },
+                "upperLeft": {
+                    "x": 221.0,
+                    "y": 1440.0
+                }
+            },
+            "resourceId": "servicetask8",
+            "childShapes": [],
+            "stencil": {
+                "id": "ServiceTask"
+            },
+            "properties": {
+                "overrideid": "servicetask8",
+                "name": "UC504-8 Transfer Production Order Response",
+                "servicetaskexpression": "#{uc504_8_TransferProductionOrderResponseTask.executeFor(execution)}",
+                "servicetaskresultvariable": "result",
+                "servicetaskfields": {
+                    "fields": []
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow27"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 326.0,
+                    "y": 1677.0
+                },
+                "upperLeft": {
+                    "x": 221.0,
+                    "y": 1600.0
+                }
+            },
+            "resourceId": "servicetask9",
+            "childShapes": [],
+            "stencil": {
+                "id": "ServiceTask"
+            },
+            "properties": {
+                "overrideid": "servicetask9",
+                "name": "UC504-9 Process Production Order Response",
+                "servicetaskexpression": "#{uc504_9_ProcessProductionOrderResponseTask.executeFor(execution)}",
+                "servicetaskresultvariable": "result",
+                "servicetaskfields": {
+                    "fields": []
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow28"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 326.0,
+                    "y": 1841.0
+                },
+                "upperLeft": {
+                    "x": 221.0,
+                    "y": 1780.0
+                }
+            },
+            "resourceId": "servicetask10",
+            "childShapes": [],
+            "stencil": {
+                "id": "ServiceTask"
+            },
+            "properties": {
+                "overrideid": "servicetask10",
+                "name": "Finalized Production Order",
+                "servicetaskexpression": "#{finalizedProductionOrderTask.executeFor(execution)}",
+                "servicetaskresultvariable": "result",
+                "servicetaskfields": {
+                    "fields": []
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow31"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 293.0,
+                    "y": 1580.0
+                },
+                "upperLeft": {
+                    "x": 253.0,
+                    "y": 1540.0
+                }
+            },
+            "resourceId": "exclusivegateway10",
+            "childShapes": [],
+            "stencil": {
+                "id": "ExclusiveGateway"
+            },
+            "properties": {
+                "overrideid": "exclusivegateway10",
+                "name": "Exclusive Gateway",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow29"
+                },
+                {
+                    "resourceId": "flow37"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 293.0,
+                    "y": 1740.0
+                },
+                "upperLeft": {
+                    "x": 253.0,
+                    "y": 1700.0
+                }
+            },
+            "resourceId": "exclusivegateway11",
+            "childShapes": [],
+            "stencil": {
+                "id": "ExclusiveGateway"
+            },
+            "properties": {
+                "overrideid": "exclusivegateway11",
+                "name": "Exclusive Gateway",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow30"
+                },
+                {
+                    "resourceId": "flow40"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow21",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 27.5
+                },
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "exclusivegateway7"
+                }
+            ],
+            "target": {
+                "resourceId": "exclusivegateway7"
+            },
+            "properties": {
+                "overrideid": "flow21"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow22",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask6"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask6"
+            },
+            "properties": {
+                "overrideid": "flow22",
+                "name": "SUCCESS",
+                "conditionsequenceflow": "${result == \"SUCCESS\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow23",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                },
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "exclusivegateway8"
+                }
+            ],
+            "target": {
+                "resourceId": "exclusivegateway8"
+            },
+            "properties": {
+                "overrideid": "flow23"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow24",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 58.0,
+                    "y": 40.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask7"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask7"
+            },
+            "properties": {
+                "overrideid": "flow24",
+                "name": "SUCCESS",
+                "conditionsequenceflow": "${result == \"SUCCESS\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow25",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 58.0,
+                    "y": 40.0
+                },
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "exclusivegateway9"
+                }
+            ],
+            "target": {
+                "resourceId": "exclusivegateway9"
+            },
+            "properties": {
+                "overrideid": "flow25"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow26",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 35.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask8"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask8"
+            },
+            "properties": {
+                "overrideid": "flow26",
+                "name": "SUCCESS",
+                "conditionsequenceflow": "${result == \"SUCCESS\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow27",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 35.5
+                },
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "exclusivegateway10"
+                }
+            ],
+            "target": {
+                "resourceId": "exclusivegateway10"
+            },
+            "properties": {
+                "overrideid": "flow27"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow28",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 38.5
+                },
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "exclusivegateway11"
+                }
+            ],
+            "target": {
+                "resourceId": "exclusivegateway11"
+            },
+            "properties": {
+                "overrideid": "flow28"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow29",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 38.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask9"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask9"
+            },
+            "properties": {
+                "overrideid": "flow29",
+                "name": "SUCCESS",
+                "conditionsequenceflow": "${result == \"SUCCESS\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow30",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask10"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask10"
+            },
+            "properties": {
+                "overrideid": "flow30",
+                "name": "SUCCESS",
+                "conditionsequenceflow": "${result == \"SUCCESS\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow31",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                },
+                {
+                    "x": 17.5,
+                    "y": 17.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "end"
+                }
+            ],
+            "target": {
+                "resourceId": "end"
+            },
+            "properties": {
+                "overrideid": "flow31"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow32",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 24.0,
+                    "y": 971.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "usertask3"
+                }
+            ],
+            "target": {
+                "resourceId": "usertask3"
+            },
+            "properties": {
+                "overrideid": "flow32",
+                "name": "FAILED",
+                "conditionsequenceflow": "${result == \"FAILED\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 169.0,
+                    "y": 1213.0
+                },
+                "upperLeft": {
+                    "x": 64.0,
+                    "y": 1146.0
+                }
+            },
+            "resourceId": "usertask4",
+            "childShapes": [],
+            "stencil": {
+                "id": "UserTask"
+            },
+            "properties": {
+                "overrideid": "usertask4",
+                "name": "M3TransferProductionOrder",
+                "formproperties": {
+                    "formProperties": [
+                        {
+                            "id": "result",
+                            "name": "result",
+                            "type": "string",
+                            "expression": null,
+                            "variable": null,
+                            "required": true,
+                            "readable": true,
+                            "writable": true
+                        }
+                    ]
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "tasklisteners": {
+                    "taskListeners": []
+                },
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow34"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow33",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 33.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "usertask4"
+                }
+            ],
+            "target": {
+                "resourceId": "usertask4"
+            },
+            "properties": {
+                "overrideid": "flow33",
+                "name": "FAILED",
+                "conditionsequenceflow": "${result == \"FAILED\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow34",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 33.5
+                },
+                {
+                    "x": 24.0,
+                    "y": 1178.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "usertask3"
+                }
+            ],
+            "target": {
+                "resourceId": "usertask3"
+            },
+            "properties": {
+                "overrideid": "flow34"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 169.0,
+                    "y": 1411.0
+                },
+                "upperLeft": {
+                    "x": 64.0,
+                    "y": 1350.0
+                }
+            },
+            "resourceId": "usertask5",
+            "childShapes": [],
+            "stencil": {
+                "id": "UserTask"
+            },
+            "properties": {
+                "overrideid": "usertask5",
+                "name": "M4RequestOrderStatus",
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "tasklisteners": {
+                    "taskListeners": []
+                },
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow36"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow35",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "usertask5"
+                }
+            ],
+            "target": {
+                "resourceId": "usertask5"
+            },
+            "properties": {
+                "overrideid": "flow35",
+                "name": "FAILED",
+                "conditionsequenceflow": "${result == \"FAILED\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow36",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                },
+                {
+                    "x": 24.0,
+                    "y": 1379.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "usertask3"
+                }
+            ],
+            "target": {
+                "resourceId": "usertask3"
+            },
+            "properties": {
+                "overrideid": "flow36"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 175.0,
+                    "y": 1591.0
+                },
+                "upperLeft": {
+                    "x": 70.0,
+                    "y": 1530.0
+                }
+            },
+            "resourceId": "usertask6",
+            "childShapes": [],
+            "stencil": {
+                "id": "UserTask"
+            },
+            "properties": {
+                "overrideid": "usertask6",
+                "name": "M5ProductionOrderResponse",
+                "formproperties": {
+                    "formProperties": [
+                        {
+                            "id": "result",
+                            "name": "result",
+                            "type": "string",
+                            "expression": null,
+                            "variable": null,
+                            "required": true,
+                            "readable": true,
+                            "writable": true
+                        }
+                    ]
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "tasklisteners": {
+                    "taskListeners": []
+                },
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow38"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow37",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "usertask6"
+                }
+            ],
+            "target": {
+                "resourceId": "usertask6"
+            },
+            "properties": {
+                "overrideid": "flow37",
+                "name": "FAILED",
+                "conditionsequenceflow": "${result == \"FAILED\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow38",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                },
+                {
+                    "x": 122.0,
+                    "y": 1475.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 35.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask8"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask8"
+            },
+            "properties": {
+                "overrideid": "flow38",
+                "name": "RETRY",
+                "conditionsequenceflow": "${result == \"RETRY\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 184.0,
+                    "y": 1748.0
+                },
+                "upperLeft": {
+                    "x": 62.0,
+                    "y": 1693.0
+                }
+            },
+            "resourceId": "usertask7",
+            "childShapes": [],
+            "stencil": {
+                "id": "UserTask"
+            },
+            "properties": {
+                "overrideid": "usertask7",
+                "name": "M6ProcessResponse",
+                "formproperties": {
+                    "formProperties": [
+                        {
+                            "id": "result",
+                            "name": "result",
+                            "type": "string",
+                            "expression": null,
+                            "variable": null,
+                            "required": true,
+                            "readable": true,
+                            "writable": true
+                        }
+                    ]
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "tasklisteners": {
+                    "taskListeners": []
+                },
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow41"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow40",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": 61.0,
+                    "y": 27.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "usertask7"
+                }
+            ],
+            "target": {
+                "resourceId": "usertask7"
+            },
+            "properties": {
+                "overrideid": "flow40",
+                "name": "FAILED",
+                "conditionsequenceflow": "${result == \"FAILED\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": -28.0,
+                    "y": 1740.0
+                },
+                "upperLeft": {
+                    "x": -68.0,
+                    "y": 1700.0
+                }
+            },
+            "resourceId": "exclusivegateway13",
+            "childShapes": [],
+            "stencil": {
+                "id": "ExclusiveGateway"
+            },
+            "properties": {
+                "overrideid": "exclusivegateway13",
+                "name": "Exclusive Gateway",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "flow42"
+                },
+                {
+                    "resourceId": "flow43"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow41",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 61.0,
+                    "y": 27.5
+                },
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "exclusivegateway13"
+                }
+            ],
+            "target": {
+                "resourceId": "exclusivegateway13"
+            },
+            "properties": {
+                "overrideid": "flow41"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow42",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": -48.0,
+                    "y": 1638.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 38.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask9"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask9"
+            },
+            "properties": {
+                "overrideid": "flow42",
+                "name": "MANUAL",
+                "conditionsequenceflow": "${result == \"MANUAL\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow43",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 20.0,
+                    "y": 20.0
+                },
+                {
+                    "x": -127.0,
+                    "y": 1719.0
+                },
+                {
+                    "x": -127.0,
+                    "y": 1475.0
+                },
+                {
+                    "x": 52.5,
+                    "y": 35.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "servicetask8"
+                }
+            ],
+            "target": {
+                "resourceId": "servicetask8"
+            },
+            "properties": {
+                "overrideid": "flow43",
+                "name": "RETRY",
+                "conditionsequenceflow": "${result == \"RETRY\"}"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "flow44",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 52.5,
+                    "y": 30.5
+                },
+                {
+                    "x": -244.0,
+                    "y": 391.0
+                },
+                {
+                    "x": -244.0,
+                    "y": 1887.0
+                },
+                {
+                    "x": 17.5,
+                    "y": 17.5
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "end"
+                }
+            ],
+            "target": {
+                "resourceId": "end"
+            },
+            "properties": {
+                "overrideid": "flow44"
+            }
+        }
+    ]
+}

@@ -1,0 +1,379 @@
+{
+    "bounds": {
+        "lowerRight": {
+            "x": 1485.0,
+            "y": 700.0
+        },
+        "upperLeft": {
+            "x": 0.0,
+            "y": 0.0
+        }
+    },
+    "resourceId": "canvas",
+    "stencil": {
+        "id": "BPMNDiagram"
+    },
+    "stencilset": {
+        "namespace": "http://b3mn.org/stencilset/bpmn2.0#",
+        "url": "../editor/stencilsets/bpmn2.0/bpmn2.0.json"
+    },
+    "properties": {
+        "process_id": "Process_1",
+        "isexecutable": "false",
+        "process_namespace": "http://bpmn.io/schema/bpmn",
+        "iseagerexecutionfetch": false,
+        "messages": [],
+        "executionlisteners": {
+            "executionListeners": []
+        },
+        "eventlisteners": {
+            "eventListeners": []
+        },
+        "signaldefinitions": [],
+        "messagedefinitions": []
+    },
+    "childShapes": [
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 209.0,
+                    "y": 138.0
+                },
+                "upperLeft": {
+                    "x": 173.0,
+                    "y": 102.0
+                }
+            },
+            "resourceId": "StartEvent_1",
+            "childShapes": [],
+            "stencil": {
+                "id": "StartNoneEvent"
+            },
+            "properties": {
+                "overrideid": "StartEvent_1",
+                "interrupting": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "SequenceFlow_0680bkm"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 769.0,
+                    "y": 138.0
+                },
+                "upperLeft": {
+                    "x": 733.0,
+                    "y": 102.0
+                }
+            },
+            "resourceId": "EndEvent_07npfec",
+            "childShapes": [],
+            "stencil": {
+                "id": "EndNoneEvent"
+            },
+            "properties": {
+                "overrideid": "EndEvent_07npfec",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": []
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 406.0,
+                    "y": 160.0
+                },
+                "upperLeft": {
+                    "x": 306.0,
+                    "y": 80.0
+                }
+            },
+            "resourceId": "Task_0de6x66",
+            "childShapes": [],
+            "stencil": {
+                "id": "ManualTask"
+            },
+            "properties": {
+                "overrideid": "Task_0de6x66",
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "SequenceFlow_0cpafc2"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 533.0,
+                    "y": 145.0
+                },
+                "upperLeft": {
+                    "x": 483.0,
+                    "y": 95.0
+                }
+            },
+            "resourceId": "ExclusiveGateway_0y3hgu8",
+            "childShapes": [],
+            "stencil": {
+                "id": "ExclusiveGateway"
+            },
+            "properties": {
+                "overrideid": "ExclusiveGateway_0y3hgu8",
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "SequenceFlow_1ci3gaw"
+                },
+                {
+                    "resourceId": "SequenceFlow_1q9vdjo"
+                }
+            ]
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "SequenceFlow_0680bkm",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 18.0,
+                    "y": 18.0
+                },
+                {
+                    "x": 50.0,
+                    "y": 40.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "Task_0de6x66"
+                }
+            ],
+            "target": {
+                "resourceId": "Task_0de6x66"
+            },
+            "properties": {
+                "overrideid": "SequenceFlow_0680bkm"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "SequenceFlow_0cpafc2",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 50.0,
+                    "y": 40.0
+                },
+                {
+                    "x": 25.0,
+                    "y": 25.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "ExclusiveGateway_0y3hgu8"
+                }
+            ],
+            "target": {
+                "resourceId": "ExclusiveGateway_0y3hgu8"
+            },
+            "properties": {
+                "overrideid": "SequenceFlow_0cpafc2"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "SequenceFlow_1ci3gaw",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 25.0,
+                    "y": 25.0
+                },
+                {
+                    "x": 18.0,
+                    "y": 18.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "EndEvent_07npfec"
+                }
+            ],
+            "target": {
+                "resourceId": "EndEvent_07npfec"
+            },
+            "properties": {
+                "overrideid": "SequenceFlow_1ci3gaw"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "SequenceFlow_1q9vdjo",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 25.0,
+                    "y": 25.0
+                },
+                {
+                    "x": 50.0,
+                    "y": 40.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "Task_053zofs"
+                }
+            ],
+            "target": {
+                "resourceId": "Task_053zofs"
+            },
+            "properties": {
+                "overrideid": "SequenceFlow_1q9vdjo"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 172.0,
+                    "y": 212.0
+                },
+                "upperLeft": {
+                    "x": 128.0,
+                    "y": 212.0
+                }
+            },
+            "resourceId": "SequenceFlow_0enrs1s",
+            "childShapes": [],
+            "stencil": {
+                "id": "SequenceFlow"
+            },
+            "dockers": [
+                {
+                    "x": 50.0,
+                    "y": 40.0
+                },
+                {
+                    "x": 751.0,
+                    "y": 263.0
+                },
+                {
+                    "x": 18.0,
+                    "y": 18.0
+                }
+            ],
+            "outgoing": [
+                {
+                    "resourceId": "EndEvent_07npfec"
+                }
+            ],
+            "target": {
+                "resourceId": "EndEvent_07npfec"
+            },
+            "properties": {
+                "overrideid": "SequenceFlow_0enrs1s"
+            }
+        },
+        {
+            "bounds": {
+                "lowerRight": {
+                    "x": 558.0,
+                    "y": 303.0
+                },
+                "upperLeft": {
+                    "x": 458.0,
+                    "y": 223.0
+                }
+            },
+            "resourceId": "Task_053zofs",
+            "childShapes": [],
+            "stencil": {
+                "id": "ServiceTask"
+            },
+            "properties": {
+                "overrideid": "Task_053zofs",
+                "name": "123",
+                "servicetaskfields": {
+                    "fields": []
+                },
+                "asynchronousdefinition": false,
+                "exclusivedefinition": true,
+                "executionlisteners": {
+                    "executionListeners": []
+                }
+            },
+            "outgoing": [
+                {
+                    "resourceId": "SequenceFlow_0enrs1s"
+                }
+            ]
+        }
+    ]
+}
