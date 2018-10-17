@@ -74,7 +74,7 @@ public abstract class BatchHandler<T> {
             return;
         }
         log.debug("do drain size : {}", drained.size());
-        doProcess(drained);
+        doProcess(queue.getKey(), drained);
     }
 
     /**
@@ -82,7 +82,7 @@ public abstract class BatchHandler<T> {
      *
      * @param drained
      */
-    public abstract void doProcess(List<T> drained);
+    public abstract void doProcess(String key, List<T> drained);
 
     /**
      * 刷新线程，用于在满足条件时处理队列数据

@@ -1,10 +1,12 @@
 package com.genie.es.entity;
 
-import com.genie.es.annotation.ShardingId;
+import com.genie.data.annotation.CriteriaEntity;
 import com.genie.es.annotation.ESIndex;
+import com.genie.es.annotation.ShardingId;
 import org.springframework.data.annotation.Id;
 
 @ESIndex(name = "task_history_", shard = true)
+@CriteriaEntity(type = "")
 public class TaskHistory {
 
     @Id

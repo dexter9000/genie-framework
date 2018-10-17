@@ -1,0 +1,18 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generateDoc.
+ */]
+[module generateDoc('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[**
+ * The documentation of the template generateElement.
+ * @param aClass
+ */]
+[template public generateElement(aModel : Model)]
+[file (aModel.name, false, 'UTF-8')]
+	[for (aClass : Class | aModel.packagedElement) separator ('\n')]
+		Class [aClass.name/]
+	[/for]
+[/file]
+[/template]

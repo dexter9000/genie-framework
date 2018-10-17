@@ -11,6 +11,10 @@
 
     <artifactId>genie-flow-engine</artifactId>
 
+    <properties>
+        <flowable.version>6.4.0</flowable.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -25,13 +29,13 @@
         <dependency>
             <groupId>org.flowable</groupId>
             <artifactId>flowable-bpmn-converter</artifactId>
-            <version>6.4.0</version>
+            <version>${flowable.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.flowable</groupId>
             <artifactId>flowable-json-converter</artifactId>
-            <version>6.4.0</version>
+            <version>${flowable.version}</version>
         </dependency>
 
         <dependency>

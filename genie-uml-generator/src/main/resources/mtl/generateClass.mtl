@@ -1,0 +1,170 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generateClass('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[**
+ * The documentation of the template generateElement.
+ * @param aClass
+ */]
+
+[template public generateElement(aClass : Class)]
+[comment @main/]
+[file ('cn/com/connext/crm/domain/mongo/'+aClass.name.concat('.java'), false, 'UTF-8')]
+package cn.com.connext.crm.domain.mongo;
+import cn.com.connext.crm.domain.enumeration.*;
+import java.util.*;
+import java.io.Serializable;
+import org.springframework.data.annotation.*;
+import org.springframework.data.mongodb.core.mapping.*;
+/**
+ * [aClass.ownedComment._body/]
+ */
+@Document(collection = "[aClass.name.toUpperFirst()/]")
+public class [aClass.name.toUpperFirst()/] implements Serializable {
+
+	@Id
+	private String id;
+
+	[for (p : Property | aClass.attribute) separator ('\n')]
+	/**
+	 * [p.ownedComment._body/]
+	 */
+	@Field("[p.name/]")
+		[if(p.aggregation.toString().equalsIgnoreCase('shared')._and(p.upper.max(0).toString().equalsIgnoreCase('0')))]
+	private Collection<[p.type.name/]> [p.name/];
+		[else]
+	private [p.type.name/] [p.name/];
+		[/if]
+	[/for]
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+	[for (p : Property | aClass.attribute) separator ('\n')]
+		[if(p.aggregation.toString().equalsIgnoreCase('shared')._and(p.upper.max(0).toString().equalsIgnoreCase('0')))]
+	public Collection<[p.type.name/]> get[p.name.toUpperFirst()/](){
+		[else]
+	public [p.type.name/] get[p.name.toUpperFirst()/](){
+		[/if]
+		return this.[p.name/];
+	}
+
+		[if(p.aggregation.toString().equalsIgnoreCase('shared')._and(p.upper.max(0).toString().equalsIgnoreCase('0')))]
+	public void set[p.name.toUpperFirst()/](Collection<[p.type.name/]> [p.name/]){
+		[else]
+	public void set[p.name.toUpperFirst()/]([p.type.name/] [p.name/]){
+		[/if]
+		this.[p.name/] = [p.name/];
+	}
+	[/for]
+}
+[/file]
+[/template]
+
+
+[template public generateElement(aClass : Enumeration)]
+[comment @main/]
+[file ('cn/com/connext/crm/domain/enumeration/'+aClass.name.concat('.java'), false, 'UTF-8')]
+package cn.com.connext.crm.domain.enumeration;
+public enum [aClass.name.toUpperFirst()/]{
+	[for (p : EnumerationLiteral | aClass.ownedLiteral) separator ('\n')]
+	/**
+	 * [p.ownedComment._body/]
+	 */
+		[p.name/],
+	[/for]
+	;
+}
+[/file]
+[/template]
+
+[template public generateElement(aModel : Model)]
+[comment @main/]
+[file (aModel.name.concat('.html'), false, 'UTF-8')]
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title></title>
+        <style type="text/css">
+            #container {margin:8px;}
+            .page {padding-bottom: 50px;}
+            .param-table {border:1px solid;margin:12px 0;border-collapse:collapse;}
+            .param-table th {background:#5B9BD5;font-size:14px;font-weight:bold;text-align:center;border:1px solid;}
+            .param-table td {border-collapse:collapse;border:1px solid;font-size:12px;}
+            .param-table .th-name {width:140px;}
+            .schema-format {width: 300px;height: 150px;resize: none;}
+            #top{text-align: center;}
+            #top{text-align: center;}
+            h1{font-size: 40.0pt; color: #2E74B5;}
+            h2{margin-top: 17.0pt; margin-right: 0cm; margin-bottom: 16.5pt; margin-left: 21.0pt; text-indent: -21.0pt;line-height: 240%; font-size: 22.0pt; color: #2E74B5; font-weight: normal;}
+            h3{    margin-top: 13.0pt; margin-right: 0cm; margin-bottom: 13.0pt; margin-left: 21.0pt; text-indent: -21.0pt; line-height: 173%; font-size: 16.0pt; color: #2E74B5;}
+            th{border: solid windowtext 1.0pt; background: #5B9BD5;padding: 0cm 5.4pt 0cm 5.4pt; font-weight: bold;}
+            td{border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt; }
+        </style>
+    </head>
+    <body>
+	<h1>[aModel.name/]</h1>
+
+	<h2>实体类</h2>
+	[for (a : Element | aModel.packagedElement)]
+		[if(a.oclIsTypeOf(Class))]
+		<div class="page">
+		<h3>[a.oclAsType(Class).name /]</h3>
+			<p>说明： [a.oclAsType(Class).ownedComment._body/]</p>
+			<table class="param-table">
+			<thead>
+				<th class="th-name">参数</th>
+				<th class="th-name">数据类型</th>
+				<th class="th-name">必输项</th>
+				<th class="th-name">请求格式</th>
+				<th class="th-name">默认值</th>
+				<th class="th-name">说明</th>
+			</thead>
+			[for(p : Property | a.oclAsType(Class).attribute)]
+			<tr>
+				<td>[p.name/]</td>
+				<td>[p.type.name/]</td>
+				<td></td>
+				<td></td>
+				<td>[p.defaultValue/]</td>
+				<td>[p.type.ownedComment._body/]</td>
+			</tr>
+			[/for]
+			</table>
+		</div>
+		[/if]
+	[/for]
+	<h2>枚举</h2>
+	[for (a : Element | aModel.packagedElement)]
+		[if(a.oclIsTypeOf(Enumeration))]
+		<div class="page">
+		<h3>[a.oclAsType(Enumeration).name /]</h3>
+		<p>说明： [a.oclAsType(Enumeration).ownedComment._body/]</p>
+			<table class="param-table">
+			<thead>
+				<th class="th-name">参数</th>
+				<th class="th-name">说明</th>
+			</thead>
+			[for(l : EnumerationLiteral | a.oclAsType(Enumeration).ownedLiteral)]
+			<tr>
+				<td>[l.name/]</td>
+				<td>[l.ownedComment._body/]</td>
+			</tr>
+			[/for]
+			</table>
+		</div>
+		[/if]
+	[/for]
+    </body>
+</html>
+[/file]
+[/template]

@@ -41,6 +41,9 @@
         <spring-boot-dependencies.version>2.0.4.RELEASE</spring-boot-dependencies.version>
         <spring-cloud.version>Finchley.SR1</spring-cloud.version>
 
+        <springfox.version>2.8.0</springfox.version>
+        <ehcache.version>3.2.3</ehcache.version>
+
         <jcache.version>1.0.0</jcache.version>
         <hibernate.version>5.2.8.Final</hibernate.version>
         <awaitility.version>2.0.0</awaitility.version>
@@ -197,7 +200,7 @@
     <!-- modules config -->
     <modules>
         <module>genie-core</module>
-        <module>genie-utils</module>
+        <!--<module>genie-utils</module>-->
         <module>genie-data-common</module>
         <module>genie-starter-elasticsearch</module>
         <module>genie-starter-jpa</module>
@@ -206,12 +209,13 @@
         <module>genie-starter-schedule</module>
         <module>genie-flow-engine</module>
 
-        <module>genie-service-includes</module>
+        <!--<module>genie-service-includes</module>-->
         <module>genie-service-dependencies</module>
-        <module>genie-service-parent</module>
-        <module>genie-module-dependencies</module>
-        <module>genie-module-parent</module>
+        <!--<module>genie-service-parent</module>-->
+        <!--<module>genie-module-dependencies</module>-->
+        <!--<module>genie-module-parent</module>-->
         <module>genie-data-modelgen</module>
+        <module>genie-uml-generator</module>
     </modules>
 
 </project>

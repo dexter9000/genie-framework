@@ -1,0 +1,2752 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<uml:Model xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" name="DB Domain" xmi:id="_3q4qsPjYEeeAMaZc_n8Khg" xmi:version="2.1">
+  <eAnnotations source="Objing" xmi:id="_3q4qsfjYEeeAMaZc_n8Khg">
+    <contents name="exporterVersion" xmi:id="_3q4qsvjYEeeAMaZc_n8Khg" xmi:type="uml:Property">
+      <defaultValue value="3.0.0" xmi:id="_3q4qs_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralString"/>
+    </contents>
+  </eAnnotations>
+  <packagedElement name="TagType" xmi:id="_3q4qtPjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedLiteral name="USER_PROFILE" xmi:id="_3q4qtfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q4qtvjYEeeAMaZc_n8Khg">
+        <body>会员概述</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="CONSUMPTION_BEHAVIOR" xmi:id="_3q4qt_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q4quPjYEeeAMaZc_n8Khg">
+        <body>消费行为</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="PREFERENCE" xmi:id="_3q4qufjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5RwPjYEeeAMaZc_n8Khg">
+        <body>会员偏好</body>
+      </ownedComment>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement name="ChannelType" xmi:id="_3q5RwfjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5RwvjYEeeAMaZc_n8Khg">
+      <body>渠道类型</body>
+    </ownedComment>
+    <ownedLiteral name="ONLINE" xmi:id="_3q5Rw_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5RxPjYEeeAMaZc_n8Khg">
+        <body>线上渠道</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="SUPERMARKET" xmi:id="_3q5RxfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5RxvjYEeeAMaZc_n8Khg">
+        <body>超市</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="MALL" xmi:id="_3q5Rx_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5RyPjYEeeAMaZc_n8Khg">
+        <body>商场</body>
+      </ownedComment>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement name="PointType" xmi:id="_3q5RyfjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5RyvjYEeeAMaZc_n8Khg">
+      <body>积分类型</body>
+    </ownedComment>
+    <ownedLiteral name="PURCHASE" xmi:id="_3q5Ry_jYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="REFUND" xmi:id="_3q5RzPjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="USE" xmi:id="_3q5RzfjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="FLOAT" xmi:id="_3q5RzvjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="EVENT" xmi:id="_3q5Rz_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="CommonStatus" xmi:id="_3q5R0PjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5R0fjYEeeAMaZc_n8Khg">
+      <body>通用状态
+尽标记可用和不可用</body>
+    </ownedComment>
+    <ownedLiteral name="ENABLE" xmi:id="_3q5R0vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5R0_jYEeeAMaZc_n8Khg">
+        <body>可用</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="DISABLE" xmi:id="_3q5R1PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5R1fjYEeeAMaZc_n8Khg">
+        <body>不可用</body>
+      </ownedComment>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement name="Map" xmi:id="_3q5R1vjYEeeAMaZc_n8Khg" xmi:type="uml:PrimitiveType">
+    <ownedComment xmi:id="_3q5R1_jYEeeAMaZc_n8Khg">
+      <body>键值对类型 key:value</body>
+    </ownedComment>
+  </packagedElement>
+  <packagedElement name="ProductType" xmi:id="_3q5R2PjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5R2fjYEeeAMaZc_n8Khg">
+      <body>产品类别</body>
+    </ownedComment>
+    <ownedLiteral name="PRODUCT" xmi:id="_3q5R2vjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="ONLINE" xmi:id="_3q5R2_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="PointRuleStatus" xmi:id="_3q5R3PjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedLiteral name="ACTIVITY" xmi:id="_3q5R3fjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="INACTIVITY" xmi:id="_3q5R3vjYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="OperatorType" xmi:id="_3q5R3_jYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedLiteral name="ADD" xmi:id="_3q5R4PjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="SUB" xmi:id="_3q5R4fjYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="Hash" xmi:id="_3q5R4vjYEeeAMaZc_n8Khg" xmi:type="uml:PrimitiveType"/>
+  <packagedElement name="DeliveryTarget" xmi:id="_3q5R4_jYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedLiteral name="CHANNEL" xmi:id="_3q5R5PjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="MEMBER" xmi:id="_3q5R5fjYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="DataSourceType" xmi:id="_3q5R5vjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5R5_jYEeeAMaZc_n8Khg">
+      <body>数据来源</body>
+    </ownedComment>
+    <ownedLiteral name="CREATE" xmi:id="_3q5R6PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5R6fjYEeeAMaZc_n8Khg">
+        <body>手动创建</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="IMPORT" xmi:id="_3q5R6vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5R6_jYEeeAMaZc_n8Khg">
+        <body>导入</body>
+      </ownedComment>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement name="AuthCategory" xmi:id="_3q5R7PjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5R7fjYEeeAMaZc_n8Khg">
+      <body>权限分类</body>
+    </ownedComment>
+    <ownedLiteral name="ZONE" xmi:id="_3q5R7vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5R7_jYEeeAMaZc_n8Khg">
+        <body>单Zone</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="ZONES" xmi:id="_3q5R8PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5R8fjYEeeAMaZc_n8Khg">
+        <body>多个Zone</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="SUPER" xmi:id="_3q5R8vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5R8_jYEeeAMaZc_n8Khg">
+        <body>平台管理员</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="APP" xmi:id="_3q5R9PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5R9fjYEeeAMaZc_n8Khg">
+        <body>第三方系统</body>
+      </ownedComment>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement name="LocalConfig" xmi:id="_3q5R9vjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5R_vjYEeeAMaZc_n8Khg" name="dict" type="_3q5VPPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5R9_jYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="language" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5R-PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5R-fjYEeeAMaZc_n8Khg">
+        <body>语言</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="title" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5R-vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5R-_jYEeeAMaZc_n8Khg">
+        <body>标题，用于在国际化环境下显示</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5R_PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5R_fjYEeeAMaZc_n8Khg">
+        <body>摘要</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5R9_jYEeeAMaZc_n8Khg _3q5R__jYEeeAMaZc_n8Khg" xmi:id="_3q5R_vjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5R_vjYEeeAMaZc_n8Khg" type="_3q5R9vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5R__jYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5SAPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="MemberSegment" xmi:id="_3q5SAfjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5SAvjYEeeAMaZc_n8Khg">
+      <body>会员细分
+会员细分支持规则计算和导入</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5SFvjYEeeAMaZc_n8Khg" name="rules" type="_3q5SHPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SA_jYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5SBPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5SBfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute aggregation="shared" association="_3q5SGPjYEeeAMaZc_n8Khg" name="members" type="_3q5UcfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SBvjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5SB_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5SCPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SCfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SCvjYEeeAMaZc_n8Khg">
+        <body>会员细分名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SC_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="source" type="_3q5SK_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SDPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SDfjYEeeAMaZc_n8Khg">
+        <body>会员细分来源</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5R0PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SDvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SD_jYEeeAMaZc_n8Khg">
+        <body>会员细分状态</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="computed" type="4b736caa-1ced-4a15-8d34-af275191218f" visibility="public" xmi:id="_3q5SEPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SEfjYEeeAMaZc_n8Khg">
+        <body>计算类型是否完成计算</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="number" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5SEvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SE_jYEeeAMaZc_n8Khg">
+        <body>细分会员总数</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="ruleScript" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SFPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SFfjYEeeAMaZc_n8Khg">
+        <body>规则脚本</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5SA_jYEeeAMaZc_n8Khg _3q5SF_jYEeeAMaZc_n8Khg" xmi:id="_3q5SFvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5SFvjYEeeAMaZc_n8Khg" type="_3q5SAfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SF_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5SBvjYEeeAMaZc_n8Khg _3q5SGfjYEeeAMaZc_n8Khg" xmi:id="_3q5SGPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5SGPjYEeeAMaZc_n8Khg" type="_3q5SAfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SGfjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5SGvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5SG_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="MemberQueryRule" xmi:id="_3q5SHPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5SHfjYEeeAMaZc_n8Khg">
+      <body>会员细分查询规则</body>
+    </ownedComment>
+    <ownedAttribute isUnique="false" name="field" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SHvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="value" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SH_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SIPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="operator" type="_3q5SOfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SIfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SIvjYEeeAMaZc_n8Khg">
+        <body>字段操作符</body>
+      </ownedComment>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="SegmentConditionGroup" xmi:id="_3q5SI_jYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5SJPjYEeeAMaZc_n8Khg">
+      <body>会员细分条件组</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5SJ_jYEeeAMaZc_n8Khg" name="memberSegment" type="_3q5SAfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SJfjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SJvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5SJfjYEeeAMaZc_n8Khg _3q5SKPjYEeeAMaZc_n8Khg" xmi:id="_3q5SJ_jYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5SJ_jYEeeAMaZc_n8Khg" type="_3q5SI_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SKPjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5SKfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5SKvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="MemberSegmentSource" xmi:id="_3q5SK_jYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5SLPjYEeeAMaZc_n8Khg">
+      <body>会员细分来源</body>
+    </ownedComment>
+    <ownedLiteral name="COMPUTE" xmi:id="_3q5SLfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SLvjYEeeAMaZc_n8Khg">
+        <body>计算</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="IMPORT" xmi:id="_3q5SL_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SMPjYEeeAMaZc_n8Khg">
+        <body>导入</body>
+      </ownedComment>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement name="Gender" xmi:id="_3q5SMfjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5SMvjYEeeAMaZc_n8Khg">
+      <body>性别</body>
+    </ownedComment>
+    <ownedLiteral name="MALE" xmi:id="_3q5SM_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SNPjYEeeAMaZc_n8Khg">
+        <body>男性</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="FEMALE" xmi:id="_3q5SNfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SNvjYEeeAMaZc_n8Khg">
+        <body>女性</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="UNKNOWN" xmi:id="_3q5SN_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SOPjYEeeAMaZc_n8Khg">
+        <body>&lt;Enter note text here&gt;</body>
+      </ownedComment>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement name="Operator" xmi:id="_3q5SOfjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5SOvjYEeeAMaZc_n8Khg">
+      <body>逻辑运算符</body>
+    </ownedComment>
+    <ownedLiteral name="START_WITH" xmi:id="_3q5SO_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SPPjYEeeAMaZc_n8Khg">
+        <body>字符串以关键字开头</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="NOT_START_WITH" xmi:id="_3q5SPfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SPvjYEeeAMaZc_n8Khg">
+        <body>字符串不以关键字开头</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="END_WITH" xmi:id="_3q5SP_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SQPjYEeeAMaZc_n8Khg">
+        <body>字符串以关键字结尾</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="NOT_END_WITH" xmi:id="_3q5SQfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SQvjYEeeAMaZc_n8Khg">
+        <body>字符串不以关键字结尾</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="EQUAL" xmi:id="_3q5SQ_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SRPjYEeeAMaZc_n8Khg">
+        <body>等于，支持字符串，数字，日期</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="NOT_EQUAL" xmi:id="_3q5SRfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SRvjYEeeAMaZc_n8Khg">
+        <body>等于，支持字符串，数字，日期</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="CONTAIN" xmi:id="_3q5SR_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SSPjYEeeAMaZc_n8Khg">
+        <body>字符串包含关键字</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="NOT_CONTAIN" xmi:id="_3q5SSfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SSvjYEeeAMaZc_n8Khg">
+        <body>字符串不包含关键字</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="NO_FIELD" xmi:id="_3q5SS_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5STPjYEeeAMaZc_n8Khg">
+        <body>字段没有值</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="GREAT" xmi:id="_3q5STfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5STvjYEeeAMaZc_n8Khg">
+        <body>大于，支持数字和日期</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="GREAT_EQUAL" xmi:id="_3q5ST_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SUPjYEeeAMaZc_n8Khg">
+        <body>大于等于，支持数字和日期</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="LESS" xmi:id="_3q5SUfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SUvjYEeeAMaZc_n8Khg">
+        <body>小于，支持数字和日期</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="LESS_EQUAL" xmi:id="_3q5SU_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SVPjYEeeAMaZc_n8Khg">
+        <body>小于等于，支持数字和日期</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="RANGE" xmi:id="_3q5SVfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SVvjYEeeAMaZc_n8Khg">
+        <body>在区间内，支持数字和日期</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="IN" xmi:id="_3q5SV_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SWPjYEeeAMaZc_n8Khg">
+        <body>列表包含</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="NOT_IN" xmi:id="_3q5SWfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SWvjYEeeAMaZc_n8Khg">
+        <body>列表不包含</body>
+      </ownedComment>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement name="MemberStatus" xmi:id="_3q5SW_jYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5SXPjYEeeAMaZc_n8Khg">
+      <body>会员状态</body>
+    </ownedComment>
+    <ownedLiteral name="NORMAL" xmi:id="_3q5SXfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SXvjYEeeAMaZc_n8Khg">
+        <body>正常</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="DELETED" xmi:id="_3q5SX_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SYPjYEeeAMaZc_n8Khg">
+        <body>已删除</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="LOCKED" xmi:id="_3q5SYfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SYvjYEeeAMaZc_n8Khg">
+        <body>锁定
+</body>
+      </ownedComment>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement name="PointRuleDetail" xmi:id="_3q5SY_jYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5SdPjYEeeAMaZc_n8Khg" name="pointRule" type="_3q5VAfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SZPjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute aggregation="shared" association="_3q5Sd_jYEeeAMaZc_n8Khg" name="pointRuleHistory" type="_3q5UVPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SZfjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="targetType" type="_3q5S2PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SZvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SZ_jYEeeAMaZc_n8Khg">
+        <body>比较的目标对象（1：订单金额  2：商品金额）</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="minAmount" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5SaPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SafjYEeeAMaZc_n8Khg">
+        <body>订单或商品最小金额</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="maxAmount" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5SavjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Sa_jYEeeAMaZc_n8Khg">
+        <body>订单或商品最大金额</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="baseAmount" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5SbPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SbfjYEeeAMaZc_n8Khg">
+        <body>多倍积分起始数量</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="multiple" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5SbvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Sb_jYEeeAMaZc_n8Khg">
+        <body>积分倍率</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="extrapoint" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5ScPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5ScfjYEeeAMaZc_n8Khg">
+        <body>额外积分数量</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="products" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5ScvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Sc_jYEeeAMaZc_n8Khg">
+        <body>参与积分规则的商品
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5SZPjYEeeAMaZc_n8Khg _3q5SdfjYEeeAMaZc_n8Khg" xmi:id="_3q5SdPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5SdPjYEeeAMaZc_n8Khg" type="_3q5SY_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SdfjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5SdvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5SZfjYEeeAMaZc_n8Khg _3q5SePjYEeeAMaZc_n8Khg" xmi:id="_3q5Sd_jYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5Sd_jYEeeAMaZc_n8Khg" type="_3q5SY_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SePjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5SefjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="PointRuleLimit" xmi:id="_3q5SevjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5SlPjYEeeAMaZc_n8Khg" name="channelGroup" type="_3q5SnPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Se_jYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5SfPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5SffjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute aggregation="shared" association="_3q5SmPjYEeeAMaZc_n8Khg" name="pointRule" type="_3q5VAfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SfvjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute aggregation="shared" association="_3q5SmvjYEeeAMaZc_n8Khg" name="pointRuleHistory" type="_3q5UVPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Sf_jYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="memberTier" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SgPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SgfjYEeeAMaZc_n8Khg">
+        <body>会员等级限制</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="pointLimit" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5SgvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Sg_jYEeeAMaZc_n8Khg">
+        <body>积分上限
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="numberLimit" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5ShPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5ShfjYEeeAMaZc_n8Khg">
+        <body>次数限制
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="channelLimit" type="_3q5RwfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5ShvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Sh_jYEeeAMaZc_n8Khg">
+        <body>渠道范围限制</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="competition" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SiPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SifjYEeeAMaZc_n8Khg">
+        <body>竞争的积分规则
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="aggregation" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SivjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Si_jYEeeAMaZc_n8Khg">
+        <body>组合规则</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="extra" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SjPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SjfjYEeeAMaZc_n8Khg">
+        <body>扩展字段
+
+比如外国人在本地购买可以享受额外积分</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="groupPurchase" type="4b736caa-1ced-4a15-8d34-af275191218f" visibility="public" xmi:id="_3q5SjvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Sj_jYEeeAMaZc_n8Khg">
+        <body>团购限制</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="minAmount" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5SkPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SkfjYEeeAMaZc_n8Khg">
+        <body>最小订单金额</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="maxAmount" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5SkvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Sk_jYEeeAMaZc_n8Khg">
+        <body>最大订单金额</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5Se_jYEeeAMaZc_n8Khg _3q5SlfjYEeeAMaZc_n8Khg" xmi:id="_3q5SlPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5SlPjYEeeAMaZc_n8Khg" type="_3q5SevjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SlfjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5SlvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5Sl_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5SfvjYEeeAMaZc_n8Khg _3q5SmfjYEeeAMaZc_n8Khg" xmi:id="_3q5SmPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5SmPjYEeeAMaZc_n8Khg" type="_3q5SevjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SmfjYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5Sf_jYEeeAMaZc_n8Khg _3q5Sm_jYEeeAMaZc_n8Khg" xmi:id="_3q5SmvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5SmvjYEeeAMaZc_n8Khg" type="_3q5SevjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Sm_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="ChannelGroup" xmi:id="_3q5SnPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SnfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SnvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Sn_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="RefundOrder" xmi:id="_3q5SoPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5SqvjYEeeAMaZc_n8Khg" name="channel" type="_3q5U3vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SofjYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5SovjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute aggregation="shared" association="_3q5SrfjYEeeAMaZc_n8Khg" name="member" type="_3q5UcfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5So_jYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5SpPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute aggregation="shared" association="_3q5SsPjYEeeAMaZc_n8Khg" name="order" type="_3q5SwfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SpfjYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5SpvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5Sp_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SqPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="extra" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SqfjYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5SofjYEeeAMaZc_n8Khg _3q5Sq_jYEeeAMaZc_n8Khg" xmi:id="_3q5SqvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5SqvjYEeeAMaZc_n8Khg" type="_3q5SoPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Sq_jYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5SrPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5So_jYEeeAMaZc_n8Khg _3q5SrvjYEeeAMaZc_n8Khg" xmi:id="_3q5SrfjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5SrfjYEeeAMaZc_n8Khg" type="_3q5SoPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SrvjYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5Sr_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5SpfjYEeeAMaZc_n8Khg _3q5SsfjYEeeAMaZc_n8Khg" xmi:id="_3q5SsPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5SsPjYEeeAMaZc_n8Khg" type="_3q5SoPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SsfjYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5SsvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="RefundOrderItem" xmi:id="_3q5Ss_jYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5Su_jYEeeAMaZc_n8Khg" name="product" type="_3q5V8PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5StPjYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5StfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute aggregation="shared" association="_3q5SvvjYEeeAMaZc_n8Khg" name="refundOrder" type="_3q5SoPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5StvjYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5St_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="quantity" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5SuPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="amount" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5SufjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="price" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5SuvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5StPjYEeeAMaZc_n8Khg _3q5SvPjYEeeAMaZc_n8Khg" xmi:id="_3q5Su_jYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5Su_jYEeeAMaZc_n8Khg" type="_3q5Ss_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SvPjYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5SvfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5StvjYEeeAMaZc_n8Khg _3q5Sv_jYEeeAMaZc_n8Khg" xmi:id="_3q5SvvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5SvvjYEeeAMaZc_n8Khg" type="_3q5Ss_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Sv_jYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5SwPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="Order" xmi:id="_3q5SwfjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5S0PjYEeeAMaZc_n8Khg" name="activity" type="_3q5S5PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SwvjYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5Sw_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute aggregation="shared" association="_3q5S1PjYEeeAMaZc_n8Khg" name="channel" type="_3q5U3vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SxPjYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5SxfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="orderTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5SxvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Sx_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SyPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SyfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5SyvjYEeeAMaZc_n8Khg">
+        <body>流水号</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="amount" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5Sy_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="extra" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5SzPjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="memberId" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SzfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="phone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5SzvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Sz_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5SwvjYEeeAMaZc_n8Khg _3q5S0fjYEeeAMaZc_n8Khg" xmi:id="_3q5S0PjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5S0PjYEeeAMaZc_n8Khg" type="_3q5SwfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5S0fjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5S0vjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5S0_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5SxPjYEeeAMaZc_n8Khg _3q5S1fjYEeeAMaZc_n8Khg" xmi:id="_3q5S1PjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5S1PjYEeeAMaZc_n8Khg" type="_3q5SwfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5S1fjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5S1vjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5S1_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="PointTargetType" xmi:id="_3q5S2PjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedLiteral name="ORDER" xmi:id="_3q5S2fjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="PRODUCT" xmi:id="_3q5S2vjYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="PointRuleType" xmi:id="_3q5S2_jYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5S3PjYEeeAMaZc_n8Khg">
+      <body>积分规则类型</body>
+    </ownedComment>
+    <ownedLiteral name="BASIC" xmi:id="_3q5S3fjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5S3vjYEeeAMaZc_n8Khg">
+        <body>基本规则</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="ACTIVITY" xmi:id="_3q5S3_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5S4PjYEeeAMaZc_n8Khg">
+        <body>活动规则</body>
+      </ownedComment>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement name="SourceType" xmi:id="_3q5S4fjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedLiteral name="ORDER" xmi:id="_3q5S4vjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="EVENT" xmi:id="_3q5S4_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="Activity" xmi:id="_3q5S5PjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5S5fjYEeeAMaZc_n8Khg">
+      <body>活动</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5S__jYEeeAMaZc_n8Khg" name="businessPlan" type="_3q5TI_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5S5vjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute aggregation="shared" association="_3q5TA_jYEeeAMaZc_n8Khg" name="zone" type="_3q5UBPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5S5_jYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5S6PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5S6fjYEeeAMaZc_n8Khg">
+        <body>活动名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5R0PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5S6vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5S6_jYEeeAMaZc_n8Khg">
+        <body>活动状态</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5S7PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5S7fjYEeeAMaZc_n8Khg">
+        <body>描述</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="startTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5S7vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5S7_jYEeeAMaZc_n8Khg">
+        <body>开始时间</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="endTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5S8PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5S8fjYEeeAMaZc_n8Khg">
+        <body>结束时间</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="extra" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5S8vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5S8_jYEeeAMaZc_n8Khg">
+        <body>扩展信息</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="activityType" type="_3q5TYPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5S9PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5S9fjYEeeAMaZc_n8Khg">
+        <body>活动类型</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="sms" type="4b736caa-1ced-4a15-8d34-af275191218f" visibility="public" xmi:id="_3q5S9vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5S9_jYEeeAMaZc_n8Khg">
+        <body>是否支持短信</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="hotline" type="4b736caa-1ced-4a15-8d34-af275191218f" visibility="public" xmi:id="_3q5S-PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5S-fjYEeeAMaZc_n8Khg">
+        <body>是否支持热线电话
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5S-vjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="dateType" type="_3q5URvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5S-_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5S_PjYEeeAMaZc_n8Khg">
+        <body>活动时间类型
+1、日期区间  2、季节</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="season" type="_3q5US_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5S_fjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5S_vjYEeeAMaZc_n8Khg">
+        <body>指定的季节</body>
+      </ownedComment>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5S5vjYEeeAMaZc_n8Khg _3q5TAPjYEeeAMaZc_n8Khg" xmi:id="_3q5S__jYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5S__jYEeeAMaZc_n8Khg" type="_3q5S5PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TAPjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5TAfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5TAvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5S5_jYEeeAMaZc_n8Khg _3q5TBPjYEeeAMaZc_n8Khg" xmi:id="_3q5TA_jYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5TA_jYEeeAMaZc_n8Khg" type="_3q5S5PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TBPjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5TBfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5TBvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="ActivityFlow" xmi:id="_3q5TB_jYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5TCPjYEeeAMaZc_n8Khg">
+      <body>活动流程</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5TDvjYEeeAMaZc_n8Khg" name="activity" type="_3q5S5PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TCfjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="target" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TCvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TC_jYEeeAMaZc_n8Khg">
+        <body>目标的会员细分</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="exculde" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TDPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TDfjYEeeAMaZc_n8Khg">
+        <body>排除的会员细分</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5TCfjYEeeAMaZc_n8Khg _3q5TD_jYEeeAMaZc_n8Khg" xmi:id="_3q5TDvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5TDvjYEeeAMaZc_n8Khg" type="_3q5TB_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TD_jYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5TEPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5TEfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="EventDetail" xmi:id="_3q5TEvjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5TE_jYEeeAMaZc_n8Khg">
+      <body>事件明细
+当事件触发次数在min和max之间，则按照当前的规则计算积分
+当max为空表示不限定最大次数
+</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5TH_jYEeeAMaZc_n8Khg" name="event" type="_3q5UJPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TFPjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="min" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5TFfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TFvjYEeeAMaZc_n8Khg">
+        <body>最小参与次数</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="max" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5TF_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TGPjYEeeAMaZc_n8Khg">
+        <body>最大参与次数</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="point" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5TGfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TGvjYEeeAMaZc_n8Khg">
+        <body>积分</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="eventSource" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TG_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5THPjYEeeAMaZc_n8Khg">
+        <body>事件来源（数据来源：数字字典）</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="operatorType" type="_3q5R3_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5THfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5THvjYEeeAMaZc_n8Khg">
+        <body>操作类型（增加、扣减）</body>
+      </ownedComment>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5TFPjYEeeAMaZc_n8Khg _3q5TIPjYEeeAMaZc_n8Khg" xmi:id="_3q5TH_jYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5TH_jYEeeAMaZc_n8Khg" type="_3q5TEvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TIPjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5TIfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5TIvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="BusinessPlan" xmi:id="_3q5TI_jYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TJPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TJfjYEeeAMaZc_n8Khg">
+        <body>编码</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TJvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TJ_jYEeeAMaZc_n8Khg">
+        <body>名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="subject" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TKPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TKfjYEeeAMaZc_n8Khg">
+        <body>计划类型</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="beginDate" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TKvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="endDate" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TK_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="state" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TLPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TLfjYEeeAMaZc_n8Khg">
+        <body>状态</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="progress" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TLvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TL_jYEeeAMaZc_n8Khg">
+        <body>执行进度</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="remark" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TMPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TMfjYEeeAMaZc_n8Khg">
+        <body>备注</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="KpiRule" xmi:id="_3q5TMvjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5TOPjYEeeAMaZc_n8Khg" name="activity" type="_3q5S5PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TM_jYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5TNPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TNfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="kpiType" type="_3q5TcPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TNvjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="target" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5TN_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5TM_jYEeeAMaZc_n8Khg _3q5TOfjYEeeAMaZc_n8Khg" xmi:id="_3q5TOPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5TOPjYEeeAMaZc_n8Khg" type="_3q5TMvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TOfjYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5TOvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="EventHistory" xmi:id="_3q5TO_jYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5TQPjYEeeAMaZc_n8Khg" name="event" type="_3q5UJPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TPPjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="eventId" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TPfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5TPvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="memberId" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TP_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5TPPjYEeeAMaZc_n8Khg _3q5TQfjYEeeAMaZc_n8Khg" xmi:id="_3q5TQPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5TQPjYEeeAMaZc_n8Khg" type="_3q5TO_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TQfjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5TQvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5TQ_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="ExchangeRule" xmi:id="_3q5TRPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5TRfjYEeeAMaZc_n8Khg">
+      <body>兑换规则
+</body>
+    </ownedComment>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TRvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TR_jYEeeAMaZc_n8Khg">
+        <body>名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TSPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TSfjYEeeAMaZc_n8Khg">
+        <body>编码</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TSvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TS_jYEeeAMaZc_n8Khg">
+        <body>描述</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5R0PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TTPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TTfjYEeeAMaZc_n8Khg">
+        <body>状态</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="memberTier" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TTvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TT_jYEeeAMaZc_n8Khg">
+        <body>会员等级</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="appointChannel" type="4b736caa-1ced-4a15-8d34-af275191218f" visibility="public" xmi:id="_3q5TUPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TUfjYEeeAMaZc_n8Khg">
+        <body>是否指定柜台</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="channels" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TUvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TU_jYEeeAMaZc_n8Khg">
+        <body>指定的渠道（多个渠道用逗号隔开）</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="activity" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TVPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TVfjYEeeAMaZc_n8Khg">
+        <body>活动</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="activityFlow" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TVvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TV_jYEeeAMaZc_n8Khg">
+        <body>活动流程</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="KpiResult" xmi:id="_3q5TWPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5TXfjYEeeAMaZc_n8Khg" name="activity" type="_3q5S5PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TWfjYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5TWvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TW_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="result" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5TXPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5TWfjYEeeAMaZc_n8Khg _3q5TXvjYEeeAMaZc_n8Khg" xmi:id="_3q5TXfjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5TXfjYEeeAMaZc_n8Khg" type="_3q5TWPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TXvjYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5TX_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="ActivityType" xmi:id="_3q5TYPjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5TYfjYEeeAMaZc_n8Khg">
+      <body>活动分类</body>
+    </ownedComment>
+    <ownedLiteral name="EVENT" xmi:id="_3q5TYvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TY_jYEeeAMaZc_n8Khg">
+        <body>时间活动</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="POINT" xmi:id="_3q5TZPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TZfjYEeeAMaZc_n8Khg">
+        <body>积分活动</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="EXCHANGE" xmi:id="_3q5TZvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TZ_jYEeeAMaZc_n8Khg">
+        <body>积分兑礼活动</body>
+      </ownedComment>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement name="CyclicalType" xmi:id="_3q5TaPjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5TafjYEeeAMaZc_n8Khg">
+      <body>周期类型</body>
+    </ownedComment>
+    <ownedLiteral name="SINGLE" xmi:id="_3q5TavjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="DAY" xmi:id="_3q5Ta_jYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="WEEK" xmi:id="_3q5TbPjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="MONTH" xmi:id="_3q5TbfjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="YEAR" xmi:id="_3q5TbvjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="ANY" xmi:id="_3q5Tb_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="KpiType" xmi:id="_3q5TcPjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5TcfjYEeeAMaZc_n8Khg">
+      <body>KPI 目标类型</body>
+    </ownedComment>
+    <ownedLiteral name="MEMBER" xmi:id="_3q5TcvjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="ORDER" xmi:id="_3q5Tc_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="OriginMember" xmi:id="_3q5TdPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5TdfjYEeeAMaZc_n8Khg">
+      <body>会员数据原始记录</body>
+    </ownedComment>
+    <ownedAttribute isUnique="false" name="data" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TdvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Td_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5TePjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="OriginOrder" xmi:id="_3q5TefjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5TevjYEeeAMaZc_n8Khg">
+      <body>订单数据原始记录</body>
+    </ownedComment>
+    <ownedAttribute isUnique="false" name="data" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Te_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TfPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5TffjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="OriginPorduct" xmi:id="_3q5TfvjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5Tf_jYEeeAMaZc_n8Khg">
+      <body>商品数据原始记录</body>
+    </ownedComment>
+    <ownedAttribute isUnique="false" name="data" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TgPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TgfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5TgvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="ImportField" xmi:id="_3q5Tg_jYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5ThPjYEeeAMaZc_n8Khg">
+      <body>导入字段</body>
+    </ownedComment>
+    <ownedAttribute isUnique="false" name="target" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5ThfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="source" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5ThvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="fieldType" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Th_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TiPjYEeeAMaZc_n8Khg">
+        <body>字段存储类型</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="notnull" type="4b736caa-1ced-4a15-8d34-af275191218f" visibility="public" xmi:id="_3q5TifjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="basic" type="4b736caa-1ced-4a15-8d34-af275191218f" visibility="public" xmi:id="_3q5TivjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Ti_jYEeeAMaZc_n8Khg">
+        <body>是否基本类型，如果不是则保存在扩展字段里</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TjPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="sourceIndex" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5TjfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TjvjYEeeAMaZc_n8Khg">
+        <body>源数据字段列序列，从0开始</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="MemberImportRule" xmi:id="_3q5Tj_jYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5TkPjYEeeAMaZc_n8Khg">
+      <body>会员数据导入规则</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5TnvjYEeeAMaZc_n8Khg" name="importField" type="_3q5Tg_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TkfjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5TkvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5Tk_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TlPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TlfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5T4PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TlvjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="ruleScript" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Tl_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="source" type="_3q5T5PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TmPjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="fromLine" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5TmfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TmvjYEeeAMaZc_n8Khg">
+        <body>当数据包含头等情况，定义读取数据的起始行数，从0开始</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Tm_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="separator" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TnPjYEeeAMaZc_n8Khg">
+      
+      <defaultValue value="," xmi:id="_3q5TnfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralString"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5TkfjYEeeAMaZc_n8Khg _3q5Tn_jYEeeAMaZc_n8Khg" xmi:id="_3q5TnvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5TnvjYEeeAMaZc_n8Khg" type="_3q5Tj_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Tn_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="OrderImportRule" xmi:id="_3q5ToPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5TofjYEeeAMaZc_n8Khg">
+      <body>会员数据导入规则</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5TrvjYEeeAMaZc_n8Khg" name="importField" type="_3q5Tg_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TovjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5To_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5TpPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TpfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TpvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5T4PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Tp_jYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="ruleScript" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TqPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="source" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TqfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="fromLine" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5TqvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Tq_jYEeeAMaZc_n8Khg">
+        <body>当数据包含头等情况，定义读取数据的起始行数，从0开始</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TrPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="separator" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TrfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5TovjYEeeAMaZc_n8Khg _3q5Tr_jYEeeAMaZc_n8Khg" xmi:id="_3q5TrvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5TrvjYEeeAMaZc_n8Khg" type="_3q5ToPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Tr_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="ProductImportRule" xmi:id="_3q5TsPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5TsfjYEeeAMaZc_n8Khg">
+      <body>会员数据导入规则</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5TvvjYEeeAMaZc_n8Khg" name="importField" type="_3q5Tg_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5TsvjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5Ts_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5TtPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TtfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TtvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5T4PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Tt_jYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="ruleScript" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TuPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="source" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TufjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="fromLine" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5TuvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Tu_jYEeeAMaZc_n8Khg">
+        <body>当数据包含头等情况，定义读取数据的起始行数，从0开始</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TvPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="separator" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TvfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5TsvjYEeeAMaZc_n8Khg _3q5Tv_jYEeeAMaZc_n8Khg" xmi:id="_3q5TvvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5TvvjYEeeAMaZc_n8Khg" type="_3q5TsPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Tv_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="OriginGift" xmi:id="_3q5TwPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute isUnique="false" name="data" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TwfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TwvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5Tw_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="MemberSnapshot" xmi:id="_3q5TxPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute isUnique="false" name="data" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TxfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TxvjYEeeAMaZc_n8Khg">
+        <body>完整的member数据，包括扩展信息等</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Tx_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TyPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="source" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TyfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TyvjYEeeAMaZc_n8Khg">
+        <body>对应原始数据表OriginMember
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="OrderSnapshot" xmi:id="_3q5Ty_jYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute isUnique="false" name="data" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TzPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5TzfjYEeeAMaZc_n8Khg">
+        <body>完整的member数据，包括扩展信息等</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5TzvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Tz_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="source" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5T0PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5T0fjYEeeAMaZc_n8Khg">
+        <body>对应原始数据表OriginMember
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="ProductSnapshot" xmi:id="_3q5T0vjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute isUnique="false" name="data" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5T0_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5T1PjYEeeAMaZc_n8Khg">
+        <body>完整的member数据，包括扩展信息等</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5T1fjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5T1vjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="source" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5T1_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5T2PjYEeeAMaZc_n8Khg">
+        <body>对应原始数据表OriginMember
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="GiftSnapshot" xmi:id="_3q5T2fjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute isUnique="false" name="data" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5T2vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5T2_jYEeeAMaZc_n8Khg">
+        <body>完整的member数据，包括扩展信息等</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5T3PjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5T3fjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="source" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5T3vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5T3_jYEeeAMaZc_n8Khg">
+        <body>对应原始数据表OriginMember
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="ImportRuleStatus" xmi:id="_3q5T4PjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5T4fjYEeeAMaZc_n8Khg">
+      <body>导入规则状态</body>
+    </ownedComment>
+    <ownedLiteral name="ACTIVITY" xmi:id="_3q5T4vjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="INACTIVITY" xmi:id="_3q5T4_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="ImportRuleSource" xmi:id="_3q5T5PjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedComment xmi:id="_3q5T5fjYEeeAMaZc_n8Khg">
+      <body>接入数据来源
+CSV：字段通过字段列序列sourceIndex进行导入
+INTERFACE：字段通过source进行导入</body>
+    </ownedComment>
+    <ownedLiteral name="CSV" xmi:id="_3q5T5vjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="INTERFACE" xmi:id="_3q5T5_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="DataAdapterType" xmi:id="_3q5T6PjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedLiteral name="MEMBER" xmi:id="_3q5T6fjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="ORDER" xmi:id="_3q5T6vjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="PRODUCT" xmi:id="_3q5T6_jYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="GIFT" xmi:id="_3q5T7PjYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="CronTriggers" xmi:id="_3q5T7fjYEeeAMaZc_n8Khg" xmi:type="uml:Class"/>
+  <packagedElement name="JobDetails" xmi:id="_3q5T7vjYEeeAMaZc_n8Khg" xmi:type="uml:Class"/>
+  <packagedElement name="JobResult" xmi:id="_3q5T7_jYEeeAMaZc_n8Khg" xmi:type="uml:Class"/>
+  <packagedElement name="GiftProductInfo" xmi:id="_3q5T8PjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5T8fjYEeeAMaZc_n8Khg">
+      <body>礼品与商品关系表
+一个礼品可以包含一个或者多个商品</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5T9fjYEeeAMaZc_n8Khg" name="gift" type="_3q5Vm_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5T8vjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="product" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5T8_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="quantity" type="362f61fa-7e21-4b7d-935b-5484ad216ea4" visibility="public" xmi:id="_3q5T9PjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5T8vjYEeeAMaZc_n8Khg _3q5T9vjYEeeAMaZc_n8Khg" xmi:id="_3q5T9fjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5T9fjYEeeAMaZc_n8Khg" type="_3q5T8PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5T9vjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5T9_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5T-PjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="GiftType" xmi:id="_3q5T-fjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedLiteral name="ONLINE" xmi:id="_3q5T-vjYEeeAMaZc_n8Khg"/>
+    <ownedLiteral name="PRODUCT" xmi:id="_3q5T-_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="BrandZoneInfo" xmi:id="_3q5T_PjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5UAPjYEeeAMaZc_n8Khg" name="brand" type="_3q5U1PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5T_fjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5T_vjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5T__jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5T_fjYEeeAMaZc_n8Khg _3q5UAfjYEeeAMaZc_n8Khg" xmi:id="_3q5UAPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5UAPjYEeeAMaZc_n8Khg" type="_3q5T_PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UAfjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5UAvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5UA_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="Zone" xmi:id="_3q5UBPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5UBfjYEeeAMaZc_n8Khg">
+      <body>地区和品牌的组合，用于区分数据权限
+一个Zone包含一个地区和多个品牌，相同的地区和品牌的组合不能出现在多个Zone中。
+对于一个Zone下面包含多个品牌的情况下，用户在系统中需要手工切换品牌。
+</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5UFvjYEeeAMaZc_n8Khg" name="region" type="_3q5V1_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UBvjYEeeAMaZc_n8Khg">
+      <lowerValue xmi:id="_3q5UB_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UCPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UCfjYEeeAMaZc_n8Khg">
+        <body>区域编码</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5R0PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UCvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UC_jYEeeAMaZc_n8Khg">
+        <body>状态</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="single" type="4b736caa-1ced-4a15-8d34-af275191218f" visibility="public" xmi:id="_3q5UDPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UDfjYEeeAMaZc_n8Khg">
+        <body>单区域标记
+系统中默认维护一条全局区域记录，这条记录不能修改，可以根据权限进行查询
+true：是单区域
+false：不是单区域，不能修改</body>
+      </ownedComment>
+      
+      <defaultValue value="true" xmi:id="_3q5UDvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralBoolean"/>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UD_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UEPjYEeeAMaZc_n8Khg">
+        <body>摘要</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UEfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UEvjYEeeAMaZc_n8Khg">
+        <body>Zone名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="brands" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UE_jYEeeAMaZc_n8Khg">
+      
+      <upperValue value="*" xmi:id="_3q5UFPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5UFfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5UBvjYEeeAMaZc_n8Khg _3q5UF_jYEeeAMaZc_n8Khg" xmi:id="_3q5UFvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5UFvjYEeeAMaZc_n8Khg" type="_3q5UBPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UF_jYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5UGPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5UGfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="ZoneConfig" xmi:id="_3q5UGvjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5UG_jYEeeAMaZc_n8Khg">
+      <body>区域配置
+区域配置从数据字典中查询</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5UIPjYEeeAMaZc_n8Khg" name="zone" type="_3q5UBPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UHPjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UHfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UHvjYEeeAMaZc_n8Khg">
+        <body>区域配置名称，维护在数据字典里
+cate：Zone
+groupName：ZoneConfig</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="configValue" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UH_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5UHPjYEeeAMaZc_n8Khg _3q5UIfjYEeeAMaZc_n8Khg" xmi:id="_3q5UIPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5UIPjYEeeAMaZc_n8Khg" type="_3q5UGvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UIfjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5UIvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5UI_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="Event" xmi:id="_3q5UJPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UJfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UJvjYEeeAMaZc_n8Khg">
+        <body>事件名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UJ_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UKPjYEeeAMaZc_n8Khg">
+        <body>编码</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UKfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UKvjYEeeAMaZc_n8Khg">
+        <body>描述</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5R0PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UK_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5ULPjYEeeAMaZc_n8Khg">
+        <body>状态</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="memberTier" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5ULfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5ULvjYEeeAMaZc_n8Khg">
+        <body>会员等级</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="pointLimit" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5UL_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UMPjYEeeAMaZc_n8Khg">
+        <body>积分上限</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="activity" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UMfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UMvjYEeeAMaZc_n8Khg">
+        <body>活动</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="activityFlow" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UM_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UNPjYEeeAMaZc_n8Khg">
+        <body>活动流程</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="ExchangeRuleDetail" xmi:id="_3q5UNfjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5UNvjYEeeAMaZc_n8Khg">
+      <body>兑换规则明细
+</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5UQvjYEeeAMaZc_n8Khg" name="exchangeRule" type="_3q5TRPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UN_jYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="point" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5UOPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UOfjYEeeAMaZc_n8Khg">
+        <body>兑换积分</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="gifts" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UOvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UO_jYEeeAMaZc_n8Khg">
+        <body>可兑换的礼品（多个礼品逗号隔开）</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="budget" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UPPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UPfjYEeeAMaZc_n8Khg">
+        <body>礼品库存预算数量</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="number" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UPvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UP_jYEeeAMaZc_n8Khg">
+        <body>允许兑换个数</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="times" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UQPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UQfjYEeeAMaZc_n8Khg">
+        <body>每天可兑换次数</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5UN_jYEeeAMaZc_n8Khg _3q5UQ_jYEeeAMaZc_n8Khg" xmi:id="_3q5UQvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5UQvjYEeeAMaZc_n8Khg" type="_3q5UNfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UQ_jYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5URPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5URfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="ActivityDateType" xmi:id="_3q5URvjYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedLiteral name="TIMEINTERVAL" xmi:id="_3q5UR_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5USPjYEeeAMaZc_n8Khg">
+        <body>时间区间</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="SEASON" xmi:id="_3q5USfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5USvjYEeeAMaZc_n8Khg">
+        <body>季节</body>
+      </ownedComment>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement name="Season" xmi:id="_3q5US_jYEeeAMaZc_n8Khg" xmi:type="uml:Enumeration">
+    <ownedLiteral name="SPRING" xmi:id="_3q5UTPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UTfjYEeeAMaZc_n8Khg">
+        <body>春季</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="SUMMER" xmi:id="_3q5UTvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UT_jYEeeAMaZc_n8Khg">
+        <body>夏季</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="AUTUMN" xmi:id="_3q5UUPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UUfjYEeeAMaZc_n8Khg">
+        <body>秋季</body>
+      </ownedComment>
+    </ownedLiteral>
+    <ownedLiteral name="WINTER" xmi:id="_3q5UUvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UU_jYEeeAMaZc_n8Khg">
+        <body>冬季</body>
+      </ownedComment>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement name="PointRuleHistory" xmi:id="_3q5UVPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UVfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UVvjYEeeAMaZc_n8Khg">
+        <body>积分规则编号</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UV_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UWPjYEeeAMaZc_n8Khg">
+        <body>积分规则名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="ruleStatus" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UWfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UWvjYEeeAMaZc_n8Khg">
+        <body>状态</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UW_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UXPjYEeeAMaZc_n8Khg">
+        <body>描述</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="ruleScript" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UXfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UXvjYEeeAMaZc_n8Khg">
+        <body>执行脚本</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="ruleType" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UX_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UYPjYEeeAMaZc_n8Khg">
+        <body>类型</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="extra" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UYfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UYvjYEeeAMaZc_n8Khg">
+        <body>扩展字段
+
+例如：限定时间区间内多次购买是否可以享受额外上限积分</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="ruleVersion" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UY_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UZPjYEeeAMaZc_n8Khg">
+        <body>积分规则版本</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="startTime" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UZfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UZvjYEeeAMaZc_n8Khg">
+        <body>规则生效时间</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="endTime" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UZ_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UaPjYEeeAMaZc_n8Khg">
+        <body>规则失效时间</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="checked" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UafjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UavjYEeeAMaZc_n8Khg">
+        <body>执行脚本是否已验证</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="businessType" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Ua_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UbPjYEeeAMaZc_n8Khg">
+        <body>业务类型</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="activity" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UbfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UbvjYEeeAMaZc_n8Khg">
+        <body>活动</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="activityFlow" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Ub_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UcPjYEeeAMaZc_n8Khg">
+        <body>活动流程</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="Member" xmi:id="_3q5UcfjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5UcvjYEeeAMaZc_n8Khg">
+      <body>会员数据模型
+需要作为条件查询会员数据的字段必须定义为普通属性</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5UmvjYEeeAMaZc_n8Khg" name="tier" type="_3q5UyPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Uc_jYEeeAMaZc_n8Khg"/>
+    <ownedAttribute aggregation="shared" association="_3q5UnvjYEeeAMaZc_n8Khg" name="tags" type="_3q5UoPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UdPjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5UdfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5UdvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Ud_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UePjYEeeAMaZc_n8Khg">
+        <body>会员编码</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UefjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UevjYEeeAMaZc_n8Khg">
+        <body>会员姓名</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="gender" type="_3q5SMfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Ue_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UfPjYEeeAMaZc_n8Khg">
+        <body>性别</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="birthday" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UffjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UfvjYEeeAMaZc_n8Khg">
+        <body>出生日期</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="registerTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5Uf_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UgPjYEeeAMaZc_n8Khg">
+        <body>注册时间</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="phone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UgfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UgvjYEeeAMaZc_n8Khg">
+        <body>手机号，需要完整的区号信息</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="idCardNo" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Ug_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UhPjYEeeAMaZc_n8Khg">
+        <body>身份证号码</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="city" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UhfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UhvjYEeeAMaZc_n8Khg">
+        <body>所在城市</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="tagInfos" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Uh_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UiPjYEeeAMaZc_n8Khg">
+        <body>标签信息
+通过标签计算得到的标签信息以Map的形式保存在Member记录里</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="profiles" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UifjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UivjYEeeAMaZc_n8Khg">
+        <body>会员身份信息</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="registerChannel" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Ui_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UjPjYEeeAMaZc_n8Khg">
+        <body>注册渠道</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="email" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UjfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UjvjYEeeAMaZc_n8Khg">
+        <body>电子邮箱</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5SW_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Uj_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UkPjYEeeAMaZc_n8Khg">
+        <body>状态</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UkfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UkvjYEeeAMaZc_n8Khg">
+        <body>zone id</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="allProducts" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Uk_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UlPjYEeeAMaZc_n8Khg">
+        <body>所有购买的商品，格式如下：
+商品code ： 数量</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="products" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UlfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UlvjYEeeAMaZc_n8Khg">
+        <body>当前有效期购买的商品，格式如下：
+商品code ： 数量</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="pointInfos" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Ul_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UmPjYEeeAMaZc_n8Khg">
+        <body>会员积分信息，包含：
+ACTIVE_POINTS：当期活动积分
+WILL_EXPIRE_POINTS：当期即将过期积分
+EXPIRED_POINTS：总过期积分
+TOTAL_POINTS：总得到积分
+LIMIT_POINTS：当期积分上限（包含会员等级积分上限和特殊商品积分上限）
+USABLE_POINTS：当期已用积分
+BIRTHDAY_POINT_DATE：上一次生日积分时间</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="tierExpiryTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5UmfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5Uc_jYEeeAMaZc_n8Khg _3q5Um_jYEeeAMaZc_n8Khg" xmi:id="_3q5UmvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5UmvjYEeeAMaZc_n8Khg" type="_3q5UcfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Um_jYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5UnPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5UnfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5UdPjYEeeAMaZc_n8Khg _3q5Un_jYEeeAMaZc_n8Khg" xmi:id="_3q5UnvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5UnvjYEeeAMaZc_n8Khg" type="_3q5UcfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Un_jYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="Tag" xmi:id="_3q5UoPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5UofjYEeeAMaZc_n8Khg">
+      <body>会员标签</body>
+    </ownedComment>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UovjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Uo_jYEeeAMaZc_n8Khg">
+        <body>标签名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="ruleScript" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UpPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UpfjYEeeAMaZc_n8Khg">
+        <body>规则脚本</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UpvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Up_jYEeeAMaZc_n8Khg">
+        <body>摘要</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="tagType" type="_3q4qtPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UqPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UqfjYEeeAMaZc_n8Khg">
+        <body>标签类型</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UqvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Uq_jYEeeAMaZc_n8Khg">
+        <body>区域</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5R0PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UrPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UrfjYEeeAMaZc_n8Khg">
+        <body>标签状态</body>
+      </ownedComment>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="PointRecord" xmi:id="_3q5UrvjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5Ur_jYEeeAMaZc_n8Khg">
+      <body>积分记录</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5UwPjYEeeAMaZc_n8Khg" name="member" type="_3q5UcfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UsPjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute aggregation="shared" association="_3q5UxPjYEeeAMaZc_n8Khg" name="pointRule" type="_3q5VAfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UsfjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="source" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UsvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Us_jYEeeAMaZc_n8Khg">
+        <body>积分来源</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="points" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5UtPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5UtfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="expiryTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5UtvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Ut_jYEeeAMaZc_n8Khg">
+        <body>失效时间</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="originalPoint" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5UuPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="orderItemCode" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UufjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UuvjYEeeAMaZc_n8Khg">
+        <body>订单条目id
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="pointType" type="_3q5RyfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Uu_jYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="floatPoints" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5UvPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="sourceType" type="_3q5S4fjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UvfjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UvvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Uv_jYEeeAMaZc_n8Khg">
+        <body>&lt;Enter note text here&gt;</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5UsPjYEeeAMaZc_n8Khg _3q5UwfjYEeeAMaZc_n8Khg" xmi:id="_3q5UwPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5UwPjYEeeAMaZc_n8Khg" type="_3q5UrvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UwfjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5UwvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5Uw_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5UsfjYEeeAMaZc_n8Khg _3q5UxfjYEeeAMaZc_n8Khg" xmi:id="_3q5UxPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5UxPjYEeeAMaZc_n8Khg" type="_3q5UrvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UxfjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5UxvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5Ux_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="Tier" xmi:id="_3q5UyPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5UyfjYEeeAMaZc_n8Khg">
+      <body>会员等级</body>
+    </ownedComment>
+    <ownedAttribute name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UyvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Uy_jYEeeAMaZc_n8Khg">
+        <body>&lt;Enter note text here&gt;</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5UzPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5UzfjYEeeAMaZc_n8Khg">
+        <body>等级名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5R0PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5UzvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Uz_jYEeeAMaZc_n8Khg">
+        <body>状态</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U0PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5U0fjYEeeAMaZc_n8Khg">
+        <body>摘要</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U0vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5U0_jYEeeAMaZc_n8Khg">
+        <body>zone id</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="Brand" xmi:id="_3q5U1PjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5U1fjYEeeAMaZc_n8Khg">
+      <body>品牌</body>
+    </ownedComment>
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U1vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5U1_jYEeeAMaZc_n8Khg">
+        <body>品牌编码</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U2PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5U2fjYEeeAMaZc_n8Khg">
+        <body>品牌名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U2vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5U2_jYEeeAMaZc_n8Khg">
+        <body>摘要</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5R0PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5U3PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5U3fjYEeeAMaZc_n8Khg">
+        <body>状态</body>
+      </ownedComment>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="Channel" xmi:id="_3q5U3vjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5U3_jYEeeAMaZc_n8Khg">
+      <body>渠道</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5U8vjYEeeAMaZc_n8Khg" name="channelGroup" type="_3q5SnPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5U4PjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U4fjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5U4vjYEeeAMaZc_n8Khg">
+        <body>渠道代码</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U4_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5U5PjYEeeAMaZc_n8Khg">
+        <body>渠道名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="channelType" type="_3q5RwfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5U5fjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5U5vjYEeeAMaZc_n8Khg">
+        <body>渠道类型</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U5_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5U6PjYEeeAMaZc_n8Khg">
+        <body>zone id</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U6fjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5U6vjYEeeAMaZc_n8Khg">
+        <body>摘要</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="storeCode" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U6_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="storeName" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U7PjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="market" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U7fjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="adminCity" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U7vjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="manager" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U7_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="supervisor" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U8PjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="url" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U8fjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5U4PjYEeeAMaZc_n8Khg _3q5U8_jYEeeAMaZc_n8Khg" xmi:id="_3q5U8vjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5U8vjYEeeAMaZc_n8Khg" type="_3q5U3vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5U8_jYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5U9PjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5U9fjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="OrderItem" xmi:id="_3q5U9vjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5U_fjYEeeAMaZc_n8Khg" name="order" type="_3q5SwfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5U9_jYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="amount" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5U-PjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="price" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5U-fjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="quantity" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5U-vjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="extra" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5U-_jYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="product" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5U_PjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5U9_jYEeeAMaZc_n8Khg _3q5U_vjYEeeAMaZc_n8Khg" xmi:id="_3q5U_fjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5U_fjYEeeAMaZc_n8Khg" type="_3q5U9vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5U_vjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5U__jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5VAPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="PointRule" xmi:id="_3q5VAfjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5VAvjYEeeAMaZc_n8Khg">
+      <body>积分规则</body>
+    </ownedComment>
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VA_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VBPjYEeeAMaZc_n8Khg">
+        <body>积分规则编号</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VBfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VBvjYEeeAMaZc_n8Khg">
+        <body>积分规则名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="ruleStatus" type="_3q5R0PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VB_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VCPjYEeeAMaZc_n8Khg">
+        <body>状态</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VCfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VCvjYEeeAMaZc_n8Khg">
+        <body>描述</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="ruleScript" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VC_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VDPjYEeeAMaZc_n8Khg">
+        <body>执行脚本</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="ruleType" type="_3q5S2_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VDfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VDvjYEeeAMaZc_n8Khg">
+        <body>类型</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="extra" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VD_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VEPjYEeeAMaZc_n8Khg">
+        <body>扩展字段
+
+例如：限定时间区间内多次购买是否可以享受额外上限积分</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="ruleVersion" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VEfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VEvjYEeeAMaZc_n8Khg">
+        <body>积分规则版本</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="startTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5VE_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VFPjYEeeAMaZc_n8Khg">
+        <body>规则生效时间</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="endTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5VFfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VFvjYEeeAMaZc_n8Khg">
+        <body>规则失效时间</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="checked" type="4b736caa-1ced-4a15-8d34-af275191218f" visibility="public" xmi:id="_3q5VF_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VGPjYEeeAMaZc_n8Khg">
+        <body>执行脚本是否已验证</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="activity" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VGfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VGvjYEeeAMaZc_n8Khg">
+        <body>活动</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="activityFlow" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VG_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VHPjYEeeAMaZc_n8Khg">
+        <body>活动流程</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="TierRule" xmi:id="_3q5VHfjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5VKvjYEeeAMaZc_n8Khg" name="zone" type="_3q5UBPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VHvjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute aggregation="shared" association="_3q5VLvjYEeeAMaZc_n8Khg" name="tier" type="_3q5UyPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VH_jYEeeAMaZc_n8Khg"/>
+    <ownedAttribute name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VIPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VIfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="threshold" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5VIvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VI_jYEeeAMaZc_n8Khg">
+        <body>金额门槛
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="multiple" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5VJPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VJfjYEeeAMaZc_n8Khg">
+        <body>积分倍数
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="products" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VJvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VJ_jYEeeAMaZc_n8Khg">
+        <body>特殊等级需要购买指定产品</body>
+      </ownedComment>
+      
+      <upperValue value="*" xmi:id="_3q5VKPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5VKfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5VHvjYEeeAMaZc_n8Khg _3q5VK_jYEeeAMaZc_n8Khg" xmi:id="_3q5VKvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5VKvjYEeeAMaZc_n8Khg" type="_3q5VHfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VK_jYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5VLPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5VLfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5VH_jYEeeAMaZc_n8Khg _3q5VL_jYEeeAMaZc_n8Khg" xmi:id="_3q5VLvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5VLvjYEeeAMaZc_n8Khg" type="_3q5VHfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VL_jYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5VMPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5VMfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="CheckinInfo" xmi:id="_3q5VMvjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5VM_jYEeeAMaZc_n8Khg">
+      <body>签到记录</body>
+    </ownedComment>
+    <ownedAttribute isUnique="false" name="member" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VNPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VNfjYEeeAMaZc_n8Khg">
+        <body>会员id</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="lastTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5VNvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VN_jYEeeAMaZc_n8Khg">
+        <body>最后一次签到时间</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="continuous" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5VOPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VOfjYEeeAMaZc_n8Khg">
+        <body>连续签到次数</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="totalTimes" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5VOvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VO_jYEeeAMaZc_n8Khg">
+        <body>总共签到次数</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="Dict" xmi:id="_3q5VPPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5VPfjYEeeAMaZc_n8Khg">
+      <body>数据字典，包含以下内容
+区域配置项
+运算符
+货币
+汇率
+</body>
+    </ownedComment>
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VPvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="cate" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VP_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VQPjYEeeAMaZc_n8Khg">
+        <body>数据分类
+数据大类，全大写字母加下划线分割，比如ZONE，PRODUCT，ORDER，SYSTEM等</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="data" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VQfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="groupName" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VQvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VQ_jYEeeAMaZc_n8Khg">
+        <body>数据分组
+全大写字母加下划线，比如：
+汇率设置：USD_RMB
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5R0PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VRPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VRfjYEeeAMaZc_n8Khg">
+        <body>状态</body>
+      </ownedComment>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="User" xmi:id="_3q5VRvjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5VVPjYEeeAMaZc_n8Khg" name="role" type="_3q5VWvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VR_jYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5VSPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5VSfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute aggregation="shared" association="_3q5VWPjYEeeAMaZc_n8Khg" name="userInfo" type="_3q5VcvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VSvjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="login" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VS_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="realname" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VTPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="password" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VTfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="email" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VTvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="phone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VT_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VUPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="langKey" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VUfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="imageUrl" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VUvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="timezone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VU_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5VR_jYEeeAMaZc_n8Khg _3q5VVfjYEeeAMaZc_n8Khg" xmi:id="_3q5VVPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5VVPjYEeeAMaZc_n8Khg" type="_3q5VRvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VVfjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5VVvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5VV_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5VSvjYEeeAMaZc_n8Khg _3q5VWfjYEeeAMaZc_n8Khg" xmi:id="_3q5VWPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5VWPjYEeeAMaZc_n8Khg" type="_3q5VRvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VWfjYEeeAMaZc_n8Khg"/>
+  </packagedElement>
+  <packagedElement name="Role" xmi:id="_3q5VWvjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5VZfjYEeeAMaZc_n8Khg" name="auth" type="_3q5VbfjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VW_jYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5VXPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5VXfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedAttribute>
+    <ownedAttribute aggregation="shared" association="_3q5VafjYEeeAMaZc_n8Khg" name="zone" type="_3q5UBPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VXvjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5VX_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VYPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="roleType" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VYfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VYvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VY_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="superRole" type="4b736caa-1ced-4a15-8d34-af275191218f" visibility="public" xmi:id="_3q5VZPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5VW_jYEeeAMaZc_n8Khg _3q5VZvjYEeeAMaZc_n8Khg" xmi:id="_3q5VZfjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5VZfjYEeeAMaZc_n8Khg" type="_3q5VWvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VZvjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5VZ_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5VaPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5VXvjYEeeAMaZc_n8Khg _3q5VavjYEeeAMaZc_n8Khg" xmi:id="_3q5VafjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5VafjYEeeAMaZc_n8Khg" type="_3q5VWvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VavjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5Va_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5VbPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="Auth" xmi:id="_3q5VbfjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VbvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="category" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5Vb_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VcPjYEeeAMaZc_n8Khg">
+        <body>权限分类
+通过权限分类决定该权限是否支持单个zone，多个zone，super和app
+通过按位与计算</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VcfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="UserInfo" xmi:id="_3q5VcvjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute isUnique="false" name="company" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Vc_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="education" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VdPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="position" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VdfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="GiftStockHistory" xmi:id="_3q5VdvjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5Vd_jYEeeAMaZc_n8Khg">
+      <body>礼品库存记录</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5VgvjYEeeAMaZc_n8Khg" name="gift" type="_3q5Vm_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VePjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="operateType" type="_3q5R3_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VefjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VevjYEeeAMaZc_n8Khg">
+        <body>操作类型</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="quantity" type="362f61fa-7e21-4b7d-935b-5484ad216ea4" visibility="public" xmi:id="_3q5Ve_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VfPjYEeeAMaZc_n8Khg">
+        <body>数量
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="stockQuantity" type="362f61fa-7e21-4b7d-935b-5484ad216ea4" visibility="public" xmi:id="_3q5VffjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VfvjYEeeAMaZc_n8Khg">
+        <body>库存</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="CreateUser" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Vf_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="CreateTime" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VgPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="exchangeRecord" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VgfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5VePjYEeeAMaZc_n8Khg _3q5Vg_jYEeeAMaZc_n8Khg" xmi:id="_3q5VgvjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5VgvjYEeeAMaZc_n8Khg" type="_3q5VdvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Vg_jYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5VhPjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5VhfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="GiftExchangeRecord" xmi:id="_3q5VhvjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5Vh_jYEeeAMaZc_n8Khg">
+      <body>礼品兑换表</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5Vl_jYEeeAMaZc_n8Khg" name="gift" type="_3q5Vm_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5ViPjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="activity" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VifjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VivjYEeeAMaZc_n8Khg">
+        <body>参与的活动</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="member" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Vi_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VjPjYEeeAMaZc_n8Khg">
+        <body>会员</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="quantity" type="362f61fa-7e21-4b7d-935b-5484ad216ea4" visibility="public" xmi:id="_3q5VjfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VjvjYEeeAMaZc_n8Khg">
+        <body>数量</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Vj_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VkPjYEeeAMaZc_n8Khg">
+        <body>创建时间</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="point" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5VkfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VkvjYEeeAMaZc_n8Khg">
+        <body>兑换积分</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="channel" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Vk_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VlPjYEeeAMaZc_n8Khg">
+        <body>渠道</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createUser" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VlfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VlvjYEeeAMaZc_n8Khg">
+        <body>创建人
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5ViPjYEeeAMaZc_n8Khg _3q5VmPjYEeeAMaZc_n8Khg" xmi:id="_3q5Vl_jYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5Vl_jYEeeAMaZc_n8Khg" type="_3q5VhvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VmPjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5VmfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5VmvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="Gift" xmi:id="_3q5Vm_jYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedAttribute aggregation="shared" association="_3q5VvPjYEeeAMaZc_n8Khg" name="brand" type="_3q5U1PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VnPjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VnfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VnvjYEeeAMaZc_n8Khg">
+        <body>名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Vn_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VoPjYEeeAMaZc_n8Khg">
+        <body>描述</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5R0PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VofjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VovjYEeeAMaZc_n8Khg">
+        <body>状态</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="picUrl" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Vo_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VpPjYEeeAMaZc_n8Khg">
+        <body>礼品图片</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VpfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VpvjYEeeAMaZc_n8Khg">
+        <body>编号</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="zone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Vp_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VqPjYEeeAMaZc_n8Khg">
+        <body>区域管理</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="quantity" type="362f61fa-7e21-4b7d-935b-5484ad216ea4" visibility="public" xmi:id="_3q5VqfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VqvjYEeeAMaZc_n8Khg">
+        <body>库存数量</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="sourceType" type="_3q5R5vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Vq_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VrPjYEeeAMaZc_n8Khg">
+        <body>来源</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createUser" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VrfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VrvjYEeeAMaZc_n8Khg">
+        <body>创建人</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5Vr_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VsPjYEeeAMaZc_n8Khg">
+        <body>创建时间</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="updateUser" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VsfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VsvjYEeeAMaZc_n8Khg">
+        <body>更新人</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="updateTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5Vs_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VtPjYEeeAMaZc_n8Khg">
+        <body>更新时间</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="batch" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VtfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VtvjYEeeAMaZc_n8Khg">
+        <body>批次</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="extra" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Vt_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VuPjYEeeAMaZc_n8Khg">
+        <body>扩展字段</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="giftType" type="_3q5T-fjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VufjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="productInfos" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VuvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5Vu_jYEeeAMaZc_n8Khg">
+        <body>礼品包含的产品信息
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5VnPjYEeeAMaZc_n8Khg _3q5VvfjYEeeAMaZc_n8Khg" xmi:id="_3q5VvPjYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5VvPjYEeeAMaZc_n8Khg" type="_3q5Vm_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VvfjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5VvvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5Vv_jYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="GiftDeliveryRecord" xmi:id="_3q5VwPjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5VwfjYEeeAMaZc_n8Khg">
+      <body>礼品发货记录</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5V0_jYEeeAMaZc_n8Khg" name="exchangeRecord" type="_3q5VhvjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5VwvjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="deliveryTarget" type="_3q5R4_jYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5Vw_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VxPjYEeeAMaZc_n8Khg">
+        <body>发货对象</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="channel" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VxfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VxvjYEeeAMaZc_n8Khg">
+        <body>渠道</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="memeber" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Vx_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VyPjYEeeAMaZc_n8Khg">
+        <body>会员</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="quantity" type="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" visibility="public" xmi:id="_3q5VyfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VyvjYEeeAMaZc_n8Khg">
+        <body>数量</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="createTime" type="3c0b0e64-f921-4ae0-af1e-ac61634ec968" visibility="public" xmi:id="_3q5Vy_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VzPjYEeeAMaZc_n8Khg">
+        <body>创建时间</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="userName" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5VzfjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5VzvjYEeeAMaZc_n8Khg">
+        <body>收货人姓名</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="mobile" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5Vz_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V0PjYEeeAMaZc_n8Khg">
+        <body>收货人电话</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="address" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V0fjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V0vjYEeeAMaZc_n8Khg">
+        <body>收货地址</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5VwvjYEeeAMaZc_n8Khg _3q5V1PjYEeeAMaZc_n8Khg" xmi:id="_3q5V0_jYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5V0_jYEeeAMaZc_n8Khg" type="_3q5VwPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5V1PjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5V1fjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5V1vjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement name="Region" xmi:id="_3q5V1_jYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5V2PjYEeeAMaZc_n8Khg">
+      <body>地区</body>
+    </ownedComment>
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V2fjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V2vjYEeeAMaZc_n8Khg">
+        <body>地区编码</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V2_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V3PjYEeeAMaZc_n8Khg">
+        <body>地区名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="timeZone" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V3fjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V3vjYEeeAMaZc_n8Khg">
+        <body>时区
+采用标准格式如：
+中国是东8区记为 GMT+08:00
+美国东部是西5区记为 GMT-05:00</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="currency" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V3_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V4PjYEeeAMaZc_n8Khg">
+        <body>货币</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="language" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V4fjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V4vjYEeeAMaZc_n8Khg">
+        <body>默认语言，在数据字典中维护
+cate：System
+groupName：Language</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V4_jYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V5PjYEeeAMaZc_n8Khg">
+        <body>摘要</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="areaCode" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V5fjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V5vjYEeeAMaZc_n8Khg">
+        <body>电话区号，例如中国的区号格式为 +86 </body>
+      </ownedComment>
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="RuleScript" xmi:id="_3q5V5_jYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5V6PjYEeeAMaZc_n8Khg">
+      <body>规则脚本
+</body>
+    </ownedComment>
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V6fjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V6vjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="scriptType" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V6_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="script" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V7PjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V7fjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="version" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V7vjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="history" type="4b736caa-1ced-4a15-8d34-af275191218f" visibility="public" xmi:id="_3q5V7_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement name="Product" xmi:id="_3q5V8PjYEeeAMaZc_n8Khg" xmi:type="uml:Class">
+    <ownedComment xmi:id="_3q5V8fjYEeeAMaZc_n8Khg">
+      <body>商品</body>
+    </ownedComment>
+    <ownedAttribute aggregation="shared" association="_3q5WC_jYEeeAMaZc_n8Khg" name="brand" type="_3q5U1PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5V8vjYEeeAMaZc_n8Khg"/>
+    <ownedAttribute aggregation="shared" association="_3q5WD_jYEeeAMaZc_n8Khg" name="zone" type="_3q5UBPjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5V8_jYEeeAMaZc_n8Khg"/>
+    <ownedAttribute isUnique="false" name="code" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V9PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V9fjYEeeAMaZc_n8Khg">
+        <body>产品编号</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="productType" type="_3q5R2PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5V9vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V9_jYEeeAMaZc_n8Khg">
+        <body>产品类别</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="status" type="_3q5R0PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5V-PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V-fjYEeeAMaZc_n8Khg">
+        <body>状态</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="productLine" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V-vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V-_jYEeeAMaZc_n8Khg">
+        <body>产品线</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="productForm" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V_PjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V_fjYEeeAMaZc_n8Khg">
+        <body>产品系列</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="productGroup" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5V_vjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5V__jYEeeAMaZc_n8Khg">
+        <body>产品组</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="barCode" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5WAPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5WAfjYEeeAMaZc_n8Khg">
+        <body>条码-sku码
+</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="name" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5WAvjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5WA_jYEeeAMaZc_n8Khg">
+        <body>默认名称</body>
+      </ownedComment>
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="extra" type="_3q5R1vjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5WBPjYEeeAMaZc_n8Khg">
+      <ownedComment xmi:id="_3q5WBfjYEeeAMaZc_n8Khg">
+        <body>扩展字段
+包含 外部编码 externalCode、外部编码来源 externalSourceType(天猫)、</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="summary" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5WBvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="picUrl" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5WB_jYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="currency" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5WCPjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="price" type="2f3247f8-1439-4e2d-a5b2-e4477248971d" visibility="public" xmi:id="_3q5WCfjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+    <ownedAttribute isUnique="false" name="sourceType" type="e5b874fb-45d0-4a95-9f29-6e6098515e66" visibility="public" xmi:id="_3q5WCvjYEeeAMaZc_n8Khg">
+      
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5V8vjYEeeAMaZc_n8Khg _3q5WDPjYEeeAMaZc_n8Khg" xmi:id="_3q5WC_jYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5WC_jYEeeAMaZc_n8Khg" type="_3q5V8PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5WDPjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5WDfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5WDvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement memberEnd="_3q5V8_jYEeeAMaZc_n8Khg _3q5WEPjYEeeAMaZc_n8Khg" xmi:id="_3q5WD_jYEeeAMaZc_n8Khg" xmi:type="uml:Association">
+    <ownedEnd association="_3q5WD_jYEeeAMaZc_n8Khg" type="_3q5V8PjYEeeAMaZc_n8Khg" visibility="public" xmi:id="_3q5WEPjYEeeAMaZc_n8Khg">
+      <upperValue value="*" xmi:id="_3q5WEfjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralUnlimitedNatural"/>
+      <lowerValue xmi:id="_3q5WEvjYEeeAMaZc_n8Khg" xmi:type="uml:LiteralInteger"/>
+    </ownedEnd>
+  </packagedElement>
+<packagedElement name="String" xmi:id="e5b874fb-45d0-4a95-9f29-6e6098515e66" xmi:type="uml:PrimitiveType"/>
+<packagedElement name="Date" xmi:id="3c0b0e64-f921-4ae0-af1e-ac61634ec968" xmi:type="uml:PrimitiveType"/>
+<packagedElement name="Integer" xmi:id="362f61fa-7e21-4b7d-935b-5484ad216ea4" xmi:type="uml:PrimitiveType"/>
+<packagedElement name="Long" xmi:id="0ba9a9f0-54ee-4b78-9245-3b2be32d1daa" xmi:type="uml:PrimitiveType"/>
+<packagedElement name="Double" xmi:id="2f3247f8-1439-4e2d-a5b2-e4477248971d" xmi:type="uml:PrimitiveType"/>
+<packagedElement name="Boolean" xmi:id="4b736caa-1ced-4a15-8d34-af275191218f" xmi:type="uml:PrimitiveType"/>
+</uml:Model>
