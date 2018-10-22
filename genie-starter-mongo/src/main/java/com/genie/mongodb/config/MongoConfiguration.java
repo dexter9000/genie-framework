@@ -25,7 +25,6 @@ import org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper;
 import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
 import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,7 +78,7 @@ public class MongoConfiguration {
 
     @Bean
     @Primary
-    public MongoDbFactory dbFactory() throws UnknownHostException {
+    public MongoDbFactory dbFactory() {
         return new SimpleMongoDbFactory(new MongoClientURI(""));
     }
 
@@ -89,6 +88,25 @@ public class MongoConfiguration {
         return new MongoTemplate(this.dbFactory(), this.mappingMongoConverter());
     }
 
+//
+//    /**
+//     * * 功能描述: 覆盖默认的MongoDbFactory
+//     */
+//    @Bean
+//    MultiTenantMongoDbFactory mongoDbFactory(MongoClientOptions options, Environment environment) {
+//        MongoClientFactory factory = new MongoClientFactory(mongoProperties, environment);
+//        MongoClient mongo = factory.createMongoClient(options);
+//        MultiTenantMongoDbFactory mongoDbFactory = new MultiTenantMongoDbFactory(mongo, "pvQC_dev");
+//        return mongoDbFactory;
+//    }
+//
+//    /**
+//     * * 功能描述: Create MongoTemplate
+//     */
+//    @Bean
+//    public MongoTemplate shardMongoTemplate(MongoClientOptions options, Environment environment) {
+//        return new MongoTemplate(mongoDbFactory(options, environment));
+//    }
 
     @Bean
     public Mongobee mongobee(MongoClient mongoClient, MongoTemplate mongoTemplate, MongoProperties mongoProperties) {

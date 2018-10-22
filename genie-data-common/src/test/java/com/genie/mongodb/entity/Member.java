@@ -1,8 +1,13 @@
-package com.genie.core.entity;
+package com.genie.mongodb.entity;
 
+import com.genie.data.annotation.ShardingId;
+import com.genie.data.annotation.ShardingTable;
+
+@ShardingTable("member")
 public class Member {
 
     private String id;
+    @ShardingId
     private String city;
     private String area;
     private String name;

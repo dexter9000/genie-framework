@@ -1,7 +1,10 @@
-package com.genie.core.shard.annotation;
+package com.genie.data.annotation;
 
 import java.lang.annotation.*;
 
+/**
+ * 分片表标记
+ */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented

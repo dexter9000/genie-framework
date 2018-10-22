@@ -2,9 +2,7 @@ package com.genie.core.properties;
 
 public class RibbonProperties {
 
-//    private Map<String, Integer>
-
-
+    // TODO
     public static class UrlConfig {
         private String url;
 

@@ -3,12 +3,13 @@ package com.genie.mongodb.repository.support;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.query.QueryByExampleExecutor;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface ShardMongoRepository<T, ID, SHARD> extends QueryByExampleExecutor<T>  {
+public interface ShardMongoRepository<T, ID, SHARD> extends MongoRepository<T, ID>, QueryByExampleExecutor<T>  {
 
     <S extends T> S save(S entity);
 

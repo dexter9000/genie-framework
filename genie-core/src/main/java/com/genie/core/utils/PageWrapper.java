@@ -2,9 +2,6 @@ package com.genie.core.utils;
 
 import org.springframework.data.domain.Pageable;
 
-/**
- * Created by sherry on 2017/5/27.
- */
 public class PageWrapper {
 
     private Pageable pageable;

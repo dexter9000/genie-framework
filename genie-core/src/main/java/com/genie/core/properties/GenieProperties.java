@@ -834,6 +834,7 @@ public class GenieProperties {
 
     public static class Locale {
         private String[] basenames;
+        private String[] languages;
 
         public String[] getBasenames() {
             return basenames;
@@ -841,6 +842,14 @@ public class GenieProperties {
 
         public void setBasenames(String[] basenames) {
             this.basenames = basenames;
+        }
+
+        public String[] getLanguages() {
+            return languages;
+        }
+
+        public void setLanguages(String[] languages) {
+            this.languages = languages;
         }
     }
 

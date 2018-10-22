@@ -14,6 +14,9 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
+import org.springframework.data.elasticsearch.core.query.SearchQuery;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
@@ -26,7 +29,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SimpleRepositoryTest {
 
     private TaskHistorySimpleReporistory repository;
-    private static ElasticSearchOperations elasticSearchOperations;
+    private static ElasticsearchTemplate elasticSearchOperations;
 
     private static ElasticSearchProperties elasticSearchProperties;
     private static EmbedSearchServer server;
@@ -38,7 +41,7 @@ public class SimpleRepositoryTest {
         server = new EmbedSearchServer();
         server.start();
         client = server.getClient();
-        elasticSearchOperations = ESTestUtil.createElasticSearchOperations(client);
+        elasticSearchOperations = ESTestUtil.createElasticsearchTemplate(client);
     }
 
     @AfterClass
@@ -50,7 +53,7 @@ public class SimpleRepositoryTest {
     public void setup()  {
         repository = new TaskHistorySimpleReporistory(elasticSearchOperations);
         try {
-            elasticSearchOperations.removeIndex("task_history_");
+            elasticSearchOperations.deleteIndex("task_history_");
         } catch (IndexNotFoundException e) {
             //
         }
@@ -66,7 +69,9 @@ public class SimpleRepositoryTest {
 
         Thread.sleep(3000);
         QueryBuilder queryBuilder = QueryBuilders.termQuery("campaignId", "camp_005");
-        long size = elasticSearchOperations.count("task_history_", TaskHistory.class.getSimpleName(), queryBuilder);
+
+        SearchQuery searchQuery = new NativeSearchQuery(queryBuilder);
+        long size = elasticSearchOperations.count(searchQuery);
         assertThat(size).isEqualTo(1);
     }
 
@@ -80,7 +85,8 @@ public class SimpleRepositoryTest {
         Thread.sleep(2000);
 
         QueryBuilder queryBuilder = QueryBuilders.termQuery("campaignId", "camp_002");
-        long size = elasticSearchOperations.count("task_history_", TaskHistory.class.getSimpleName(), queryBuilder);
+        SearchQuery searchQuery = new NativeSearchQuery(queryBuilder);
+        long size = elasticSearchOperations.count(searchQuery);
         assertThat(size).isEqualTo(100);
     }
 
@@ -95,7 +101,9 @@ public class SimpleRepositoryTest {
 
         Thread.sleep(5000);
         QueryBuilder queryBuilder = QueryBuilders.termQuery("campaignId", "camp_001");
-        long size = elasticSearchOperations.count("task_history_camp_001", TaskHistory.class.getSimpleName(), queryBuilder);
+        SearchQuery searchQuery = new NativeSearchQuery(queryBuilder);
+
+        long size = elasticSearchOperations.count(searchQuery);
 
         assertThat(size).isEqualTo(100);
     }

@@ -1,6 +1,6 @@
 package com.genie.mongodb.repository.support;
 
-import com.genie.mongodb.annotation.ShardId;
+import com.genie.data.annotation.ShardingId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.*;
@@ -352,16 +352,17 @@ public class SimpleShardMongoRepository<T, ID, SHARD> implements ShardMongoRepos
     }
 
     private String getCollectionName(String shardId){
-        return entityInformation.getCollectionName() + shardId;
+        // TODO 增加模板格式
+        return (shardId == null) ?  entityInformation.getCollectionName() :  entityInformation.getCollectionName() + shardId;
     }
 
     private <S extends T> String getCollectionName(S entity){
         for (Field field : entity.getClass().getDeclaredFields()) {
-            ShardId id = field.getAnnotation(ShardId.class);
+            ShardingId id = field.getAnnotation(ShardingId.class);
             if (id != null) {
                 try {
                     field.setAccessible(true);
-                    String indexName = entityInformation.getCollectionName() + field.get(entity);
+                    String indexName = getCollectionName(field.get(entity).toString());
                     field.setAccessible(false);
                     return indexName;
                 } catch (IllegalAccessException e) {
@@ -375,5 +376,50 @@ public class SimpleShardMongoRepository<T, ID, SHARD> implements ShardMongoRepos
 
     private SHARD getShard(){
         return null;
+    }
+
+    @Override
+    public List<T> findAll() {
+        return null;
+    }
+
+    @Override
+    public List<T> findAll(Sort sort) {
+        return null;
+    }
+
+    @Override
+    public Page<T> findAll(Pageable pageable) {
+        return null;
+    }
+
+    @Override
+    public Optional<T> findById(ID id) {
+        return Optional.empty();
+    }
+
+    @Override
+    public boolean existsById(ID id) {
+        return false;
+    }
+
+    @Override
+    public Iterable<T> findAllById(Iterable<ID> ids) {
+        return null;
+    }
+
+    @Override
+    public long count() {
+        return 0;
+    }
+
+    @Override
+    public void deleteById(ID id) {
+
+    }
+
+    @Override
+    public void deleteAll() {
+
     }
 }

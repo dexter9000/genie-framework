@@ -8,6 +8,7 @@ import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
+import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -36,6 +37,10 @@ public class ESTestUtil {
 
     public static ElasticSearchOperations createElasticSearchOperations(Client client) throws UnknownHostException {
         return new ElasticSearchOperations(client);
+    }
+
+    public static ElasticsearchTemplate createElasticsearchTemplate(Client client) throws UnknownHostException {
+        return new ElasticsearchTemplate(client);
     }
 
     public static ElasticSearchOperations createElasticSearchOperations(ElasticSearchProperties elasticSearchProperties) throws UnknownHostException {

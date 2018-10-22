@@ -31,7 +31,7 @@ public class MongoConfig {
      * @param environment TODO: 待完善 断点跟踪Spring框架传参进来是null
      */
     public MongoConfig(MongoProperties properties, ObjectProvider<MongoClientOptions> options, Environment environment) {
-        this.options = (MongoClientOptions) options.getIfAvailable();
+        this.options = options.getIfAvailable();
         this.factory = new MongoClientFactory(properties, environment);
     }
 

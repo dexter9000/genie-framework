@@ -29,11 +29,6 @@ public class ModelProcessor extends AbstractProcessor {
     String outPath = ModelProcessor.class.getResource("/").getPath() + "../generated-sources/annotations";
 
     @Override
-    public synchronized void init(ProcessingEnvironment processingEnv) {
-        super.init(processingEnv);
-    }
-
-    @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnvironment) {
 
         if (!roundEnvironment.processingOver()) {
@@ -113,7 +108,10 @@ public class ModelProcessor extends AbstractProcessor {
 
     private void createGetMethodSpec(TypeSpec.Builder builder, String fieldName, Type filterType){
         String code = "return this.$N;\n";
-        MethodSpec getMethod = MethodSpec.methodBuilder("get"+ fieldName.toUpperCase())
+        String getMethodName = (new StringBuilder()).append("get")
+            .append(Character.toUpperCase(fieldName.charAt(0)))
+            .append(fieldName.substring(1)).toString();
+        MethodSpec getMethod = MethodSpec.methodBuilder(getMethodName)
             .addModifiers(Modifier.PUBLIC)
             .returns(filterType)
             .addCode(code, fieldName)
