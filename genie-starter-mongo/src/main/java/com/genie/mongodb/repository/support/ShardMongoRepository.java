@@ -9,33 +9,33 @@ import org.springframework.data.repository.query.QueryByExampleExecutor;
 import java.util.List;
 import java.util.Optional;
 
-public interface ShardMongoRepository<T, ID, SHARD> extends MongoRepository<T, ID>, QueryByExampleExecutor<T>  {
+public interface ShardMongoRepository<T, ID> extends MongoRepository<T, ID>, QueryByExampleExecutor<T>  {
 
     <S extends T> S save(S entity);
 
     <S extends T> List<S> saveAll(Iterable<S> entities);
 
-    Optional<T> findById(ID id, SHARD shard);
+    Optional<T> findById(ID id, String shard);
 
-    boolean existsById(ID id, SHARD shard);
+    boolean existsById(ID id, String shard);
 
-    long count(SHARD shard);
+    long count(String shard);
 
-    void deleteById(ID id, SHARD shard);
+    void deleteById(ID id, String shard);
 
     void delete(T entity);
 
     void deleteAll(Iterable<? extends T> entities);
 
-    void deleteAll(SHARD shard);
+    void deleteAll(String shard);
 
-    List<T> findAll(SHARD shard);
+    List<T> findAll(String shard);
 
-    Iterable<T> findAllById(Iterable<ID> ids, SHARD shard);
+    Iterable<T> findAllById(Iterable<ID> ids, String shard);
 
-    Page<T> findAll(SHARD shard, Pageable pageable);
+    Page<T> findAll(String shard, Pageable pageable);
 
-    List<T> findAll(SHARD shard, Sort sort);
+    List<T> findAll(String shard, Sort sort);
 
     <S extends T> S insert(S entity);
 
