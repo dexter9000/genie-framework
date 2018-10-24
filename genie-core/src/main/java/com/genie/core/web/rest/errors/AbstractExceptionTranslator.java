@@ -1,6 +1,7 @@
 package com.genie.core.web.rest.errors;
 
 import com.genie.core.exception.ServiceException;
+import com.genie.core.properties.GenieProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
@@ -31,9 +32,11 @@ public abstract class AbstractExceptionTranslator {
     private final Logger log = LoggerFactory.getLogger(AbstractExceptionTranslator.class);
 
     private final MessageSource messageSource;
+    private final GenieProperties properties;
 
-    protected AbstractExceptionTranslator(MessageSource messageSource) {
+    protected AbstractExceptionTranslator(MessageSource messageSource, GenieProperties properties) {
         this.messageSource = messageSource;
+        this.properties = properties;
     }
 
     @ExceptionHandler(ConcurrencyFailureException.class)
@@ -45,28 +48,6 @@ public abstract class AbstractExceptionTranslator {
         log.error("ConcurrencyFailureException[" + error.getErrorId() + "] : " + ex.getMessage(), ex);
         return error;
     }
-
-//    @ExceptionHandler(MethodArgumentNotValidException.class)
-//    @ResponseStatus(HttpStatus.BAD_REQUEST)
-//    @ResponseBody
-//    public ErrorVM processValidationError(HttpServletRequest request, MethodArgumentNotValidException ex) {
-//        BindingResult result = ex.getBindingResult();
-//        List<FieldError> fieldErrors = result.getFieldErrors();
-//
-//        ErrorVM error = new ErrorVM(ErrorConstants.ERR_VALIDATION, localTranslate(request.getLocale(), ErrorConstants.ERR_VALIDATION));
-//        for (FieldError fieldError : fieldErrors) {
-//            FieldErrorVM field = new FieldErrorVM(
-//                fieldError.getObjectName(),
-//                fieldError.getField(),
-//                fieldError.getCode(),
-//                fieldError.getArguments(),
-//                fieldError.getDefaultMessage()
-//            );
-//            error.add(field);
-//        }
-//        log.error("MethodArgumentNotValidException[" + error.getErrorId() + "] : " + ex.getMessage(), ex);
-//        return error;
-//    }
 
     /**
      * 处理参数校验异常，多个字段错误转换成错误数组
@@ -80,16 +61,32 @@ public abstract class AbstractExceptionTranslator {
     public ErrorVM processValidationError(HttpServletRequest request, MethodArgumentNotValidException ex) {
         BindingResult result = ex.getBindingResult();
         List<FieldError> fieldErrors = result.getFieldErrors();
+        ErrorVM error;
+        if(properties.getError().isFieldError()){
+            // 包含字段完整说明
+            error = new ErrorVM(ErrorConstants.ERR_VALIDATION, localTranslate(request.getLocale(), ErrorConstants.ERR_VALIDATION));
+            for (FieldError fieldError : fieldErrors) {
+                FieldErrorVM field = new FieldErrorVM(
+                    fieldError.getObjectName(),
+                    fieldError.getField(),
+                    fieldError.getCode(),
+                    fieldError.getArguments(),
+                    localTranslate(request.getLocale(), fieldError.getDefaultMessage())
+                );
+                error.add(field);
+            }
+        }else{
+            // 简单字段校验提醒，按照顺序
+            List<String> messages = new ArrayList<>();
+            List<String> descriptions = new ArrayList<>();
 
-        List<String> messages = new ArrayList<>();
-        List<String> descriptions = new ArrayList<>();
-
-        for (FieldError fieldError : fieldErrors) {
-            messages.add(fieldError.getField() + "." + fieldError.getCode());
-            descriptions.add(fieldError.getDefaultMessage());
+            for (FieldError fieldError : fieldErrors) {
+                messages.add(fieldError.getField() + "." + fieldError.getCode());
+                descriptions.add(localTranslate(request.getLocale(), fieldError.getDefaultMessage()));
+            }
+            error = new ErrorVM(messages, descriptions, "", null);
         }
-        ErrorVM error = new ErrorVM(messages, descriptions, "", null);
-        log.error("MethodArgumentNotValidException[" + error.getErrorId() + "] : " + ex.getMessage(), ex);
+        log.warn("MethodArgumentNotValidException[" + error.getErrorId() + "] : " + ex.getMessage(), ex);
         return error;
     }
 

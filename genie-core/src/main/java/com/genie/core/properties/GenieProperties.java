@@ -46,6 +46,8 @@ public class GenieProperties {
 
     private final Multipart multipart = new Multipart();
 
+    private final Error error = new Error();
+
     private final LoggingAspect loggingAspect = new LoggingAspect();
 
     public LoggingAspect getLoggingAspect() {
@@ -106,6 +108,10 @@ public class GenieProperties {
 
     public Multipart getMultipart() {
         return multipart;
+    }
+
+    public Error getError() {
+        return error;
     }
 
     public static class Async {
@@ -900,6 +906,19 @@ public class GenieProperties {
 
         public void setRunType(String runType) {
             this.runType = runType;
+        }
+    }
+
+    public static class Error {
+
+        private boolean fieldError = false;
+
+        public boolean isFieldError() {
+            return fieldError;
+        }
+
+        public void setFieldError(boolean fieldError) {
+            this.fieldError = fieldError;
         }
     }
 }
