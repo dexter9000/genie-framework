@@ -16,17 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Entry point of the 'GenerateClass' generation module.
+ * 基于MTL文件生成代码和文档
  *
  * @generated
  */
 public class Generator extends AbstractAcceleoGenerator {
-    /**
-     * The name of the module.
-     *
-     * @generated
-     */
-    public static final String MODULE_FILE_NAME = "/mtl/generateClass.mtl";
 
     /**
      * The name of the templates that are to be generated.
@@ -42,7 +36,7 @@ public class Generator extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    private List<String> propertiesFiles = new ArrayList<String>();
+    private List<String> propertiesFiles = new ArrayList<>();
 
     /**
      * Allows the public constructor to be used. Note that a generator created

@@ -99,6 +99,11 @@
 
         <dependency>
             <groupId>org.eclipse.uml2</groupId>
+            <artifactId>org.eclipse.uml2.common</artifactId>
+            <version>2.0.1.v20140910-1354</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.uml2</groupId>
             <artifactId>org.eclipse.uml2.uml</artifactId>
             <version>5.0.1.v20140910-1354</version>
         </dependency>
@@ -106,6 +111,12 @@
             <groupId>org.eclipse.uml2</groupId>
             <artifactId>org.eclipse.uml2.types</artifactId>
             <version>2.0.0.v20140910-1354</version>
+        </dependency>
+
+        <dependency>
+            <groupId>lpg.runtime.java</groupId>
+            <artifactId>lpg.runtime.java</artifactId>
+            <version>2.0.17.v201004271640</version>
         </dependency>
 
         <dependency>
@@ -123,7 +134,11 @@
             <artifactId>org.eclipse.acceleo.engine</artifactId>
             <version>${acceleo.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.eclipse.acceleo</groupId>
+            <artifactId>org.eclipse.acceleo.parser</artifactId>
+            <version>${acceleo.version}</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
