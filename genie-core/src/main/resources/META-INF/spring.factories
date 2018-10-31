@@ -1,3 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.genie.core.config.LoggingAspectConfiguration,\
-com.genie.core.config.apidoc.SwaggerAutoConfiguration
+com.genie.core.config.apidoc.SwaggerAutoConfiguration,\
+com.genie.core.config.apidoc.SwaggerPluginsAutoConfiguration

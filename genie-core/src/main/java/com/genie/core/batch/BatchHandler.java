@@ -60,6 +60,7 @@ public abstract class BatchHandler<T> {
     }
 
     /**
+     *
      * @param queue
      */
     public void drainToConsume(BatchQueue<T> queue) {
@@ -79,8 +80,8 @@ public abstract class BatchHandler<T> {
 
     /**
      * 数据处理方法
-     *
-     * @param drained
+     * @param key 批量数据的key
+     * @param drained 数据集
      */
     public abstract void doProcess(String key, List<T> drained);
 
