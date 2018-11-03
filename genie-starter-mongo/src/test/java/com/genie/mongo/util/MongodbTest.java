@@ -38,6 +38,11 @@ public class MongodbTest {
     }
 
     @Test
+    public void find(){
+//        template.find
+    }
+
+    @Test
     public void testBulk(){
         BulkOperations bulkOps = template.bulkOps(BulkOperations.BulkMode.UNORDERED, "test");
 

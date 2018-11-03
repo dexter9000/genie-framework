@@ -60,9 +60,9 @@ public class SimpleShardMongoRepository<T, ID> implements ShardMongoRepository<T
 
         if (entityInformation.isNew(entity)) {
             entity = UUIDGenerator.generate(entity);
-            mongoOperations.insert(entity, getCollectionName(entity));
+            mongoOperations.insert(UUIDGenerator.generate(entity), getCollectionName(entity));
         } else {
-            mongoOperations.save(entity, getCollectionName(entity));
+            mongoOperations.save(UUIDGenerator.generate(entity), getCollectionName(entity));
         }
 
         return entity;
