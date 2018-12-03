@@ -6,7 +6,6 @@ import lombok.ToString;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 
-//@Document(collection = "Fact")
 @ToString
 public class Fact implements Serializable {
 
@@ -16,19 +15,30 @@ public class Fact implements Serializable {
      */
 //    @Id
     private String id;
-//    @Field("campaignId")
-    private String campaignId;
-//    @Field("taskId")
+    /**
+     * 流程进程ID
+     */
+    private String processId;
+    /**
+     * 当前TaskId
+     */
     private String taskId;
-//    @Field("batchCode")
     private String batchCode;
-//    @Field("metaId")
+    /**
+     * 元数据ID，用于识别流数据
+     */
     private String metaId;
-//    @Field("metadata")
+    /**
+     * 扩展字段，JSON形式保存
+     */
     private String metadata;
-//    @Field("timestamp")
+    /**
+     * 时间戳
+     */
     private transient ZonedDateTime timestamp;
-//    @Field("status")
+    /**
+     * 状态
+     */
     private FactStatus status;
 
     public String getId() {
@@ -39,12 +49,12 @@ public class Fact implements Serializable {
         this.id = id;
     }
 
-    public String getCampaignId() {
-        return campaignId;
+    public String getProcessId() {
+        return processId;
     }
 
-    public void setCampaignId(String campaignId) {
-        this.campaignId = campaignId;
+    public void setProcessId(String processId) {
+        this.processId = processId;
     }
 
     public String getTaskId() {

@@ -1,7 +1,6 @@
 package com.genie.mongodb.repository.support;
 
 import com.genie.data.UUIDGenerator;
-import com.genie.data.annotation.ShardingId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.*;
@@ -16,7 +15,6 @@ import org.springframework.data.util.Streamable;
 import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;
 
-import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -60,9 +58,9 @@ public class SimpleShardMongoRepository<T, ID> implements ShardMongoRepository<T
 
         if (entityInformation.isNew(entity)) {
             entity = UUIDGenerator.generate(entity);
-            mongoOperations.insert(UUIDGenerator.generate(entity), getCollectionName(entity));
+            mongoOperations.insert(UUIDGenerator.generate(entity), getCollectionName(ShardUtil.getShard(entity)));
         } else {
-            mongoOperations.save(UUIDGenerator.generate(entity), getCollectionName(entity));
+            mongoOperations.save(UUIDGenerator.generate(entity), getCollectionName(ShardUtil.getShard(entity)));
         }
 
         return entity;
@@ -85,7 +83,7 @@ public class SimpleShardMongoRepository<T, ID> implements ShardMongoRepository<T
             List<S> result = source.stream()
                 .map(entity -> UUIDGenerator.generate(entity))
                 .collect(Collectors.toList());
-            mongoOperations.insert(result, getCollectionName(result.get(0)));
+            mongoOperations.insert(result, getCollectionName(ShardUtil.getShard(result.get(0))));
             return result;
 
         } else {
@@ -150,7 +148,7 @@ public class SimpleShardMongoRepository<T, ID> implements ShardMongoRepository<T
 
         Assert.notNull(entity, "The given entity must not be null!");
 
-        deleteById(entityInformation.getRequiredId(entity), getShard(entity));
+        deleteById(entityInformation.getRequiredId(entity), ShardUtil.getShard(entity));
     }
 
     /*
@@ -230,7 +228,7 @@ public class SimpleShardMongoRepository<T, ID> implements ShardMongoRepository<T
 
         Assert.notNull(entity, "Entity must not be null!");
 
-        mongoOperations.insert(UUIDGenerator.generate(entity), getCollectionName(entity));
+        mongoOperations.insert(UUIDGenerator.generate(entity), getCollectionName(ShardUtil.getShard(entity)));
         return entity;
     }
 
@@ -266,7 +264,7 @@ public class SimpleShardMongoRepository<T, ID> implements ShardMongoRepository<T
         Assert.notNull(pageable, "Pageable must not be null!");
 
         Query q = new Query(new Criteria().alike(example)).with(pageable);
-        String collectionName = getCollectionName(example.getProbe());
+        String collectionName = getCollectionName(ShardUtil.getShard(example.getProbe()));
         List<S> list = mongoOperations.find(q, example.getProbeType(), collectionName);
 
         return PageableExecutionUtils.getPage(list, pageable,
@@ -285,7 +283,7 @@ public class SimpleShardMongoRepository<T, ID> implements ShardMongoRepository<T
 
         Query q = new Query(new Criteria().alike(example)).with(sort);
 
-        return mongoOperations.find(q, example.getProbeType(), getCollectionName(example.getProbe()));
+        return mongoOperations.find(q, example.getProbeType(), getCollectionName(ShardUtil.getShard(example.getProbe())));
     }
 
     /*
@@ -308,7 +306,7 @@ public class SimpleShardMongoRepository<T, ID> implements ShardMongoRepository<T
 
         Query q = new Query(new Criteria().alike(example));
         return Optional
-            .ofNullable(mongoOperations.findOne(q, example.getProbeType(), getCollectionName(example.getProbe())));
+            .ofNullable(mongoOperations.findOne(q, example.getProbeType(), getCollectionName(ShardUtil.getShard(example.getProbe()))));
     }
 
     /*
@@ -321,7 +319,7 @@ public class SimpleShardMongoRepository<T, ID> implements ShardMongoRepository<T
         Assert.notNull(example, "Sample must not be null!");
 
         Query q = new Query(new Criteria().alike(example));
-        return mongoOperations.count(q, example.getProbeType(), getCollectionName(example.getProbe()));
+        return mongoOperations.count(q, example.getProbeType(), getCollectionName(ShardUtil.getShard(example.getProbe())));
     }
 
     /*
@@ -357,28 +355,6 @@ public class SimpleShardMongoRepository<T, ID> implements ShardMongoRepository<T
     private String getCollectionName(String shardId) {
         // TODO 增加模板格式
         return (shardId == null) ? entityInformation.getCollectionName() : entityInformation.getCollectionName() + shardId;
-    }
-
-    private <S extends T> String getCollectionName(S entity) {
-        return getCollectionName(getShard(entity));
-    }
-
-    private String getShard(T entity) {
-        for (Field field : entity.getClass().getDeclaredFields()) {
-            ShardingId id = field.getAnnotation(ShardingId.class);
-            if (id != null) {
-                try {
-                    field.setAccessible(true);
-                    String shardValue = field.get(entity).toString();
-                    field.setAccessible(false);
-                    return shardValue;
-                } catch (IllegalAccessException e) {
-                    // TODO
-                    log.error("error", e);
-                }
-            }
-        }
-        return "";
     }
 
     @Override

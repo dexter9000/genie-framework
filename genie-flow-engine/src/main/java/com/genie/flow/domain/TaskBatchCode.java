@@ -2,14 +2,12 @@ package com.genie.flow.domain;
 
 import lombok.ToString;
 
-//@Document(collection = "TaskBatchCode")
 @ToString
 public class TaskBatchCode {
 
     /**
      * 取Task Id
      */
-//    @Id
     private String id;
 
     private String batchCode;

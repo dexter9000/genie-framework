@@ -19,7 +19,7 @@ public abstract class BatchHandler<T> {
 
     protected int batchSize;        // 批量大小
     protected int flushTime;        // 队列超时时间
-    protected int breakTime = 100;  // 延时时间，防止
+    protected int breakTime = 100;  // 延时时间，防止频繁占用CPU
     protected int threadTimeout;    // 线程超时时间，当到达该时间切队列为空，则删除线程
     protected AtomicBoolean isLooping = new AtomicBoolean(false);
     protected BatchQueueMap<T> queueMap;

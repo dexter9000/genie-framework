@@ -5,14 +5,11 @@ import lombok.ToString;
 /**
  * 任务执行历史
  */
-//@Document(collection = "TaskHistory")
-//@ShardingTable(Constants.ES_FACT_INDEX_PREFIX)
 @ToString
 public class TaskHistory {
 
     private String factId;
     private String taskId;
-//    @ShardingId
     private String campaignId;
     private String metaId;
     private String result;

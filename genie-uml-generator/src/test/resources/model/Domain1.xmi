@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="__Zsg8NwbEeiLyrrI6Wo21A" name="Domain">
+  <eAnnotations xmi:id="__Zsg8dwbEeiLyrrI6Wo21A" source="Objing">
+    <contents xmi:type="uml:Property" xmi:id="__Zsg8twbEeiLyrrI6Wo21A" name="exporterVersion">
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="__Zsg89wbEeiLyrrI6Wo21A" value="3.0.0"/>
+    </contents>
+  </eAnnotations>
+  <packagedElement xmi:type="uml:Class" xmi:id="__Zsg9NwbEeiLyrrI6Wo21A" name="DataStrategy">
+    <ownedAttribute xmi:id="__Zsg9dwbEeiLyrrI6Wo21A" name="fields" visibility="public" type="__ZshDdwbEeiLyrrI6Wo21A" aggregation="shared" association="__ZshBNwbEeiLyrrI6Wo21A">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__Zsg9twbEeiLyrrI6Wo21A" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__Zsg99wbEeiLyrrI6Wo21A"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__Zsg-NwbEeiLyrrI6Wo21A" name="category" visibility="public" type="__ZshBtwbEeiLyrrI6Wo21A" isUnique="false"/>
+    <ownedAttribute xmi:id="__Zsg-dwbEeiLyrrI6Wo21A" name="sourceType" visibility="public" isUnique="false">
+      <ownedComment xmi:id="__Zsg-twbEeiLyrrI6Wo21A">
+        <body>数据来源类型，标识数据源，比如官网，微信等</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__Zsg-9wbEeiLyrrI6Wo21A" name="tenant" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__Zsg_NwbEeiLyrrI6Wo21A" name="verify" visibility="public" isUnique="false">
+      <ownedComment xmi:id="__Zsg_dwbEeiLyrrI6Wo21A">
+        <body>是否校验字段</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__Zsg_twbEeiLyrrI6Wo21A" name="mapping" visibility="public" isUnique="false">
+      <ownedComment xmi:id="__Zsg_9wbEeiLyrrI6Wo21A">
+        <body>是否映射字段</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__ZshANwbEeiLyrrI6Wo21A" name="targets" visibility="public" isUnique="false">
+      <ownedComment xmi:id="__ZshAdwbEeiLyrrI6Wo21A">
+        <body>目标系统，可以有多个目标系统，会根据该字段决定写入对应的MQ
+</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__ZshAtwbEeiLyrrI6Wo21A" name="type" visibility="public" type="__ZshI9wbEeiLyrrI6Wo21A" isUnique="false"/>
+    <ownedAttribute xmi:id="__ZshA9wbEeiLyrrI6Wo21A" name="zone" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="__ZshBNwbEeiLyrrI6Wo21A" memberEnd="__Zsg9dwbEeiLyrrI6Wo21A __ZshBdwbEeiLyrrI6Wo21A">
+    <ownedEnd xmi:id="__ZshBdwbEeiLyrrI6Wo21A" visibility="public" type="__Zsg9NwbEeiLyrrI6Wo21A" association="__ZshBNwbEeiLyrrI6Wo21A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="__ZshBtwbEeiLyrrI6Wo21A" name="DataCategory">
+    <ownedComment xmi:id="__ZshB9wbEeiLyrrI6Wo21A">
+      <body>&lt;Enter note text here></body>
+    </ownedComment>
+    <ownedLiteral xmi:id="__ZshCNwbEeiLyrrI6Wo21A" name="MEMBER"/>
+    <ownedLiteral xmi:id="__ZshCdwbEeiLyrrI6Wo21A" name="PRODUCT"/>
+    <ownedLiteral xmi:id="__ZshCtwbEeiLyrrI6Wo21A" name="TAG"/>
+    <ownedLiteral xmi:id="__ZshC9wbEeiLyrrI6Wo21A" name="ACTION"/>
+    <ownedLiteral xmi:id="__ZshDNwbEeiLyrrI6Wo21A" name="TRANSACTION"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="__ZshDdwbEeiLyrrI6Wo21A" name="DataField">
+    <ownedAttribute xmi:id="__ZshDtwbEeiLyrrI6Wo21A" name="fieldname" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__ZshD9wbEeiLyrrI6Wo21A" name="dataType" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__ZshENwbEeiLyrrI6Wo21A" name="summary" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__ZshEdwbEeiLyrrI6Wo21A" name="format" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__ZshEtwbEeiLyrrI6Wo21A" name="require" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__ZshE9wbEeiLyrrI6Wo21A" name="length" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__ZshFNwbEeiLyrrI6Wo21A" name="min" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__ZshFdwbEeiLyrrI6Wo21A" name="regex" visibility="public" isUnique="false">
+      <ownedComment xmi:id="__ZshFtwbEeiLyrrI6Wo21A">
+        <body>&lt;Enter note text here></body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__ZshF9wbEeiLyrrI6Wo21A" name="sourceName" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="__ZshGNwbEeiLyrrI6Wo21A" name="CauseType">
+    <ownedLiteral xmi:id="__ZshGdwbEeiLyrrI6Wo21A" name="REGISTRY"/>
+    <ownedLiteral xmi:id="__ZshGtwbEeiLyrrI6Wo21A" name="UPDATE"/>
+    <ownedLiteral xmi:id="__ZshG9wbEeiLyrrI6Wo21A" name="BUY"/>
+    <ownedLiteral xmi:id="__ZshHNwbEeiLyrrI6Wo21A" name="IMPORT"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="__ZshHdwbEeiLyrrI6Wo21A" name="DataType">
+    <ownedLiteral xmi:id="__ZshHtwbEeiLyrrI6Wo21A" name="STRING"/>
+    <ownedLiteral xmi:id="__ZshH9wbEeiLyrrI6Wo21A" name="INTEGER"/>
+    <ownedLiteral xmi:id="__ZshINwbEeiLyrrI6Wo21A" name="DATE"/>
+    <ownedLiteral xmi:id="__ZshIdwbEeiLyrrI6Wo21A" name="BOOL"/>
+    <ownedLiteral xmi:id="__ZshItwbEeiLyrrI6Wo21A" name="DOUBLE"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="__ZshI9wbEeiLyrrI6Wo21A" name="DataStrategyType">
+    <ownedLiteral xmi:id="__ZshJNwbEeiLyrrI6Wo21A" name="TEMPLATE"/>
+    <ownedLiteral xmi:id="__ZshJdwbEeiLyrrI6Wo21A" name="INSTANCE"/>
+  </packagedElement>
+</uml:Model>

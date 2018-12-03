@@ -16,6 +16,10 @@ public class AppInitUtil {
 
     private static final Logger log = LoggerFactory.getLogger(AppInitUtil.class);
 
+    /**
+     * 检查并打印启动模式
+     * @param env
+     */
     public static void checkProfiles(Environment env){
         Collection<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
         if (activeProfiles.contains(BaseConstants.SPRING_PROFILE_DEVELOPMENT)
@@ -30,6 +34,11 @@ public class AppInitUtil {
         }
     }
 
+    /**
+     * 打印应用信息，在服务启动时打印ip，端口，启动模式等信息
+     * @param env
+     * @throws UnknownHostException
+     */
     public static void printAppInfo(Environment env) throws UnknownHostException {
         String protocol = "http";
         if (env.getProperty("server.ssl.key-store") != null) {

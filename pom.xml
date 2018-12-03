@@ -205,17 +205,18 @@
         <module>genie-starter-elasticsearch</module>
         <module>genie-starter-jpa</module>
         <module>genie-starter-mongo</module>
-        <module>genie-starter-metrics</module>
-        <module>genie-starter-schedule</module>
+        <!--<module>genie-starter-metrics</module>-->
+        <!--<module>genie-starter-schedule</module>-->
         <module>genie-flow-engine</module>
 
-        <!--<module>genie-service-includes</module>-->
         <module>genie-service-dependencies</module>
         <!--<module>genie-service-parent</module>-->
         <!--<module>genie-module-dependencies</module>-->
         <!--<module>genie-module-parent</module>-->
         <!--<module>genie-data-modelgen</module>-->
-        <module>genie-uml-generator</module>
+        <!--<module>genie-uml-generator</module>-->
+        <!--<module>genie-starter-excel</module>-->
+        <module>genie-code-generator</module>
     </modules>
 
 </project>

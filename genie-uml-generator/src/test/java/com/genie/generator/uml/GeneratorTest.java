@@ -14,21 +14,25 @@ public class GeneratorTest {
     @Test
     public void test() throws IOException {
 
+        String targetXmi = "/model/domain.xmi";
         String path = Generator.class.getResource("/").getPath();
         System.out.println(path + "generate");
 
-        XmiFileFormat.generate(path + "/model/source.xmi",
-            path + "/model/domain.xmi",null);
+        System.out.println("generate xmi...");
+        XmiFileFormat.generate(path + "/model/Domain1.xmi",
+            path + targetXmi,null);
 
+        System.out.println("compiler mtl to emtl...");
         AcceleoStandaloneCompiler compiler = new AcceleoStandaloneCompiler();
         compiler.execute(path + "/mtl", path + "/mtl");
 
-        URI modelURI = URI.createFileURI(path + "/model/domain.xmi");
+        URI modelURI = URI.createFileURI(path + targetXmi);
 
         File folder = new File(path + "generate");
 
         List<String> arguments = new ArrayList<>();
 
+        System.out.println("generate code...");
         Generator generator = new Generator(modelURI, folder, arguments, "/mtl/generateClass.mtl");
 
         generator.doGenerate(new BasicMonitor());

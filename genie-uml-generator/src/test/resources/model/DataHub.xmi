@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_ZcjugNtvEeivhaxRtJ3vdQ" name="DataHub Domain">
+  <eAnnotations xmi:id="_ZcjugdtvEeivhaxRtJ3vdQ" source="Objing">
+    <contents xmi:type="uml:Property" xmi:id="_ZcjugttvEeivhaxRtJ3vdQ" name="exporterVersion">
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_Zcjug9tvEeivhaxRtJ3vdQ" value="3.0.0"/>
+    </contents>
+  </eAnnotations>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZcjuhNtvEeivhaxRtJ3vdQ" name="DataChannel">
+    <ownedComment xmi:id="_ZcjuhdtvEeivhaxRtJ3vdQ">
+      <body>数据渠道信息，记录渠道连接的账号等信息。</body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_ZcjuhttvEeivhaxRtJ3vdQ" name="label" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Zcjuh9tvEeivhaxRtJ3vdQ" name="type" visibility="public" type="_Zcjuj9tvEeivhaxRtJ3vdQ" isUnique="false"/>
+    <ownedAttribute xmi:id="_ZcjuiNtvEeivhaxRtJ3vdQ" name="account" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_ZcjuidtvEeivhaxRtJ3vdQ">
+        <body>账号</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjuittvEeivhaxRtJ3vdQ" name="password" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_Zcjui9tvEeivhaxRtJ3vdQ">
+        <body>密码</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjujNtvEeivhaxRtJ3vdQ" name="url" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjujdtvEeivhaxRtJ3vdQ" name="summary" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_ZcjujttvEeivhaxRtJ3vdQ">
+        <body>摘要信息</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_Zcjuj9tvEeivhaxRtJ3vdQ" name="DataChannelType">
+    <ownedLiteral xmi:id="_ZcjukNtvEeivhaxRtJ3vdQ" name="API"/>
+    <ownedLiteral xmi:id="_ZcjukdtvEeivhaxRtJ3vdQ" name="MQ"/>
+    <ownedLiteral xmi:id="_ZcjukttvEeivhaxRtJ3vdQ" name="SFTP"/>
+    <ownedLiteral xmi:id="_Zcjuk9tvEeivhaxRtJ3vdQ" name="BLOB"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZcjulNtvEeivhaxRtJ3vdQ" name="OrigionData">
+    <ownedComment xmi:id="_ZcjuldtvEeivhaxRtJ3vdQ">
+      <body>临时存储的原始记录</body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_ZcjulttvEeivhaxRtJ3vdQ" name="tenant" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Zcjul9tvEeivhaxRtJ3vdQ" name="category" visibility="public" type="_ZcjuyttvEeivhaxRtJ3vdQ" isUnique="false"/>
+    <ownedAttribute xmi:id="_ZcjumNtvEeivhaxRtJ3vdQ" name="content" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjumdtvEeivhaxRtJ3vdQ" name="createTime" visibility="public" type="_Zcju0dtvEeivhaxRtJ3vdQ" isUnique="false"/>
+    <ownedAttribute xmi:id="_ZcjumttvEeivhaxRtJ3vdQ" name="createType" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_Zcjum9tvEeivhaxRtJ3vdQ">
+        <body>&lt;Enter note text here></body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjunNtvEeivhaxRtJ3vdQ" name="source" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_ZcjundtvEeivhaxRtJ3vdQ">
+        <body>数据来源</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjunttvEeivhaxRtJ3vdQ" name="strategy" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_Zcjun9tvEeivhaxRtJ3vdQ">
+        <body>接入策略ID</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZcjuoNtvEeivhaxRtJ3vdQ" name="OrgionDataBackup">
+    <ownedAttribute xmi:id="_ZcjuodtvEeivhaxRtJ3vdQ" name="tenant" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjuottvEeivhaxRtJ3vdQ" name="category" visibility="public" type="_ZcjuyttvEeivhaxRtJ3vdQ" isUnique="false"/>
+    <ownedAttribute xmi:id="_Zcjuo9tvEeivhaxRtJ3vdQ" name="strategy" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjupNtvEeivhaxRtJ3vdQ" name="createTime" visibility="public" type="_Zcju0dtvEeivhaxRtJ3vdQ" isUnique="false"/>
+    <ownedAttribute xmi:id="_ZcjupdtvEeivhaxRtJ3vdQ" name="path" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjupttvEeivhaxRtJ3vdQ" name="md5" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Zcjup9tvEeivhaxRtJ3vdQ" name="DataExportStrategy">
+    <ownedAttribute xmi:id="_ZcjuqNtvEeivhaxRtJ3vdQ" name="id" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjuqdtvEeivhaxRtJ3vdQ" name="tenant" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_ZcjuqttvEeivhaxRtJ3vdQ">
+        <body>租户</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Zcjuq9tvEeivhaxRtJ3vdQ" name="category" visibility="public" type="_ZcjuyttvEeivhaxRtJ3vdQ" isUnique="false">
+      <ownedComment xmi:id="_ZcjurNtvEeivhaxRtJ3vdQ">
+        <body>数据分类</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjurdtvEeivhaxRtJ3vdQ" name="formatType" visibility="public" type="_ZcjuxttvEeivhaxRtJ3vdQ" isUnique="false">
+      <ownedComment xmi:id="_ZcjurttvEeivhaxRtJ3vdQ">
+        <body>数据格式类型</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Zcjur9tvEeivhaxRtJ3vdQ" name="dataChannel" visibility="public" type="_Zcjuj9tvEeivhaxRtJ3vdQ" isUnique="false">
+      <ownedComment xmi:id="_ZcjusNtvEeivhaxRtJ3vdQ">
+        <body>数据介质类型</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjusdtvEeivhaxRtJ3vdQ" name="namePatten" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_ZcjusttvEeivhaxRtJ3vdQ">
+        <body>文件命名模板</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Zcjus9tvEeivhaxRtJ3vdQ" name="channel" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_ZcjutNtvEeivhaxRtJ3vdQ">
+        <body>来源渠道id</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZcjutdtvEeivhaxRtJ3vdQ" name="DataImportStrategy">
+    <ownedComment xmi:id="_ZcjutttvEeivhaxRtJ3vdQ">
+      <body>数据接入策略，用于接入服务判断执行策略</body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_Zcjut9tvEeivhaxRtJ3vdQ" name="id" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjuuNtvEeivhaxRtJ3vdQ" name="tenant" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_ZcjuudtvEeivhaxRtJ3vdQ">
+        <body>租户</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjuuttvEeivhaxRtJ3vdQ" name="zone" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_Zcjuu9tvEeivhaxRtJ3vdQ">
+        <body>区域</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjuvNtvEeivhaxRtJ3vdQ" name="category" visibility="public" type="_ZcjuyttvEeivhaxRtJ3vdQ" isUnique="false">
+      <ownedComment xmi:id="_ZcjuvdtvEeivhaxRtJ3vdQ">
+        <body>分类</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjuvttvEeivhaxRtJ3vdQ" name="backup" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_Zcjuv9tvEeivhaxRtJ3vdQ">
+        <body>是否需要备份</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjuwNtvEeivhaxRtJ3vdQ" name="dataChannel" visibility="public" type="_Zcjuj9tvEeivhaxRtJ3vdQ" isUnique="false">
+      <ownedComment xmi:id="_ZcjuwdtvEeivhaxRtJ3vdQ">
+        <body>数据介质类型</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjuwttvEeivhaxRtJ3vdQ" name="formatType" visibility="public" type="_ZcjuxttvEeivhaxRtJ3vdQ" isUnique="false">
+      <ownedComment xmi:id="_Zcjuw9tvEeivhaxRtJ3vdQ">
+        <body>数据格式类型</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ZcjuxNtvEeivhaxRtJ3vdQ" name="channel" visibility="public" isUnique="false">
+      <ownedComment xmi:id="_ZcjuxdtvEeivhaxRtJ3vdQ">
+        <body>来源渠道id</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_ZcjuxttvEeivhaxRtJ3vdQ" name="FormatType">
+    <ownedComment xmi:id="_Zcjux9tvEeivhaxRtJ3vdQ">
+      <body>数据媒介</body>
+    </ownedComment>
+    <ownedLiteral xmi:id="_ZcjuyNtvEeivhaxRtJ3vdQ" name="CSV"/>
+    <ownedLiteral xmi:id="_ZcjuydtvEeivhaxRtJ3vdQ" name="JSON"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_ZcjuyttvEeivhaxRtJ3vdQ" name="DataCategory">
+    <ownedComment xmi:id="_Zcjuy9tvEeivhaxRtJ3vdQ">
+      <body>&lt;Enter note text here></body>
+    </ownedComment>
+    <ownedLiteral xmi:id="_ZcjuzNtvEeivhaxRtJ3vdQ" name="MEMBER"/>
+    <ownedLiteral xmi:id="_ZcjuzdtvEeivhaxRtJ3vdQ" name="PRODUCT"/>
+    <ownedLiteral xmi:id="_ZcjuzttvEeivhaxRtJ3vdQ" name="TAG"/>
+    <ownedLiteral xmi:id="_Zcjuz9tvEeivhaxRtJ3vdQ" name="ACTION"/>
+    <ownedLiteral xmi:id="_Zcju0NtvEeivhaxRtJ3vdQ" name="TRANSACTION"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_Zcju0dtvEeivhaxRtJ3vdQ" name="ZonedDateTime"/>
+</uml:Model>

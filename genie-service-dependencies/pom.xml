@@ -10,6 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>genie-service-dependencies</artifactId>
+    <name>Genie Service Dependencies</name>
+    <packaging>pom</packaging>
     <description>服务的基础库依赖</description>
 
     <properties>

@@ -1,6 +1,6 @@
 package com.genie.flow.service;
 
-import com.genie.flow.ProcessInstance;
+import com.genie.flow.model.ProcessInstance;
 
 import java.util.Map;
 

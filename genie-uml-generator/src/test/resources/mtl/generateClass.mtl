@@ -13,8 +13,8 @@
 [template public generateElement(aClass : Class)]
 [comment @main/]
 [file ('com/genie/domain/mongo/'+aClass.name.concat('.java'), false, 'UTF-8')]
-package com.genie.domain.mongo;
-import com.genie.domain.enumeration.*;
+package cn.com.connext.crm.domain.mongo;
+import cn.com.connext.crm.domain.enumeration.*;
 import java.util.*;
 import java.io.Serializable;
 import org.springframework.data.annotation.*;
@@ -73,7 +73,7 @@ public class [aClass.name.toUpperFirst()/] implements Serializable {
 [template public generateElement(aClass : Enumeration)]
 [comment @main/]
 [file ('com/genie/domain/enumeration/'+aClass.name.concat('.java'), false, 'UTF-8')]
-package com.genie.domain.enumeration;
+package cn.com.connext.crm.domain.enumeration;
 public enum [aClass.name.toUpperFirst()/]{
 	[for (p : EnumerationLiteral | aClass.ownedLiteral) separator ('\n')]
 	/**

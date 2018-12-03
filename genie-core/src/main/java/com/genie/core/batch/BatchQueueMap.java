@@ -10,6 +10,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * 批量队列集合，通过队列名称可以方便的切换处理的队列
  * @param <T>
  */
 public class BatchQueueMap<T> {
