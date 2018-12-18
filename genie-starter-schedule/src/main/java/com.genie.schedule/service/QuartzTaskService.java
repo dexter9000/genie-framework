@@ -82,8 +82,9 @@ public class QuartzTaskService {
             .setJobData(jobInfo.getJobData())
             .build();
 
+        String tz = StringUtils.isNoneBlank(jobInfo.getTimeZone())? jobInfo.getTimeZone() : timeZone;
         MutableTrigger trigger = CronScheduleBuilder.cronSchedule(jobInfo.getCronExpression())
-            .inTimeZone(TimeZone.getTimeZone(timeZone))
+            .inTimeZone(TimeZone.getTimeZone(tz))
             .build();
         trigger.setKey(new TriggerKey(jobInfo.getJobName(), jobInfo.getJobGroup()));
 

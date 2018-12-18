@@ -104,7 +104,7 @@ public abstract class AbstractExceptionTranslator {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public ErrorVM processServiceError(HttpServletRequest request, ServiceException ex) {
-        ErrorVM error = new ErrorVM(ex.getErrorCode(), localTranslate(request.getLocale(), ex.getErrorCode(), ex.getErrorParms()));
+        ErrorVM error = new ErrorVM(ex.getErrorCode(), localTranslate(request.getLocale(), ex.getErrorCode(), ex.getErrorParams()));
         log.error("ServiceException[" + error.getErrorId() + "]: " + ex.getMessage(), ex);
         return error;
     }

@@ -1268,4 +1268,13 @@ public final class DateUtil {
     public static boolean isBetween2Time(LocalDate target, LocalDate begin, LocalDate end) {
         return target.isAfter(begin) && target.isBefore(end);
     }
+
+    public static LocalDate nowLocalDate(){
+        return LocalDate.now();
+    }
+
+    public static ZonedDateTime nowZonedDateTime(){
+        return ZonedDateTime.now();
+    }
+
 }

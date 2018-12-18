@@ -7,11 +7,23 @@ import java.util.Properties;
 @ConfigurationProperties(prefix = "quartz")
 public class QuartzProperties {
 
+    private boolean enabled = false;
+
     private String timezone;
 
     private Properties properties;
 
     private Schedule[] schedules = new Schedule[0];
+
+    private boolean storageResult = false;
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
     public String getTimezone() {
         return timezone;
@@ -35,6 +47,14 @@ public class QuartzProperties {
 
     public void setSchedules(Schedule[] schedules) {
         this.schedules = schedules;
+    }
+
+    public boolean isStorageResult() {
+        return storageResult;
+    }
+
+    public void setStorageResult(boolean storageResult) {
+        this.storageResult = storageResult;
     }
 
     public static class Schedule {

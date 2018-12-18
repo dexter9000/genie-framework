@@ -11,19 +11,22 @@ import org.quartz.impl.StdSchedulerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
 /**
- * @ClassName: InitQuartJob
+ *
  */
 @Configuration
 @ConditionalOnProperty(name = "quartz.enabled", havingValue = "true", matchIfMissing = true)
 @EnableScheduling
+@ComponentScan(value="com.genie.schedule.service")
 @EnableConfigurationProperties({QuartzProperties.class})
 public class QuartzAutoConfiguration {
 
@@ -32,7 +35,7 @@ public class QuartzAutoConfiguration {
     @Autowired
     private QuartzProperties quartzProperties;
     @Autowired
-    private JobFactory jobFactory;
+    private AutowireCapableBeanFactory capableBeanFactory;
     @Autowired
     private QuartzTaskService quartzTaskService;
 
@@ -54,7 +57,7 @@ public class QuartzAutoConfiguration {
         //QuartzScheduler 延时启动，应用启动完20秒后 QuartzScheduler 再启动
         factory.setStartupDelay(20);
 
-        factory.setJobFactory(jobFactory);
+        factory.setJobFactory(new JobFactory(capableBeanFactory));
         //注册触发器
 
         return factory;

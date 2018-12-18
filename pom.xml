@@ -206,7 +206,7 @@
         <module>genie-starter-jpa</module>
         <module>genie-starter-mongo</module>
         <!--<module>genie-starter-metrics</module>-->
-        <!--<module>genie-starter-schedule</module>-->
+        <module>genie-starter-schedule</module>
         <module>genie-flow-engine</module>
 
         <module>genie-service-dependencies</module>

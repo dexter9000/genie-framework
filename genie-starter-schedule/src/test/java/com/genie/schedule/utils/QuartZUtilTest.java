@@ -6,7 +6,7 @@ import org.quartz.Trigger;
 
 public class QuartZUtilTest {
     @Test
-    public void swingTheAir() {
+    public void testGetJobTrigger() {
         String executionTime = "0 0 9 27 7 ?";
         CronJobInfo cronJobInfo = new CronJobInfo();
         cronJobInfo.setJobGroup("Test");

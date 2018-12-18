@@ -7,8 +7,6 @@ import org.quartz.Trigger;
 import org.quartz.TriggerKey;
 import org.quartz.spi.MutableTrigger;
 
-import java.util.TimeZone;
-
 import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
 import static org.quartz.TriggerBuilder.newTrigger;
 
@@ -20,7 +18,7 @@ public class QuartzUtil {
 
     public static Trigger getJobTrigger(CronJobInfo cronJobInfo) {
         MutableTrigger trigger = CronScheduleBuilder.cronSchedule(cronJobInfo.getCronExpression())
-            .inTimeZone(TimeZone.getTimeZone("Asia/Shanghai"))
+//            .inTimeZone(TimeZone.getTimeZone("Asia/Shanghai"))
             .build();
         trigger.setKey(new TriggerKey(cronJobInfo.getJobName(), cronJobInfo.getJobGroup()));
         return trigger;

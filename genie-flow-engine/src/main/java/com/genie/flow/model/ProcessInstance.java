@@ -2,7 +2,7 @@ package com.genie.flow.model;
 
 import com.genie.flow.TaskFactory;
 import com.genie.flow.domain.Fact;
-import com.genie.flow.service.TaskCache;
+import com.genie.flow.service.GlobalCache;
 import com.genie.flow.task.BaseTask;
 import com.genie.flow.task.StartTask;
 import com.genie.flow.task.StreamTask;
@@ -30,7 +30,7 @@ public class ProcessInstance {
         process.getFlowElements().stream()
             .filter(flow -> flow instanceof FlowNode)
             .map(flow -> (FlowNode) flow)
-            .forEach(flowNode -> TaskCache.addTask(TaskFactory.createTask(flowNode)));
+            .forEach(flowNode -> GlobalCache.addTask(TaskFactory.createTask(flowNode)));
     }
 
     /**
@@ -74,7 +74,7 @@ public class ProcessInstance {
      * 数据流调度
      */
     public void executeStream(Fact fact) {
-        BaseTask task = TaskCache.getTask(fact.getTaskId());
+        BaseTask task = GlobalCache.getTask(fact.getTaskId());
         if (task instanceof StreamTask) {
             ((StreamTask) task).executeStream(fact);
         }

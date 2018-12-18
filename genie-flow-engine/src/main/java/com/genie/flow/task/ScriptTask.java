@@ -4,12 +4,13 @@ import com.genie.flow.model.TaskResult;
 import org.flowable.bpmn.model.FlowElement;
 
 /**
- * 定时任务节点，不支持流式数据
+ * 脚本任务，根据脚本执行，不支持流式数据
  */
-public class ScheduleTask extends BaseTask {
+public class ScriptTask extends BaseTask {
 
+    private String result;
 
-    ScheduleTask(FlowElement flow) {
+    public ScriptTask(FlowElement flow) {
         super(flow);
     }
 

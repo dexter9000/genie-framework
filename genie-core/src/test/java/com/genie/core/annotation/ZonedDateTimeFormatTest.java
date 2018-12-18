@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ZonedDateTimeFormatTest {
 
     @Test
-    public void test() throws IOException {
+    public void testZonedDateTimeFormat() throws IOException {
         ObjectMapper om = new ObjectMapper().registerModule(new JavaTimeModule());
         String str = "{\"name\":\"0\"," +
             "\"startTime\":\"2018-07-29T16:00:00.000Z\"," +
