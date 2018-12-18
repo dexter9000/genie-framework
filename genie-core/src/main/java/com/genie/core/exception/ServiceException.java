@@ -14,7 +14,7 @@ public class ServiceException extends RuntimeException {
     /**
      * 错误参数
      */
-    private final String[] errorParms;
+    private final String[] errorParams;
 
     /**
      * 默认错误消息
@@ -25,15 +25,15 @@ public class ServiceException extends RuntimeException {
      * @param errorCode 错误码
      */
     public ServiceException(String errorCode) {
-        this(errorCode, "");
+        this(errorCode, null, errorCode, null);
     }
 
     /**
      * @param errorCode  错误码
-     * @param errorParms 错误参数
+     * @param errorParams 错误参数
      */
-    public ServiceException(String errorCode, String[] errorParms) {
-        this(errorCode, errorParms, null);
+    public ServiceException(String errorCode, String[] errorParams) {
+        this(errorCode, errorParams, errorCode, null);
     }
 
     /**
@@ -41,7 +41,7 @@ public class ServiceException extends RuntimeException {
      * @param errorMessage 默认错误消息
      */
     public ServiceException(String errorCode, String errorMessage) {
-        this(errorCode, null, "", null);
+        this(errorCode, null, errorMessage, null);
     }
 
     /**
@@ -49,16 +49,16 @@ public class ServiceException extends RuntimeException {
      * @param cause 错误原因
      */
     public ServiceException(String errorCode, Throwable cause) {
-        this(errorCode, null, "", cause);
+        this(errorCode, null, errorCode, cause);
     }
 
     /**
      * @param errorCode 错误码
-     * @param errorParms 错误参数
+     * @param errorParams 错误参数
      * @param cause 错误原因
      */
-    public ServiceException(String errorCode, String[] errorParms, Throwable cause) {
-        this(errorCode, errorParms, "", cause);
+    public ServiceException(String errorCode, String[] errorParams, Throwable cause) {
+        this(errorCode, errorParams, errorCode, cause);
     }
 
     /**
@@ -79,10 +79,10 @@ public class ServiceException extends RuntimeException {
 
     /**
      * @param errorCode 错误码
-     * @param errorParms 错误参数
+     * @param errorParams 错误参数
      */
-    public ServiceException(ErrorCode errorCode, String[] errorParms) {
-        this(errorCode.getCode(), errorParms, null);
+    public ServiceException(ErrorCode errorCode, String[] errorParams) {
+        this(errorCode.getCode(), errorParams, errorCode.getMessage(), null);
     }
 
     /**
@@ -95,24 +95,24 @@ public class ServiceException extends RuntimeException {
 
     /**
      * @param errorCode 错误码
-     * @param errorParms 错误参数
+     * @param errorParams 错误参数
      * @param cause 错误原因
      */
-    public ServiceException(ErrorCode errorCode, String[] errorParms, Throwable cause) {
-        this(errorCode.getCode(), errorParms, cause);
+    public ServiceException(ErrorCode errorCode, String[] errorParams, Throwable cause) {
+        this(errorCode.getCode(), errorParams, errorCode.getMessage(), cause);
     }
 
 
     /**
      * @param errorCode 错误码
-     * @param errorParms 错误参数
+     * @param errorParams 错误参数
      * @param errorMessage 默认错误消息
      * @param cause 错误原因
      */
-    public ServiceException(String errorCode, String[] errorParms, String errorMessage, Throwable cause) {
-        super(cause);
+    public ServiceException(String errorCode, String[] errorParams, String errorMessage, Throwable cause) {
+        super(errorMessage, cause);
         this.errorCode = errorCode;
-        this.errorParms = errorParms;
+        this.errorParams = errorParams;
         this.errorMessage = errorMessage;
     }
 
@@ -124,7 +124,7 @@ public class ServiceException extends RuntimeException {
         return errorMessage;
     }
 
-    public String[] getErrorParms() {
-        return errorParms;
+    public String[] getErrorParams() {
+        return errorParams;
     }
 }
